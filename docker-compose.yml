@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  site:
+    container_name: hiidenvuori_site
+    build: .
+    restart: unless-stopped
+    networks:
+      - web_proxy
+    expose:
+      - "80"
+
+networks:
+  web_proxy:
+    external: true

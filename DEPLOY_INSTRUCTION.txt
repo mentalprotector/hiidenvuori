@@ -1,0 +1,20 @@
+ИНСТРУКЦИЯ ПО ДЕПЛОЮ (Satellite Mode)
+
+1. Распакуйте архив на сервере:
+   (Предполагается, что вы уже загрузили файл, например, через scp)
+   unzip hiidenvuori_deploy_pack.zip -d hiidenvuori
+
+2. Переместите конфиг Caddy в папку FitnessApp:
+   (Путь может отличаться, проверьте где лежит FitnessApp)
+   mv hiidenvuori/hiidenvuori.caddy ~/fitnessapp/docker/conf.d/
+
+3. Запустите сайт:
+   cd hiidenvuori
+   docker compose up -d --build
+
+4. Перезагрузите основной Caddy (чтобы он увидел новый конфиг):
+   cd ~/fitnessapp/docker
+   docker compose exec caddy caddy reload
+
+5. Проверьте:
+   Откройте https://хийденвуори.рф (или xn--b1aigpbrd8abgk.xn--p1ai)

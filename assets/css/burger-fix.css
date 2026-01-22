@@ -1,0 +1,39 @@
+/* Fix for mobile menu wrapping */
+@media screen and (max-width: 768px) {
+    .site-header-bottom {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+    
+    .site-header__logo {
+        flex: 0 1 auto !important;
+        min-width: 0 !important; /* Allow shrinking */
+        max-width: 70% !important; /* Leave space for burger */
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .site-header__img-container {
+        display: block;
+    }
+
+    .site-header__img-container img {
+        max-width: 100% !important;
+        max-height: 50px !important; /* Restrict height */
+        width: auto !important;
+        object-fit: contain;
+    }
+
+    .site-header__manage {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        min-width: auto !important;
+    }
+    
+    /* Ensure burger container fits */
+    .site-header__burger {
+        width: auto !important;
+    }
+}
