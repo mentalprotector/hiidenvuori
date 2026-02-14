@@ -54,13 +54,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     form.style.display = "none";
                     form.parentNode.insertBefore(successMessage, form);
                 } else {
-                    alert("Ошибка отправки. Пожалуйста, позвоните нам: +79114057329");
+                    alert("Ошибка отправки. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
                     resetBtn();
                 }
             })
             .catch(error => {
                 console.error("Error:", error);
-                alert("Ошибка соединения. Пожалуйста, позвоните нам: +79114057329");
+                alert("Ошибка соединения. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
                 resetBtn();
             });
 
