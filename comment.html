@@ -160,6 +160,16 @@
 <meta content="Хийденвуори | Туристическое пространство" property="og:title"/>
 <meta content="Отдых в Карелии на берегу Ладоги. Кемпинг, прокат, природа." property="og:description"/>
 <link href="assets/css/burger-fix.css" rel="stylesheet" type="text/css"/>
+<style>
+/* Fix topbar buttons and burger menu interactivity */
+.nh-topbar { z-index: 10000 !important; }
+.nh-topbar-links, .nh-topbar-contacts, .site-header__burger, .nh-topbar-button { 
+    position: relative; 
+    z-index: 10001 !important; 
+    pointer-events: auto !important; 
+}
+.nh-topbar-overlay { z-index: 9000 !important; }
+</style>
 </head>
 <body class="site" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 11" data-page-type="comment" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="show-for-large">
@@ -617,8 +627,8 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                     </a>
 </li>
 <li class="nh-footer-columns__links-item">
-<a class="nh-footer-columns__link" href="tel:+79210141190" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
-                                        +7 (921) 014-11-90
+<a class="nh-footer-columns__link" href="tel:+79210146447" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
+                                        +7 (921) 014-64-47
                                     </a>
 </li>
 
