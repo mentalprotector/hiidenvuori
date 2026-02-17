@@ -37,3 +37,8 @@
         width: auto !important;
     }
 }
+
+/* Fix for layout shift when opening modals/burger menu */
+html {
+    scrollbar-gutter: stable;
+}
