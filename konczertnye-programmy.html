@@ -175,6 +175,20 @@
 }
 .nh-topbar-overlay { z-index: 9000 !important; }
 </style>
+
+<style id="aboba-perfect-fix">
+    @media (max-width: 768px) {
+        .nh-features__item-wrapper { flex-direction: column !important; }
+        .nh-features__info { padding: 20px !important; margin-top: 0 !important; border-radius: 0 0 12px 12px !important; }
+        .nh-features__image-grid { width: 100% !important; margin-bottom: 0 !important; grid-template-columns: 1fr !important; }
+        .nh-features__image-grid div { grid-column: span 1 !important; }
+        .nh-features__btn { width: 100% !important; text-align: center !important; }
+        h3 { font-size: 22px !important; }
+        
+    }
+    /* SAFE LAZYLOAD FIX: Only for images, no UI breaking */
+    img.lazyload, img.lazyloading { opacity: 1 !important; visibility: visible !important; }
+</style>
 </head>
 <body class="site" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 6" data-page-type="text" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="show-for-large">
@@ -352,87 +366,74 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
 </section>
 <div class="module__content_filled" data-blocks-list="" data-ng-controller="WidgetController" data-page-id="1884189" data-region="2" data-sorted-blocks="" data-widget-store-list="content">
 <section class="nh-features widget-block nh-editor-panel js-indent" data-widget-store-item="" id="features-49">
-<link href="assets/css/features.4c0a14.min.css" rel="stylesheet" type="text/css"/> <div class="lazyload nh-features--indent-top-l nh-features--indent-bottom-l" data-ng-non-bindable="" data-widget-replaceable-content="49" style="background-position: top center;background-repeat: repeat-y;background-size: 1420px;background-color: rgba(255,255,255, 1);">
+<link href="assets/css/features.4c0a14.min.css" rel="stylesheet" type="text/css"/> <div class="lazyload nh-features--indent-top-s nh-features--indent-bottom-s" data-ng-non-bindable="" data-widget-replaceable-content="49" style="background-position: top center;background-repeat: repeat-y;background-size: 1420px;background-color: rgba(255,255,255, 1);">
 <div class="js-indent-add"></div> <div class="nh-features__container">
 <ul class="nh-features__items">
 <li class="nh-features__item" style="margin-bottom: 60px;">
     <div class="nh-features__inner">
-        <div class="nh-features__item-wrapper" style="display: flex;  align-items: flex-start; gap: 40px; flex-wrap: wrap;">
-            
-    <div class="nh-features__image-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; min-width: 300px;">
-        <div style="grid-column: span 2;">
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/7ilwtoolxu8sskw08ccg80kw0ckkww.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 16/9;">
-            </picture>
-        </div>
-        <div>
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/ship_test.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
-            </picture>
-        </div>
-        <div>
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/features_bg.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
-            </picture>
-        </div>
-    </div>
-    
+        <div class="nh-features__item-wrapper" style="display: flex; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
+            <div class="nh-features__image-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; flex: 1; min-width: 300px;">
+                <div style="grid-column: span 2;">
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/interior_night.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 16/9;">
+                    </picture>
+                </div>
+                <div>
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/interior_day.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
+                    </picture>
+                </div>
+                <div>
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/exterior.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
+                    </picture>
+                </div>
+            </div>
             <div class="nh-features__info nh-features_round-2" style="flex: 1; min-width: 300px; padding: 30px; background: #f4f6fc; border-radius: 12px;">
-                <div class="nh-features__text nh-features-item-desc--user-inner">
-                    
-<h3>Органные концерты в Ангаре (Хийденвуори)</h3>
-<p class="nh-text-editor__fontsize-16"><strong>Такого органа и в таком зале вы точно не слышали!</strong> Органный зал на самом берегу Ладоги открывает свои двери.</p>
-<p class="nh-text-editor__fontsize-16">Классические бессмертные произведения, музыка кино, рок-баллады, уникальные беседы о композиторах — этого вы больше не услышите НИГДЕ! Зал находится при входе в кафе Saha налево!</p>
-<p class="nh-text-editor__fontsize-16">Инструмент уникальной конструкции привезён из Нижнего Новгорода. Он ожил и готов перемещать вас во времени и пространстве.</p>
-<p class="nh-text-editor__fontsize-16">Группа ВК: <a href="https://vk.com/oragnvangare" target="_blank" style="color: #3384BF; text-decoration: underline;">vk.com/oragnvangare</a></p>
-
- style="margin-top: 20px; display: flex; gap: 15px;">
-    <a class="nh-features__btn nh-features__btn--basic nh-features__btn--size-l" href="tel:+79210141190" target="_parent">+7 (921) 014-11-90</a>
-</div>
-
-
+                <div class="nh-features__text">
+                    <h3 style="font-family: FontHeader, sans-serif; font-weight: 800; color: #102748; margin-bottom: 15px;">Органные концерты в Ангаре (Хийденвуори)</h3>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;"><strong>Такого органа и в таком зале вы точно не слышали!</strong> Органный зал на самом берегу Ладоги открывает свои двери.</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Классические бессмертные произведения, музыка кино, рок-баллады, уникальные беседы о композиторах — этого вы больше не услышите НИГДЕ! Зал находится при входе в кафе Saha налево!</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Инструмент уникальной конструкции привезён из Нижнего Новгорода. Он ожил и готов перемещать вас во времени и пространстве.</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Группа ВК: <a href="https://vk.com/oragnvangare" target="_blank" style="color: #3384BF; text-decoration: underline;">vk.com/oragnvangare</a></p>
+                    <div style="margin-top: 25px; display: flex; gap: 15px;">
+                        <a style="color: #ffffff !important; background-color: #3384BF !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;" href="tel:+79210141190">+7 (921) 014-11-90</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </li>
-
 <li class="nh-features__item" style="margin-bottom: 60px;">
     <div class="nh-features__inner">
         <div class="nh-features__item-wrapper" style="display: flex; flex-direction: row-reverse; align-items: flex-start; gap: 40px; flex-wrap: wrap;">
-            
-    <div class="nh-features__image-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1; min-width: 300px;">
-        <div style="grid-column: span 2;">
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/features_bg.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 16/9;">
-            </picture>
-        </div>
-        <div>
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
-            </picture>
-        </div>
-        <div>
-            <picture class="nh-features__picture-container nh-features_round-2">
-                <img src="assets/img/boat_launch.webp" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
-            </picture>
-        </div>
-    </div>
-    
+            <div class="nh-features__image-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; flex: 1; min-width: 300px;">
+                <div style="grid-column: span 2;">
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/interior_night.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 16/9;">
+                    </picture>
+                </div>
+                <div>
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/interior_day.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
+                    </picture>
+                </div>
+                <div>
+                    <picture class="nh-features__picture-container nh-features_round-2">
+                        <img src="assets/organ-concerts/exterior.png" style="width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 1/1;">
+                    </picture>
+                </div>
+            </div>
             <div class="nh-features__info nh-features_round-2" style="flex: 1; min-width: 300px; padding: 30px; background: #f4f6fc; border-radius: 12px;">
-                <div class="nh-features__text nh-features-item-desc--user-inner">
-                    
-<h3>Органные концерты в Сортавала</h3>
-<p class="nh-text-editor__fontsize-16">Органные концерты — пожалуй, одно из самых необычных предложений для Вас в г. Сортавала. И все же — очень логичное.</p>
-<p class="nh-text-editor__fontsize-16">Именно здесь, среди старинных архитектурных памятников, рядом с бескрайним Ладожским озером, музыкальные впечатления обретут особую силу и яркость!</p>
-<p class="nh-text-editor__fontsize-16">В программе: произведения Вивальди, Баха, Генделя, шедевры современных органистов, а также узнаваемая музыка из кинофильмов.</p>
-<p class="nh-text-editor__fontsize-16">Группа ВК: <a href="https://vk.com/organvsortavale" target="_blank" style="color: #3384BF; text-decoration: underline;">vk.com/organvsortavale</a></p>
-
- style="margin-top: 20px; display: flex; gap: 15px;">
-    <a class="nh-features__btn nh-features__btn--secondary nh-features__btn--size-l" href="https://vk.com/organvsortavale" target="_blank">Группа ВКонтакте</a>
-</div>
-
-
+                <div class="nh-features__text">
+                    <h3 style="font-family: FontHeader, sans-serif; font-weight: 800; color: #102748; margin-bottom: 15px;">Органные концерты в Сортавала</h3>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Органные концерты — пожалуй, одно из самых необычных предложений для Вас в г. Сортавала. И все же — очень логичное.</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Именно здесь, среди старинных архитектурных памятников, рядом с бескрайним Ладожским озером, музыкальные впечатления обретут особую силу и яркость!</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">В программе: произведения Вивальди, Баха, Генделя, шедевры современных органистов, а также узнаваемая музыка из кинофильмов.</p>
+                    <p style="font-family: FontParagraph, sans-serif; font-size: 16px; line-height: 1.6; color: #333;">Группа ВК: <a href="https://vk.com/organvsortavale" target="_blank" style="color: #3384BF; text-decoration: underline;">vk.com/organvsortavale</a></p>
+                    <div style="margin-top: 25px; display: flex; gap: 15px;">
+                        <a style="color: #ffffff !important; background-color: #3384BF !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;" href="https://vk.com/organvsortavale" target="_blank">Группа ВКонтакте</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -444,7 +445,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
 </section>
 <section class="nh-horizontal-cards widget-block nh-editor-panel lazyload js-indent" data-widget-store-item="" id="horizontal-cards-63">
 <link href="assets/css/horizontal-cards.374645.min.css" rel="stylesheet" type="text/css"/> <div data-ng-non-bindable="" data-widget-replaceable-content="63" style="--hc-bg-before-color: rgba(255,255,255, 1);">
-<div class="lazyload nh-horizontal-cards--indent-top-s nh-horizontal-cards--indent-bottom-l" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 1);">
+<div class="lazyload nh-horizontal-cards--indent-top-s nh-horizontal-cards--indent-bottom-s" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 1);">
 <div class="js-indent-add"></div> <div class="nh-horizontal-cards__inner">
 <div class="nh-horizontal-cards__content">
 <ul class="nh-horizontal-cards__items nh-horizontal-cards__items--gap-3 nh-horizontal-cards__items--columns-3 nh-horizontal-cards__items--columns-tablet-landscape-3 nh-horizontal-cards__items--columns-tablet-portrait-3 nh-horizontal-cards__items--columns-mobile-1">
@@ -464,11 +465,11 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                                                                             ">
 <div class="nh-horizontal-cards__picture-container">
 <picture class="nh-horizontal-cards__picture-container nh-horizontal-cards_round-0" style="                                        ">
-<source media="(max-width: 767px)" srcset="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 1x, assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 2x " type="image/webp"/>
-<source media="(max-width: 767px)" srcset="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 1x, assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 2x " type="image/png"/>
-<source media="(min-width: 768px)" srcset="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 1x, assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 2x " type="image/webp"/>
-<source media="(min-width: 768px)" srcset="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 1x, assets/img/hdabn3svd008048wo488o0sk8sg84g.webp 2x " type="image/png"/>
-<img alt="" class="nh-horizontal-cards_round-0" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 370px, (min-width: 768px) 370px" src="assets/img/hdabn3svd008048wo488o0sk8sg84g.webp"/>
+<source media="(max-width: 767px)" srcset="assets/organ-concerts/interior_day.png 1x, assets/organ-concerts/interior_day.png 2x " type="image/webp"/>
+<source media="(max-width: 767px)" srcset="assets/organ-concerts/interior_day.png 1x, assets/organ-concerts/interior_day.png 2x " type="image/png"/>
+<source media="(min-width: 768px)" srcset="assets/organ-concerts/interior_day.png 1x, assets/organ-concerts/interior_day.png 2x " type="image/webp"/>
+<source media="(min-width: 768px)" srcset="assets/organ-concerts/interior_day.png 1x, assets/organ-concerts/interior_day.png 2x " type="image/png"/>
+<img alt="" class="nh-horizontal-cards_round-0" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 370px, (min-width: 768px) 370px" src="assets/organ-concerts/interior_day.png"/>
 </picture>
 </div>
 <div class="nh-horizontal-cards__info nh-horizontal-cards__info--alignment-1" style="                                                    ">

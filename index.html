@@ -173,6 +173,20 @@
 /* Fix for white screen issue: force visibility of lazyload elements */
 .lazyload, .lazyloading { opacity: 1 !important; visibility: visible !important; }
 </style>
+
+<style id="aboba-perfect-fix">
+    @media (max-width: 768px) {
+        .nh-features__item-wrapper { flex-direction: column !important; }
+        .nh-features__info { padding: 20px !important; margin-top: 0 !important; border-radius: 0 0 12px 12px !important; }
+        .nh-features__image-grid { width: 100% !important; margin-bottom: 0 !important; grid-template-columns: 1fr !important; }
+        .nh-features__image-grid div { grid-column: span 1 !important; }
+        .nh-features__btn { width: 100% !important; text-align: center !important; }
+        h3 { font-size: 22px !important; }
+        
+    }
+    /* SAFE LAZYLOAD FIX: Only for images, no UI breaking */
+    img.lazyload, img.lazyloading { opacity: 1 !important; visibility: visible !important; }
+</style>
 </head>
 <body class="site site_main-page" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-main-page="true" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 2" data-page-type="index" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="show-for-large">
@@ -683,11 +697,11 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                                                                             ">
 <div class="nh-horizontal-cards__picture-container">
 <picture class="nh-horizontal-cards__picture-container nh-horizontal-cards_round-2" style="                                        ">
-<source media="(max-width: 767px)" srcset="assets/img/boat_launch.webp" type="image/webp"/>
-<source media="(max-width: 767px)" srcset="assets/img/boat_launch.webp" type="image/png"/>
-<source media="(min-width: 768px)" srcset="assets/img/boat_launch.webp" type="image/webp"/>
-<source media="(min-width: 768px)" srcset="assets/img/boat_launch.webp" type="image/png"/>
-<img alt="" class="nh-horizontal-cards_round-2" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 656px, (min-width: 768px) 656px" src="assets/img/boat_launch.webp"/>
+<source media="(max-width: 767px)" srcset="assets/organ-concerts/interior_night.png" type="image/webp"/>
+<source media="(max-width: 767px)" srcset="assets/organ-concerts/interior_night.png" type="image/png"/>
+<source media="(min-width: 768px)" srcset="assets/organ-concerts/interior_night.png" type="image/webp"/>
+<source media="(min-width: 768px)" srcset="assets/organ-concerts/interior_night.png" type="image/png"/>
+<img alt="" class="nh-horizontal-cards_round-2" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 656px, (min-width: 768px) 656px" src="assets/organ-concerts/interior_night.png"/>
 </picture>
 </div>
 <div class="nh-horizontal-cards__info nh-horizontal-cards__info--alignment-1" style="                                                    ">
