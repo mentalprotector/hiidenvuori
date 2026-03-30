@@ -175,6 +175,39 @@
 }
 .nh-topbar-overlay { z-index: 9000 !important; }
 </style>
+<style id="aboba-sitewide-fix">
+    .lazyload, .lazyloading { opacity: 1 !important; visibility: visible !important; }
+    img.lazyload, img.lazyloading { opacity: 1 !important; visibility: visible !important; }
+
+    @media screen and (max-width: 1024px) {
+        section.widget-block,
+        section.widget-sort {
+            animation-delay: 0s !important;
+            animation-duration: 0s !important;
+        }
+
+        section.widget-block[style*="visibility: hidden"],
+        section.widget-sort[style*="visibility: hidden"] {
+            visibility: visible !important;
+            animation-name: none !important;
+            opacity: 1 !important;
+        }
+    }
+</style>
+<style id="aboba-features-image-fix">
+    .nh-features__image-block .nh-features__picture-container {
+        width: 100%;
+    }
+
+    .nh-features__image-block .nh-features__picture-container img,
+    .nh-features__image-block .nh-features__picture-container source,
+    .nh-features__image-block picture.nh-features__picture-container img {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block;
+    }
+</style>
+<link href="assets/css/site-media-fixes.css" rel="stylesheet" type="text/css"/>
 </head>
 <body class="site" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 6" data-page-type="text" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="show-for-large">
@@ -198,7 +231,9 @@
     box-shadow: 0px var(--topbar-shadow-y, 4px) var(--topbar-shadow-blur, 24px) 0px     transparent;
  background-position: top center;background-repeat: no-repeat;background-size: 0px;background-color: rgba(255,255,255, 0);">
 <div class="nh-topbar-links nh-topbar--hide-1" id="nh-topbar-links-2-2-1">
-<a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="stoyanka-dlya-avtodomov.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
+<a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="razmeshhenie.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
+                Кемпинг
+            </a><a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="stoyanka-dlya-avtodomov.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Автокемпинг
             </a><a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="aktivnyj-otdykh.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Активный отдых
@@ -213,8 +248,7 @@
 <a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="contacts.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Контакты
             </a>
-</div>
-<button class="nh-topbar-links__btn nh-topbar--hide-1 nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" id="move-links-btn-2-2-1" style="color:#F5F1FE">
+</div><button class="nh-topbar-links__btn nh-topbar--hide-1 nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" id="move-links-btn-2-2-1" style="color:#F5F1FE">
          <svg fill="currentColor" height="6" viewbox="0 0 12 6" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l5.2-6H.8L6 6z"></path></svg> </button>
 <script>
 document.getElementById('move-links-btn-2-2-1').addEventListener('click', function () {
@@ -229,7 +263,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
 <a class="nh-topbar-button nh-topbar-button--primary nh-topbar-button--m nh-topbar--hide-1 nh-topbar-button--left" href="tel:+79210141190" target="_parent">
 <span>+7 (921) 014-11-90</span></a>
 <div class="nh-topbar-contacts nh-topbar--hide-2">
-<a class="nh-topbar-link nh-topbar-link nh-topbar-link__font nh-topbar-link__font--12 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-0" href="https://wa.me/+79210141190" style="--nh-topbar-link-color:#619745;--nh-topbar-link-hover:#578D3B;--nh-topbar-link-active:#578D3B;" target="">
+<a class="nh-topbar-link nh-topbar-link nh-topbar-link__font nh-topbar-link__font--12 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-0" href="https://wa.me/79210141190" style="--nh-topbar-link-color:#619745;--nh-topbar-link-hover:#578D3B;--nh-topbar-link-active:#578D3B;" target="">
 <span class="nh-topbar-link__icon nh-topbar-link__icon--3">
 <svg fill="none" height="20" viewbox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg">
 <path clip-rule="evenodd" d="M9.50284 0.0115787C4.18176 0.262101 -0.0159877 4.66127 4.57767e-05 9.94928C0.00268174 11.5058 0.375351 13.0394 1.08731 14.4236L0.0271021 19.5353C0.014166 19.5992 0.0175531 19.6653 0.0369502 19.7276C0.0563474 19.7898 0.0911281 19.8462 0.138076 19.8914C0.185025 19.9367 0.242624 19.9694 0.30555 19.9864C0.368475 20.0035 0.434694 20.0045 0.498083 19.9892L5.54259 18.8027C6.87866 19.463 8.34538 19.8163 9.83554 19.8369C15.2739 19.9201 19.8073 15.6331 19.9767 10.2369C20.159 4.44982 15.35 -0.264998 9.50284 0.0115787ZM14.84 12.0696L12.905 11.5185C12.7801 11.4826 12.6479 11.481 12.5222 11.5138C12.3965 11.5466 12.2819 11.6126 12.1905 11.7049L11.7175 12.1839C11.6196 12.283 11.4947 12.3511 11.3583 12.3796C11.222 12.4081 11.0803 12.3958 10.9509 12.3442C10.036 11.9764 8.10996 10.2769 7.61794 9.4261C7.54896 9.30594 7.51746 9.16791 7.52745 9.02972C7.53745 8.89153 7.5885 8.75947 7.67405 8.65049L8.08691 8.11938C8.16639 8.01762 8.21669 7.89615 8.2324 7.76799C8.24811 7.63983 8.22865 7.50981 8.1761 7.39187L7.3624 5.56406C7.31638 5.4619 7.24729 5.3718 7.16056 5.30086C7.07384 5.22991 6.97184 5.18005 6.86258 5.15519C6.75332 5.13032 6.63979 5.13114 6.53091 5.15758C6.42202 5.18401 6.32075 5.23534 6.23505 5.30752C5.69493 5.76147 5.05359 6.4499 4.97643 7.2145C4.83915 8.5603 5.42036 10.2568 7.61894 12.2951C10.1592 14.649 12.1945 14.9606 13.5182 14.641C14.2698 14.4606 14.871 13.7361 15.2488 13.1439C15.3093 13.0498 15.3468 12.9428 15.3583 12.8316C15.3699 12.7204 15.3552 12.6081 15.3154 12.5036C15.2757 12.3991 15.2119 12.3054 15.1293 12.23C15.0468 12.1547 14.9477 12.0997 14.84 12.0696Z" fill="currentColor" fill-rule="evenodd"></path>
@@ -445,7 +479,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
 <div class="lazyload" style="                                            height: 100%;
                                             --hc-item-bg-before-color: rgba(97,151,69, 1);
                                         background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(97,151,69, 1);">
-<a href="https://wa.me/+79210141190" target="_parent">
+<a href="https://wa.me/79210141190" target="_parent">
 <figure class="nh-horizontal-cards__item--width-4" style="                                                --img-border-color: rgba(0,0,0, 0); --img-border-width: 24px;                                                                                                    --image-shadow-rgba-color: rgba(52,62,69, 0);
                                                     --image-shadow-offsetX: 0px;
                                                     --image-shadow-offsetY: 4px;
@@ -618,7 +652,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                     </a>
 </li>
 <li class="nh-footer-columns__links-item">
-<a class="nh-footer-columns__link" href="https://wa.me/+79210141190" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
+<a class="nh-footer-columns__link" href="https://wa.me/79210141190" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
                                         Написать в Whatsapp
                                     </a>
 </li>
@@ -752,6 +786,10 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
         }
     });
 </script>
+<script src="assets/js/site-shell.js"></script>
+<script src="assets/js/site-conversion.js"></script>
 <script src="assets/js/form-ajax.js"></script>
 </body>
 </html>
+
+

@@ -142,6 +142,39 @@
 <meta content="Хийденвуори | Туристическое пространство" property="og:title"/>
 <meta content="Отдых в Карелии на берегу Ладоги. Кемпинг, прокат, природа." property="og:description"/>
 <link href="assets/css/burger-fix.css" rel="stylesheet" type="text/css"/>
+<style id="aboba-sitewide-fix">
+    .lazyload, .lazyloading { opacity: 1 !important; visibility: visible !important; }
+    img.lazyload, img.lazyloading { opacity: 1 !important; visibility: visible !important; }
+
+    @media screen and (max-width: 1024px) {
+        section.widget-block,
+        section.widget-sort {
+            animation-delay: 0s !important;
+            animation-duration: 0s !important;
+        }
+
+        section.widget-block[style*="visibility: hidden"],
+        section.widget-sort[style*="visibility: hidden"] {
+            visibility: visible !important;
+            animation-name: none !important;
+            opacity: 1 !important;
+        }
+    }
+</style>
+<style id="aboba-features-image-fix">
+    .nh-features__image-block .nh-features__picture-container {
+        width: 100%;
+    }
+
+    .nh-features__image-block .nh-features__picture-container img,
+    .nh-features__image-block .nh-features__picture-container source,
+    .nh-features__image-block picture.nh-features__picture-container img {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block;
+    }
+</style>
+<link href="assets/css/site-media-fixes.css" rel="stylesheet" type="text/css"/>
 </head>
 <body class="site" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 6" data-page-type="text" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="show-for-large">
@@ -169,6 +202,8 @@
                 Кемпинг
             </a><a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="stoyanka-dlya-avtodomov.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Автокемпинг
+            </a><a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="aktivnyj-otdykh.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
+                Активный отдых
             </a>
 <a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="uslugi.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Услуги
@@ -180,8 +215,7 @@
 <a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" href="contacts.html" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
                 Контакты
             </a>
-</div>
-<button class="nh-topbar-links__btn nh-topbar--hide-1 nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" id="move-links-btn-2-2-1" style="color:#F5F1FE">
+</div><button class="nh-topbar-links__btn nh-topbar--hide-1 nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" id="move-links-btn-2-2-1" style="color:#F5F1FE">
          <svg fill="currentColor" height="6" viewbox="0 0 12 6" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l5.2-6H.8L6 6z"></path></svg> </button>
 <script>
 document.getElementById('move-links-btn-2-2-1').addEventListener('click', function () {
@@ -441,7 +475,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                     </a>
 </li>
 <li class="nh-footer-columns__links-item">
-<a class="nh-footer-columns__link" href="https://wa.me/+79210141190" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
+<a class="nh-footer-columns__link" href="https://wa.me/79210141190" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">
                                         Написать в Whatsapp
                                     </a>
 </li>
@@ -575,6 +609,9 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
         }
     });
 </script>
+<script src="assets/js/site-shell.js"></script>
+<script src="assets/js/site-conversion.js"></script>
 <script src="assets/js/form-ajax.js"></script>
 </body>
 </html>
+

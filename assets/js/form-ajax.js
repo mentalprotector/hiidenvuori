@@ -10,6 +10,15 @@ document.addEventListener("DOMContentLoaded", function() {
         // Пропускаем формы, которые не похожи на заявки (например, поиск)
         if (!form.querySelector("input")) return;
 
+        const currentUrl = window.location.origin + window.location.pathname;
+        if (!form.querySelector("input[name='_next']")) {
+            const nextField = document.createElement("input");
+            nextField.type = "hidden";
+            nextField.name = "_next";
+            nextField.value = currentUrl + "?form=success";
+            form.appendChild(nextField);
+        }
+
         form.addEventListener("submit", function(e) {
             e.preventDefault();
 
@@ -38,6 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.json())
             .then(data => {
                 if (data.success === "true" || data.success === true) {
+                    document.dispatchEvent(new CustomEvent("hiidenvuori:form-success", {
+                        detail: { formId: form.id || form.dataset.target || "" }
+                    }));
+
                     // Успех! Заменяем содержимое формы на красивое сообщение
                     const successMessage = document.createElement("div");
                     successMessage.style.textAlign = "center";
@@ -54,12 +67,18 @@ document.addEventListener("DOMContentLoaded", function() {
                     form.style.display = "none";
                     form.parentNode.insertBefore(successMessage, form);
                 } else {
+                    document.dispatchEvent(new CustomEvent("hiidenvuori:form-error", {
+                        detail: { formId: form.id || form.dataset.target || "" }
+                    }));
                     alert("Ошибка отправки. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
                     resetBtn();
                 }
             })
             .catch(error => {
                 console.error("Error:", error);
+                document.dispatchEvent(new CustomEvent("hiidenvuori:form-error", {
+                    detail: { formId: form.id || form.dataset.target || "" }
+                }));
                 alert("Ошибка соединения. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
                 resetBtn();
             });

@@ -1,0 +1,32 @@
+.nh-features__image-block .nh-features__picture-container {
+    width: 100%;
+}
+
+.nh-features__image-block .nh-features__picture-container img,
+.nh-features__image-block picture.nh-features__picture-container img {
+    display: block;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+.nh-horizontal-cards__picture-container picture,
+.nh-horizontal-cards__picture-container img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+.nh-horizontal-cards__picture-container {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    width: 100%;
+}
+
+.nh-horizontal-cards__picture-container picture {
+    height: 100%;
+}
+
+.nh-horizontal-cards__picture-container img {
+    height: 100% !important;
+    object-fit: cover;
+}
