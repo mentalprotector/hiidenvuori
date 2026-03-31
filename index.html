@@ -248,6 +248,69 @@
         display: block;
     }
 </style>
+<style id="aboba-home-sections-image-fix">
+    #horizontal-cards-26 .nh-horizontal-cards__picture-container {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+    }
+
+    #horizontal-cards-26 .nh-horizontal-cards__picture-container img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media screen and (max-width: 47.998rem) {
+        #horizontal-cards-26 .nh-horizontal-cards__picture-container {
+            aspect-ratio: 16 / 10;
+        }
+    }
+</style>
+<style id="aboba-contact-buttons-fix">
+    #horizontal-cards-40 .nh-horizontal-cards__item--width-4 {
+        align-items: center;
+        display: grid;
+        gap: 16px;
+        grid-template-columns: 44px 1fr;
+    }
+
+    #horizontal-cards-40 .nh-horizontal-cards__picture-container {
+        align-items: center;
+        display: flex;
+        height: 44px;
+        justify-content: center;
+        width: 44px;
+    }
+
+    #horizontal-cards-40 .nh-horizontal-cards__picture-container img {
+        background: #ffffff;
+        border-radius: 6px;
+        display: block;
+        height: 44px !important;
+        object-fit: contain;
+        padding: 9px;
+        width: 44px !important;
+    }
+
+    #horizontal-cards-40 .nh-horizontal-cards__info {
+        padding-left: 0;
+        width: 100%;
+    }
+
+    #horizontal-cards-40 .nh-horizontal-cards__text p {
+        margin: 0;
+        text-align: center;
+    }
+
+    @media screen and (max-width: 47.998rem) {
+        #horizontal-cards-40 .nh-horizontal-cards__item--width-4 {
+            grid-template-columns: 44px 1fr;
+        }
+    }
+</style>
 <link href="assets/css/site-media-fixes.css" rel="stylesheet" type="text/css"/>
 </head>
 <body class="site site_main-page" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-main-page="true" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 2" data-page-type="index" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">

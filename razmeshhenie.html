@@ -207,6 +207,25 @@
         display: block;
     }
 </style>
+<style id="aboba-placement-gallery-fix">
+    #cards-45 .nh-cards__picture-container {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+    }
+
+    #cards-45 .nh-cards__picture-container img {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+    
+    @media screen and (max-width: 47.938rem) {
+        #cards-45 .nh-cards__picture-container {
+            aspect-ratio: 16 / 10;
+        }
+    }
+</style>
 <link href="assets/css/site-media-fixes.css" rel="stylesheet" type="text/css"/>
 </head>
 <body class="site" data-cart="old" data-enable-compare="false" data-grid="12" data-html-version="8450396804356098204101" data-lang="ru_RU" data-ng-controller="BlocksController as blockCtrl" data-ng-init="moduleId = 6" data-page-type="text" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
@@ -628,7 +647,7 @@ document.getElementById('move-links-btn-2-2-1').addEventListener('click', functi
                                                                                                                                                                 text-align: left                                                    "><h6 class="nh-text-editor__fontsize-48">🚭</h6> </div>
 <div class="nh-cards__text nh-cards-item-desc--user-inner nh-cards-item-desc-user-inner--size-l" style="
                                                                                                             color: #102748;
-                                                                                                        "><h6 class="nh-text-editor__fontsize-16"><strong>Курить в шатрах.</strong><br/><strong>Для этого есть отведенные места</strong></h6> </div>
+         "><h6 class="nh-text-editor__fontsize-16"><strong>Курить на настилах запрещено.</strong><br/><strong>Для этого есть отведенные места</strong></h6> </div>
 </div>
 </figure>
 </div>
