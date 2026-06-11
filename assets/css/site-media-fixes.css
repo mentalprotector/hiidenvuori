@@ -1,3 +1,21 @@
+html {
+    height: auto !important;
+    min-height: 100% !important;
+}
+
+body {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+}
+
+.layout,
+.site__layout {
+    height: auto !important;
+    min-height: 100vh !important;
+}
+
 .nh-features__image-block .nh-features__picture-container {
     width: 100%;
 }
@@ -9,16 +27,16 @@
     width: 100% !important;
 }
 
+.nh-horizontal-cards__picture-container {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    width: 100%;
+}
+
 .nh-horizontal-cards__picture-container picture,
 .nh-horizontal-cards__picture-container img {
     display: block;
     max-width: 100%;
-    width: 100%;
-}
-
-.nh-horizontal-cards__picture-container {
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
     width: 100%;
 }
 
@@ -29,4 +47,54 @@
 .nh-horizontal-cards__picture-container img {
     height: 100% !important;
     object-fit: cover;
+}
+
+.nh-horizontal-cards__item > .lazyload > a {
+    display: block;
+    width: 100%;
+}
+
+.nh-horizontal-cards__item--width-4 {
+    align-items: center;
+    display: flex;
+    gap: 16px;
+    width: 100%;
+}
+
+.nh-horizontal-cards__item--width-4 .nh-horizontal-cards__picture-container {
+    align-items: center;
+    aspect-ratio: auto;
+    display: flex;
+    flex: 0 0 44px;
+    height: 44px;
+    justify-content: center;
+    overflow: visible;
+    width: 44px;
+}
+
+.nh-horizontal-cards__item--width-4 .nh-horizontal-cards__picture-container picture {
+    height: 44px;
+    width: 44px;
+}
+
+.nh-horizontal-cards__item--width-4 .nh-horizontal-cards__picture-container img {
+    background: #ffffff;
+    border-radius: 6px;
+    display: block;
+    height: 44px !important;
+    object-fit: contain;
+    padding: 9px;
+    width: 44px !important;
+}
+
+.nh-horizontal-cards__item--width-4 .nh-horizontal-cards__info {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding-left: 0;
+    width: 100%;
+}
+
+.nh-horizontal-cards__item--width-4 .nh-horizontal-cards__text p {
+    margin: 0;
+    text-align: center;
 }
