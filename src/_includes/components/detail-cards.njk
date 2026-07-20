@@ -1,0 +1,74 @@
+{% macro detailCards(title, description, items, columns=2, id=none, background="rgba(255,255,255,1)", theme="light") %}
+{% set cols = columns if columns else 2 %}
+{% set tabletCols = 2 if cols > 2 else cols %}
+{% set colClass = "nh-cards__items--two-columns" if cols == 2 else "nh-cards__items--adaptive" %}
+{% set headingColor = "#ffffff" if theme == "dark" else "#243B5C" %}
+{% set textColor = "#ffffff" if theme == "dark" else "#102748" %}
+<section class="nh-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id or ('cards-' ~ range(1000,9999) | random) }}">
+<link href="/assets/css/cards.ce46b1.min.css" rel="stylesheet" type="text/css"/>
+<div class="lazyload nh-cards--indent-top-m nh-cards--indent-bottom-m" data-ng-non-bindable="" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: {{ background }};">
+<div class="js-indent-add"></div>
+<div class="nh-cards__inner">
+<div class="nh-cards__content">
+{% if title or description %}
+<div class="nh-cards-inner__width nh-cards-inner__width--content">
+<div class="nh-cards-header nh-cards-header--indent-bottom nh-cards-header--left">
+{% if title %}
+<div class="nh-h2 nh-cards-header__title nh-cards-title--user-inner nh-cards-header__title--content nh-cards-header__title--left" style="color: {{ headingColor }};">
+<h2 class="nh-text-editor__fontsize-28">{{ title }}</h2>
+</div>
+{% endif %}
+{% if description %}
+<div class="nh-cards-header__description nh-cards-header__description--indent-bottom nh-cards-desc--user-inner" style="color: {{ textColor }};">
+<p class="nh-text-editor__fontsize-16">{{ description }}</p>
+</div>
+{% endif %}
+</div>
+</div>
+{% endif %}
+<ul class="nh-cards__items nh-cards_m nh-cards__items_0 {{ colClass }} nh-cards__items--columns-tablet-landscape-{{ tabletCols }} nh-cards__items--columns-tablet-portrait-{{ tabletCols }} nh-cards__items--columns-mobile-1">
+{% for item in items %}
+<li{% if item.anchor %} id="{{ item.anchor }}"{% endif %} class="lazyload nh-cards__item nh-cards_round-2 nh-cards__item--two-columns" style="--shadow-rgba-color: rgba(76,91,102, 0.03); --shadow-offsetX: 0px; --shadow-offsetY: 4px; --shadow-blur: 25px; --border-color: rgba(0,0,0, 0); --border-width: 0px; background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 1);">
+<div>
+<figure>
+{% if item.image %}
+<div class="nh-cards__picture-container">
+<picture class="nh-cards__picture-container nh-cards_round-2" style="">
+<img alt="{{ item.image.alt or item.title or '' }}" class="nh-cards_round-2" loading="lazy" src="{{ item.image.src }}" style="width: 100%; height: auto; object-fit: cover;{% if item.image.ratio %} aspect-ratio: {{ item.image.ratio }};{% endif %}"/>
+</picture>
+</div>
+{% endif %}
+{% if item.title or item.text or item.html or item.meta %}
+<div class="nh-cards__info">
+{% if item.meta %}
+<div class="nh-cards__text nh-cards-item-desc--user-inner nh-cards-item-desc-user-inner--size-m" style="color: #3384BF;">
+<p class="nh-text-editor__fontsize-14"><strong>{{ item.meta }}</strong></p>
+</div>
+{% endif %}
+{% if item.title %}
+<div class="nh-cards__title nh-cards-item-title--user-inner nh-cards-item-title-user-inner--size-m" style="color: #243B5C; text-align: left;">
+<h6 class="nh-text-editor__fontsize-16">{{ item.title }}</h6>
+</div>
+{% endif %}
+{% if item.text %}
+<div class="nh-cards__text nh-cards-item-desc--user-inner nh-cards-item-desc-user-inner--size-m" style="color: #102748;">
+<p class="nh-text-editor__fontsize-14">{{ item.text }}</p>
+</div>
+{% endif %}
+{% if item.html %}
+<div class="nh-cards__text nh-cards-item-desc--user-inner nh-cards-item-desc-user-inner--size-m" style="color: #102748;">
+{{ item.html | safe }}
+</div>
+{% endif %}
+</div>
+{% endif %}
+</figure>
+</div>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</section>
+{% endmacro %}

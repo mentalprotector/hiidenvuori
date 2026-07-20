@@ -1,0 +1,49 @@
+<div data-region="2" data-widget-store-list="burger-menu">
+<section class="nh-burger-menu widget-block nh-editor-panel nh-burger-menu-layout nh-burger-menu-layout__close nh-burger-menu-layout__0 nh-burger-menu-layout__open--2-0 nh-burger-menu-layout__close--2-0" data-widget-store-item="" id="burger-menu-38" style="--shadow-rgba-color:rgba(76,91,102, 0)">
+<style>.nh-burger-menu-layout__close {visibility: hidden}</style>
+<link href="/assets/css/burger-menu.ccc67e.min.css" rel="stylesheet" type="text/css"/>
+<div data-ng-non-bindable="" data-widget-replaceable-content="38" style="height:100%">
+<div class="nh-burger-menu__wrapper nh-burger-menu-layout__open--2-0 nh-burger-menu-layout__close--2-0 nh-burger-menu__font-size-m lazyload" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(16,39,72, 0.9);">
+<button class="nh-burger-menu__close-icon" id="burger-menu-close-btn">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="white" fill-rule="evenodd"></path>
+</svg>
+</button>
+<div class="nh-burger-menu__container" style="grid-template-columns: repeat( 1, 1fr);">
+<div class="nh-burger-menu__column lazyload" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 0);">
+<div class="nh-burger-menu__section nh-burger-menu__section--align-left" style="--title-color: #000000;border-bottom: 1px solid rgba(255,255,255, 1);">
+<ul class="nh-burger-menu__links-list">
+{% for item in burgerNavigation %}
+<li class="nh-burger-menu__links-item">
+<a class="nh-burger-menu__link" href="{{ item.url }}" style="--item-color: #FFFFFF; --item-hover: #3384BF;" target="_parent">
+{{ item.label }}
+</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+<div class="nh-burger-menu__section nh-burger-menu__section--align-left" style="--title-color: #000000;">
+<ul class="nh-burger-menu__links-list">
+<li class="nh-burger-menu__links-item">
+<a class="nh-burger-menu__link" href="/contacts/" style="--item-color: #FFFFFF; --item-hover: #3384BF;" target="_parent">
+{{ site.address }}
+</a>
+</li>
+<li class="nh-burger-menu__links-item">
+<a class="nh-burger-menu__link" href="tel:{{ site.phone1Raw }}" style="--item-color: #FFFFFF; --item-hover: #3384BF;" target="_parent">
+{{ site.phone1 }}
+</a>
+</li>
+<li class="nh-burger-menu__links-item">
+<a class="nh-burger-menu__link" href="tel:{{ site.phone2Raw }}" style="--item-color: #FFFFFF; --item-hover: #3384BF;" target="_parent">
+{{ site.phone2 }}
+</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>

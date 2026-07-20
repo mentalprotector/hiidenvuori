@@ -1,0 +1,98 @@
+---
+layout: base.njk
+title: "Развлечения и услуги"
+ogTitle: "Развлечения и услуги"
+ogDescription: "Баня на дровах, ХийденАрт, активный отдых, магазин-кафе Saha, душ и дополнительные услуги Хийденвуори."
+activePage: "/uslugi/"
+pageType: "text"
+---
+{% from "components/features.njk" import features %}
+{% from "components/detail-cards.njk" import detailCards %}
+
+{{ features([
+  {
+    anchor: "banya",
+    url: "/uslugi/#banya",
+    image: { src: "/assets/img/placeholder-sauna.svg", alt: "Плейсхолдер фото бани на дровах" },
+    title: "Баня на дровах",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Баня на дровах — спокойный способ завершить день после дороги, прогулки или активностей на Ладоге.</strong></p><p class="nh-text-editor__fontsize-16">Формат рассчитан на бронирование по времени. Стоимость и доступные слоты появятся позже, а сейчас их можно уточнить у администратора.</p>',
+    buttons: [
+      { url: "https://t.me/+79210141190", label: "Уточнить время", type: "basic" }
+    ]
+  },
+  {
+    anchor: "hiidenart",
+    url: "/uslugi/#hiidenart",
+    image: { src: "/assets/img/placeholder-hiidenart.svg", alt: "Плейсхолдер фото ХийденАрт" },
+    title: "ХийденАрт",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>ХийденАрт — бесплатное творческое направление для гостей Хийденвуори.</strong></p><p class="nh-text-editor__fontsize-16">Это камерный арт-маршрут и площадка для небольших выставок, встреч и визуальных историй о Ладоге, северной природе и месте, где бывшая промышленная территория стала туристическим пространством.</p><p class="nh-text-editor__fontsize-16">Программа будет обновляться по сезону.</p>'
+  },
+  {
+    anchor: "aktivnyj-otdykh",
+    url: "/aktivnyj-otdykh/",
+    image: { src: "/assets/img/eo851ccast4csw8ksgggkco8wo8osw.webp", alt: "Активный отдых в Хийденвуори" },
+    title: "Активный отдых",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Для знакомства с Карелией и Ладожскими шхерами мы предлагаем прокат снаряжения и разные форматы активного отдыха.</strong></p><ul><li class="nh-text-editor__fontsize-16"><strong>Велосипеды:</strong> для прогулок по живописным дорогам и лесным маршрутам.</li><li class="nh-text-editor__fontsize-16"><strong>Сапборды:</strong> для спокойных прогулок по воде и знакомства с береговыми пейзажами.</li><li class="nh-text-editor__fontsize-16"><strong>Вейкборды:</strong> для тех, кто хочет добавить к отдыху больше движения и адреналина.</li><li class="nh-text-editor__fontsize-16"><strong>Катер и рыболовное снаряжение:</strong> для прогулок по шхерам и тихого отдыха на Ладоге.</li></ul><p class="nh-text-editor__fontsize-16">О наличии снаряжения лучше уточнить заранее: набор проката зависит от сезона и погоды.</p>'
+  },
+  {
+    anchor: "saha",
+    url: "/magazin-kafe-saha/",
+    image: { src: "/assets/img/55bycsmyzvwow84kc848g80kws4o8o.webp", alt: "Магазин-кафе Saha" },
+    title: "Магазин-кафе «Saha»",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Kauppa «Saha» — магазин сувенирной продукции.</strong> В ассортименте изделия ручной работы из кожи и дерева, украшения, одежда и аксессуары, сувениры, карельская косметика, продукты местных производителей, рыба, консервы, сладости, мороженое, напитки и другие товары.</p><p class="nh-text-editor__fontsize-16"><strong>Kahvila «Saha» — небольшое уютное кафе при магазине.</strong> Здесь можно выпить кофе или чай, попробовать карельские калитки и другую выпечку.</p><p class="nh-text-editor__fontsize-16"><strong>Работаем ежедневно с 8:00 до 22:00.</strong></p>',
+    buttons: [
+      { url: "tel:+79210141190", label: "+7 (921) 014-11-90", type: "secondary" }
+    ]
+  }
+], "features-uslugi") }}
+
+{{ detailCards("Платные и дополнительные услуги", "Эти услуги удобно планировать заранее: часть зависит от сезона, графика и загрузки территории.", [
+  {
+    anchor: "dus",
+    title: "Душ с горячей водой",
+    meta: "Первые 15 мин. — 350 руб.; следующие 10 мин. — по 50 руб.",
+    text: "На территории оборудованы чистые душевые кабины с горячей водой."
+  },
+  {
+    anchor: "transfer",
+    image: { src: "/assets/img/c5a6bs66mc0884kg8cwoccs8c88sg0.webp", alt: "Трансфер в горный парк Рускеала", ratio: "4 / 3" },
+    title: "Трансфер в горный парк Рускеала",
+    text: "Горный парк Рускеала — один из самых известных маршрутов Карелии с мраморными каньонами, подземными галереями и прогулочными тропами. Трансфер помогает съездить туда без лишней логистики и вернуться обратно в Хийденвуори."
+  }
+], 2, "paid-services-uslugi", "rgba(244,246,252,1)") }}
+
+{{ detailCards("Концертные программы", "Музыкальные события остаются отдельным направлением внутри раздела развлечений.", [
+  {
+    anchor: "koncerty",
+    image: { src: "/assets/organ-concerts-hiiden/hiidenvuori-screen.png?v=20260329", alt: "Органные концерты в Ангаре Хийденвуори", ratio: "16 / 9" },
+    title: "Органные концерты в Ангаре",
+    html: '<p class="nh-text-editor__fontsize-14"><strong>Такого органа и в таком зале вы точно не слышали.</strong> Органный зал на самом берегу Ладоги открывает свои двери.</p><p class="nh-text-editor__fontsize-14">Классические произведения, музыка кино, рок-баллады и беседы о композиторах проходят в зале при входе в кафе Saha налево.</p><p class="nh-text-editor__fontsize-14">Группа ВК: <a href="https://vk.com/oragnvangare" target="_blank" rel="noopener noreferrer" style="color: rgb(51, 132, 191);">vk.com/oragnvangare</a></p>'
+  },
+  {
+    image: { src: "/assets/organ-concerts/exterior.png", alt: "Органные концерты в Сортавала", ratio: "16 / 9" },
+    title: "Органные концерты в Сортавала",
+    html: '<p class="nh-text-editor__fontsize-14">Органные концерты в Сортавале — необычный музыкальный маршрут среди старинной архитектуры и северной природы.</p><p class="nh-text-editor__fontsize-14">В программе произведения Вивальди, Баха, Генделя, шедевры современных органистов и узнаваемая музыка из кинофильмов.</p><p class="nh-text-editor__fontsize-14">Группа ВК: <a href="https://vk.com/organvsortavale" target="_blank" rel="noopener noreferrer" style="color: rgb(51, 132, 191);">vk.com/organvsortavale</a></p>'
+  }
+], 2, "concerts-uslugi") }}
+
+{{ detailCards("Фото магазина-кафе «Saha»", "Несколько кадров из старой галереи Saha сохранены в объединенном разделе.", [
+  {
+    image: { src: "/assets/img/tgzyrorryv4wk40w4cwwwos448w8cg.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+  },
+  {
+    image: { src: "/assets/img/s84papiap340wocosggsc8gog8gg8k.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+  },
+  {
+    image: { src: "/assets/img/rlq580p5juo4sogc8wgk0wgcg8c8sk.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+  },
+  {
+    image: { src: "/assets/img/fywhs487j1cg8gsgwkgkgwskc0wsw4.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+  }
+], 4, "saha-gallery-uslugi", "rgba(244,246,252,1)") }}
+
+{% set title = 'Хотите забронировать услугу?' %}
+{% set text = 'Напишите нам: подскажем актуальное расписание, стоимость, свободное время и сезонные ограничения по прокату и дополнительным услугам.' %}
+{% set buttons = [
+  { href: 'tel:+79210141190', label: '+7 (921) 014-11-90' }
+] %}
+{% include "components/cta.njk" %}

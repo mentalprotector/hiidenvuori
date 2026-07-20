@@ -1,0 +1,5 @@
+[
+  { "type": "whatsapp", "url": "https://wa.me/79210141190", "label": "Написать в Whatsapp" },
+  { "type": "telegram", "url": "https://t.me/+79210141190", "label": "Написать в Telegram" },
+  { "type": "vk", "url": "https://vk.com/hiidenv", "label": "Написать во ВКонтакте" }
+]

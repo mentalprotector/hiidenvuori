@@ -1,0 +1,182 @@
+<meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>{{ title }} | {{ site.title }}</title>
+{% if redirectTo %}
+<meta http-equiv="refresh" content="0; url={{ redirectTo }}"/>
+{% endif %}
+<meta content="{{ title }} | {{ site.title }}" name="description"/>
+<link href="/assets/img/favicon-57x57.webp" rel="apple-touch-icon" sizes="57x57" type="image/png"/><link href="/assets/img/favicon-60x60.webp" rel="apple-touch-icon" sizes="60x60" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="apple-touch-icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-76x76.webp" rel="apple-touch-icon" sizes="76x76" type="image/png"/><link href="/assets/img/favicon-114x114.webp" rel="apple-touch-icon" sizes="114x114" type="image/png"/><link href="/assets/img/favicon-120x120.webp" rel="apple-touch-icon" sizes="120x120" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="apple-touch-icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-152x152.webp" rel="apple-touch-icon" sizes="152x152" type="image/png"/><link href="/assets/img/favicon-180x180.webp" rel="apple-touch-icon" sizes="180x180" type="image/png"/><link href="/assets/img/favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png"/><link href="/assets/img/favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png"/><link href="/assets/img/favicon-36x36.webp" rel="icon" sizes="36x36" type="image/png"/><link href="/assets/img/favicon-48x48.webp" rel="icon" sizes="48x48" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-96x96.webp" rel="icon" sizes="96x96" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-192x192.webp" rel="icon" sizes="192x192" type="image/png"/> <style>svg {display: none;}</style>
+<link as="font" crossorigin="" href="/assets/fonts/manrope-800-cyrillic.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/manrope-800-latin.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/manrope-400-cyrillic.woff2" rel="preload" type="font/woff2"/>
+<link as="font" crossorigin="" href="/assets/fonts/manrope-400-latin.woff2" rel="preload" type="font/woff2"/>
+<style type="text/css">
+    @font-face {font-family:FontHeader;font-style:normal;font-weight:800;font-display:block;src:url(/assets/fonts/manrope-800-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face {font-family:FontHeader;font-style:normal;font-weight:800;font-display:block;src:url(/assets/fonts/manrope-800-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+    @font-face {font-family:FontParagraph;font-style:normal;font-weight:400;font-display:block;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+    @font-face {font-family:FontParagraph;font-style:normal;font-weight:400;font-display:block;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+</style>
+<link href="/assets/css/layouts.ce5f3d.min.css" rel="stylesheet" type="text/css"/>
+<link href="{{ canonicalUrl | default(redirectTo | default('/')) }}" rel="canonical"/>
+<style type="text/css">
+    :root {
+        --button-default-font-family : FontParagraph, var(--fallback-font-paragraph), "ProximaNova-Bold", Futura, Avenir, Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, Droid Sans, sans-serif;
+        --button-default-color : #FFFFFF;
+        --button-default-bg-color : #3384BF;
+        --button-default-border-color : #3384BF;
+        --button-default-color-hover : #FFFFFF;
+        --button-default-bg-color-hover : #1F70AB;
+        --button-default-border-color-hover : #1F70AB;
+        --button-default-color-active : #ffffff;
+        --button-default-bg-color-active : #1F70AB;
+        --button-default-border-color-active : #1F70AB;
+        --button-default-radius-small : var(--button-default-radius-small-2);
+        --button-default-radius-medium : var(--button-default-radius-medium-2);
+        --button-default-radius-large : var(--button-default-radius-large-2);
+        --button-default-radius-xlarge : var(--button-default-radius-xlarge-2);
+        --button-default-radius-xxlarge : var(--button-default-radius-xxlarge-2);
+        --button-default-border-width : 2;
+        --button-default-shadow-blur : 0;
+        --button-default-shadow-offsetY : 0;
+        --button-default-border-width-hover : 2;
+        --button-default-shadow-blur-hover : 15;
+        --button-default-shadow-offsetY-hover : 0;
+        --button-default-border-width-active : 2;
+        --button-default-shadow-blur-active : 0;
+        --button-default-shadow-offsetY-active : 0;
+        --button-default-shadow-color : transparent;
+        --button-default-shadow-color-hover : #3384BF;
+        --button-default-shadow-color-active : transparent;
+        --button-default-bg-color-rgba : rgba(51, 132, 191, 1.000000);
+        --button-default-bg-color-hover-rgba : rgba(31, 112, 171, 1.000000);
+        --button-default-bg-color-active-rgba : rgba(31, 112, 171, 1.000000);
+        --button-default-border-color-rgba : rgba(51, 132, 191, 1.000000);
+        --button-default-border-color-hover-rgba : rgba(31, 112, 171, 1.000000);
+        --button-default-border-color-active-rgba : rgba(31, 112, 171, 1.000000);
+        --button-default-shadow-color-rgba : transparent;
+        --button-default-shadow-color-hover-rgba : rgba(51, 132, 191, 0.350000);
+        --button-default-shadow-color-active-rgba : transparent;
+        --button-bordered-font-family : FontParagraph, var(--fallback-font-paragraph), "ProximaNova-Bold", Futura, Avenir, Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, Droid Sans, sans-serif;
+        --button-bordered-color : #ffffff;
+        --button-bordered-bg-color : #243B5C;
+        --button-bordered-border-color : #243B5C;
+        --button-bordered-color-hover : #ffffff;
+        --button-bordered-bg-color-hover : #102748;
+        --button-bordered-border-color-hover : #102748;
+        --button-bordered-color-active : #ffffff;
+        --button-bordered-bg-color-active : #102748;
+        --button-bordered-border-color-active : #102748;
+        --button-bordered-radius-small : var(--button-bordered-radius-small-2);
+        --button-bordered-radius-medium : var(--button-bordered-radius-medium-2);
+        --button-bordered-radius-large : var(--button-bordered-radius-large-2);
+        --button-bordered-radius-xlarge : var(--button-bordered-radius-xlarge-2);
+        --button-bordered-radius-xxlarge : var(--button-bordered-radius-xxlarge-2);
+        --button-bordered-border-width : 2;
+        --button-bordered-shadow-blur : 0;
+        --button-bordered-shadow-offsetY : 0;
+        --button-bordered-border-width-hover : 2;
+        --button-bordered-shadow-blur-hover : 0;
+        --button-bordered-shadow-offsetY-hover : 0;
+        --button-bordered-border-width-active : 2;
+        --button-bordered-shadow-blur-active : 0;
+        --button-bordered-shadow-offsetY-active : 0;
+        --button-bordered-shadow-color : transparent;
+        --button-bordered-shadow-color-hover : transparent;
+        --button-bordered-shadow-color-active : transparent;
+        --button-bordered-bg-color-rgba : rgba(36, 59, 92, 1.000000);
+        --button-bordered-bg-color-hover-rgba : rgba(16, 39, 72, 1.000000);
+        --button-bordered-bg-color-active-rgba : rgba(16, 39, 72, 1.000000);
+        --button-bordered-border-color-rgba : rgba(36, 59, 92, 1.000000);
+        --button-bordered-border-color-hover-rgba : rgba(16, 39, 72, 1.000000);
+        --button-bordered-border-color-active-rgba : rgba(16, 39, 72, 1.000000);
+        --button-bordered-shadow-color-rgba : transparent;
+        --button-bordered-shadow-color-hover-rgba : transparent;
+        --button-bordered-shadow-color-active-rgba : transparent;
+        --menu-logo-width : 215px;
+        --menu-vertical-align : center;
+        --menu-links-underline-on-hover : 0;
+        --menu-sticky : absolute;
+        --menu-font-size : 0.875rem;
+        --menu-width : 84.5rem;
+        --menu-bg-blur : blur(32px);
+        --menu-menu_layering : 1;
+        --menu-color : #000000;
+        --menu-color-hover : #7dc5df;
+        --menu-bg-color : rgba(255, 255, 255, 1.000000);
+        --menu-bg-color-solid : #ffffff;
+        --menu-enableTopbar : ;
+        --menu-font-family : FontHeader, var(--fallback-font-header), "ProximaNova-Bold", Futura, Avenir, Helvetica,  -apple-system, BlinkMacSystemFont, Roboto, Arial, Droid Sans, sans-serif;
+        --menu-font-weight : 800;
+        --header-color : #102748;
+        --header-backgroundColor : transparent;
+        --header-marginTop : 2;
+        --header-marginBottom : 2;
+        --header-isHide : 1;
+        --block-headerColor : #102748;
+    }
+</style>
+<style>
+    @media screen and (max-width: 1024px) {
+        body, html { overflow-x: hidden !important; width: 100% !important; }
+        img, video, iframe, svg { max-width: 100% !important; height: auto !important; }
+        .container, .row, .column, [class*="grid"], [style*="width"] { width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+        .container { padding-left: 15px !important; padding-right: 15px !important; }
+        .nh-topbar-link { display: inline-block !important; padding: 10px !important; }
+    }
+</style>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Хийденвуори",
+  "url": "https://xn--b1aigpbrd8abgk.xn--p1ai",
+  "telephone": "+79210141190",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "п. Хийденсельга",
+    "addressRegion": "Республика Карелия",
+    "addressCountry": "RU"
+  }
+}
+</script>
+<meta content="website" property="og:type"/>
+<meta content="{{ ogTitle | default(title ~ ' — Хийденвуори') }}" property="og:title"/>
+<meta content="{{ ogDescription | default('Отдых в Карелии на берегу Ладоги. Кемпинг, прокат, природа.') }}" property="og:description"/>
+<link href="/assets/css/burger-fix.css" rel="stylesheet" type="text/css"/>
+<style>
+.nh-topbar { z-index: 10000 !important; }
+.nh-topbar-links, .nh-topbar-contacts, .nh-topbar-button { position: relative; z-index: 10001 !important; pointer-events: auto !important; }
+.nh-topbar-overlay { z-index: 9000 !important; }
+</style>
+<style id="aboba-perfect-fix">
+    @media (max-width: 768px) {
+        .nh-features__item-wrapper { flex-direction: column !important; }
+        .nh-features__info { padding: 20px !important; margin-top: 0 !important; border-radius: 0 0 12px 12px !important; }
+        .nh-features__image-grid { width: 100% !important; margin-bottom: 0 !important; grid-template-columns: 1fr !important; }
+        .nh-features__image-grid div { grid-column: span 1 !important; }
+        .nh-features__btn { width: 100% !important; text-align: center !important; }
+        h3 { font-size: 22px !important; }
+    }
+</style>
+<style id="faq-comment-mobile-fix">
+    @media (max-width: 768px) {
+        #qa-67 .nh-qa-columns__group { gap: 0.875rem; }
+        #qa-67 .nh-qa-item__details { background: #ffffff; border-radius: 20px; overflow: hidden; padding: 0.125rem 0; }
+        #qa-67 .nh-qa-item__summary { align-items: center; display: flex; min-height: 0; padding-left: 2.75rem; padding-right: 1rem; }
+        #qa-67 .nh-qa-item__summary:before, #qa-67 .nh-qa-item__summary:after { left: 1rem; top: 50%; }
+        #qa-67 .nh-qa-item__summary h6 { margin: 0; width: 100%; }
+        #qa-67 .nh-qa-item__desc { padding-left: 2.75rem; padding-right: 1rem; padding-bottom: 1rem; }
+        #comment, #application-form-31, #maps-39, #horizontal-cards-40 { visibility: visible !important; opacity: 1 !important; animation-name: none !important; }
+    }
+</style>
+<style id="aboba-features-image-fix">
+    .nh-features__image-block .nh-features__picture-container { width: 100%; }
+    .nh-features__image-block .nh-features__picture-container img, .nh-features__image-block .nh-features__picture-container source, .nh-features__image-block picture.nh-features__picture-container img { width: 100% !important; max-width: 100% !important; display: block; }
+</style>
+<style id="aboba-home-sections-image-fix">
+    #horizontal-cards-26 .nh-horizontal-cards__picture-container { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; }
+    #horizontal-cards-26 .nh-horizontal-cards__picture-container img { display: block; width: 100% !important; height: 100% !important; object-fit: cover; object-position: center; }
+    @media screen and (max-width: 47.998rem) { #horizontal-cards-26 .nh-horizontal-cards__picture-container { aspect-ratio: 16 / 10; } }
+</style>
+<link href="/assets/css/site-media-fixes.css?v=20260611-scroll" rel="stylesheet" type="text/css"/>

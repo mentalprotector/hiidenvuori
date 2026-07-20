@@ -1,0 +1,11 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Плейсхолдер фото причала и слипа</title>
+  <desc id="desc">Временное изображение для блока Причал и слип</desc>
+  <rect width="960" height="640" rx="32" fill="#F4F6FC"/>
+  <rect x="80" y="80" width="800" height="480" rx="28" fill="#E2E8F2"/>
+  <path d="M120 400C240 350 340 450 460 400C590 345 700 455 840 390V560H120V400Z" fill="#3384BF"/>
+  <path d="M280 390L680 250" stroke="#243B5C" stroke-width="30" stroke-linecap="round"/>
+  <path d="M300 430L700 290" stroke="#102748" stroke-width="16" stroke-linecap="round"/>
+  <path d="M600 340L735 340L690 395H560L600 340Z" fill="#F4F6FC"/>
+  <text x="480" y="515" text-anchor="middle" fill="#102748" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Фото причала скоро</text>
+</svg>

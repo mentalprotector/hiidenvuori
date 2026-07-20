@@ -1,0 +1,542 @@
+---
+layout: base.njk
+title: "Размещение и удобства"
+ogTitle: "Размещение и удобства"
+ogDescription: "Кемпинг, автокемпинг, песчаный пляж, общая кухня и береговая инфраструктура Хийденвуори."
+activePage: "/razmeshhenie/"
+pageType: "text"
+---
+{% from "components/features.njk" import features %}
+{% from "components/detail-cards.njk" import detailCards %}
+
+<style>
+  .razmeshhenie-top-spacer {
+    height: 86px;
+  }
+
+  .razmeshhenie-extra {
+    background: #f4f7f8;
+    padding: 72px 0;
+  }
+
+  .razmeshhenie-extra__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .razmeshhenie-extra__head {
+    max-width: 760px;
+    margin: 0 0 34px;
+  }
+
+  .razmeshhenie-extra__head h2 {
+    margin: 0 0 12px;
+    color: #243b5c;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-extra__head p {
+    margin: 0;
+    color: #102748;
+    font-size: 18px;
+    line-height: 1.65;
+  }
+
+  .razmeshhenie-extra__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .razmeshhenie-extra__card {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 18px 50px rgba(36, 59, 92, 0.08);
+  }
+
+  .razmeshhenie-extra__gallery {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    grid-template-rows: 118px 118px;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .razmeshhenie-extra__gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+  }
+
+  .razmeshhenie-extra__gallery img:first-child {
+    grid-row: 1 / span 2;
+  }
+
+  .razmeshhenie-extra__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px 24px 26px;
+  }
+
+  .razmeshhenie-extra__body h3 {
+    margin: 0 0 12px;
+    color: #243b5c;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-extra__body p {
+    margin: 0 0 18px;
+    color: #102748;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .razmeshhenie-rules {
+    padding: 86px 0;
+    background: #ffffff;
+  }
+
+  .razmeshhenie-price {
+    padding: 78px 0 86px;
+    background: #243b5c;
+    color: #ffffff;
+  }
+
+  .razmeshhenie-price__inner,
+  .razmeshhenie-included__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .razmeshhenie-price__title,
+  .razmeshhenie-included__title {
+    margin: 0 0 8px;
+    color: inherit;
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-price__date {
+    margin: 0 0 34px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .razmeshhenie-price__grid,
+  .razmeshhenie-included__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .razmeshhenie-price-card,
+  .razmeshhenie-included-card {
+    min-height: 194px;
+    border-radius: 8px;
+    background: #f4f6fc;
+    padding: 26px 24px;
+    color: #102748;
+  }
+
+  .razmeshhenie-price-card__icon,
+  .razmeshhenie-included-card__icon {
+    display: block;
+    margin: 0 0 18px;
+    font-size: 38px;
+    line-height: 1;
+  }
+
+  .razmeshhenie-price-card h3,
+  .razmeshhenie-included-card h3 {
+    margin: 0 0 18px;
+    color: #102748;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-price-card p,
+  .razmeshhenie-included-card p {
+    margin: 0 0 14px;
+    color: #102748;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .razmeshhenie-price-card strong {
+    display: block;
+    margin-top: auto;
+    color: #102748;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .razmeshhenie-included {
+    padding: 74px 0 82px;
+    background: #ffffff;
+    color: #243b5c;
+  }
+
+  .razmeshhenie-included__title {
+    max-width: 360px;
+    margin-bottom: 34px;
+  }
+
+  .razmeshhenie-rules__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .razmeshhenie-rules__title {
+    margin: 0 0 34px;
+    color: #243b5c;
+    font-size: 34px;
+    line-height: 1.2;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-rules__intro {
+    margin: -8px 0 42px;
+    color: #102748;
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  .razmeshhenie-rules__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .razmeshhenie-rules__grid--forbidden {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .razmeshhenie-rule-card {
+    min-height: 210px;
+    border-radius: 8px;
+    background: #f4f6fc;
+    padding: 28px 26px;
+    color: #102748;
+  }
+
+  .razmeshhenie-rule-card--compact {
+    min-height: 112px;
+  }
+
+  .razmeshhenie-rule-card__icon {
+    display: block;
+    margin: 0 0 22px;
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  .razmeshhenie-rule-card h3 {
+    margin: 0 0 20px;
+    color: #102748;
+    font-size: 17px;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .razmeshhenie-rule-card p {
+    margin: 0;
+    color: #102748;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .razmeshhenie-rules__section + .razmeshhenie-rules__section {
+    margin-top: 72px;
+  }
+
+  @media (max-width: 960px) {
+    .razmeshhenie-extra__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .razmeshhenie-extra__gallery {
+      grid-template-rows: 170px 170px;
+    }
+
+    .razmeshhenie-rules__grid,
+    .razmeshhenie-rules__grid--forbidden,
+    .razmeshhenie-price__grid,
+    .razmeshhenie-included__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .razmeshhenie-top-spacer {
+      height: 56px;
+    }
+
+    .razmeshhenie-extra {
+      padding: 52px 0;
+    }
+
+    .razmeshhenie-extra__head h2 {
+      font-size: 30px;
+    }
+
+    .razmeshhenie-extra__gallery {
+      grid-template-rows: 126px 126px;
+    }
+
+    .razmeshhenie-rules {
+      padding: 58px 0;
+    }
+
+    .razmeshhenie-price,
+    .razmeshhenie-included {
+      padding: 56px 0;
+    }
+
+    .razmeshhenie-price__title,
+    .razmeshhenie-included__title {
+      font-size: 28px;
+    }
+
+    .razmeshhenie-rules__title {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+
+    .razmeshhenie-rules__intro {
+      margin-bottom: 28px;
+    }
+
+    .razmeshhenie-rules__grid,
+    .razmeshhenie-rules__grid--forbidden,
+    .razmeshhenie-price__grid,
+    .razmeshhenie-included__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .razmeshhenie-rule-card,
+    .razmeshhenie-rule-card--compact {
+      min-height: 0;
+    }
+  }
+</style>
+
+<div class="razmeshhenie-top-spacer" aria-hidden="true"></div>
+
+{{ features([
+  {
+    anchor: "camping",
+    url: "/palatki-na-nastilah/",
+    image: { src: "/assets/img/palatka_large.webp", alt: "Палатки на деревянных настилах в Хийденвуори" },
+    title: "Кемпинг: палатки на настилах",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Приглашаем вас отдохнуть в нашем кемпинге на берегу Ладожского озера.</strong> Мы подготовили удобные деревянные настилы для установки палаток.</p><p class="nh-text-editor__fontsize-16">Настилы дают ровную поверхность для сна и защищают от холода и влаги, идущих от земли. Это помогает сохранить тепло и сухость внутри палатки в любую погоду.</p><p class="nh-text-editor__fontsize-16">На территории есть мангальные зоны, костровища и доступ к инфраструктуре туристического пространства.</p>'
+  },
+  {
+    anchor: "avtocamping",
+    url: "/stoyanka-dlya-avtodomov/",
+    image: { src: "/assets/img/9hbg2e0s524gws880og4g0oo4400w0.webp", alt: "Стоянка для автодомов в Хийденвуори" },
+    title: "Автокемпинг",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Стоянка для автодомов создана для гостей, которые путешествуют на собственном доме на колесах</strong> и хотят сохранить комфорт рядом с природой.</p><p class="nh-text-editor__fontsize-16">Наш кемпинг находится в живописном месте: рядом Ладога, свежий воздух и вся базовая инфраструктура. Для автодомов предусмотрены электричество, вода, доступ к сливу и зона для утилизации мусора.</p><p class="nh-text-editor__fontsize-16">Вы сохраняете мобильность и свободу маршрута, но отдыхаете в организованном и понятном месте.</p>'
+  }
+], "features-razmeshhenie") }}
+
+<section class="razmeshhenie-extra" id="amenities-gallery">
+  <div class="razmeshhenie-extra__inner">
+    <div class="razmeshhenie-extra__head">
+      <h2>Берег, кухня и выход на воду</h2>
+      <p>Эти зоны живут отдельно от размещения: здесь больше пространства, больше деталей и больше фотографий, чтобы было понятно, как устроен отдых на территории.</p>
+    </div>
+    <div class="razmeshhenie-extra__grid">
+      <article class="razmeshhenie-extra__card" id="plyazh">
+        <div class="razmeshhenie-extra__gallery">
+          <img src="/assets/img/os310n7rzv4c0goswc4wsw48440c4c.webp" alt="Песчаный пляж на берегу Ладоги" loading="lazy">
+          <img src="/assets/img/p05yaisd0y88o8s4cgg084wko0c8gs.webp" alt="Береговая зона Хийденвуори" loading="lazy">
+          <img src="/assets/img/mbppi31cxbkogc000o4cwocs44kk00.webp" alt="Вид на Ладожское озеро" loading="lazy">
+        </div>
+        <div class="razmeshhenie-extra__body">
+          <h3>Песчаный пляж</h3>
+          <p>Береговая зона у Ладоги подходит для спокойного отдыха у воды, прогулок и фотографий. До пляжа удобно дойти из кемпинга и автокемпинга.</p>
+        </div>
+      </article>
+      <article class="razmeshhenie-extra__card" id="kitchen">
+        <div class="razmeshhenie-extra__gallery">
+          <img src="/assets/img/naves.webp" alt="Крытая общая зона на берегу Ладоги" loading="lazy">
+          <img src="/assets/img/mziqpz0enhwc8kkg0s8c088wkoswg0.webp" alt="Навес и общая зона" loading="lazy">
+          <img src="/assets/img/np3wb8n21r4kwg4kc4kkoso4ggg880.webp" alt="Инфраструктура кемпинга" loading="lazy">
+        </div>
+        <div class="razmeshhenie-extra__body">
+          <h3>Общая кухня входит в стоимость</h3>
+          <p>Для проживающих доступна крытая общая кухня с посудой, холодильником и морозильной камерой. Можно готовить на территории без отдельной доплаты.</p>
+        </div>
+      </article>
+      <article class="razmeshhenie-extra__card" id="prichal-slip">
+        <div class="razmeshhenie-extra__gallery">
+          <img src="/assets/img/boat_launch.webp" alt="Спуск для катеров на Ладоге" loading="lazy">
+          <img src="/assets/img/ship_test.webp" alt="Катер у берега" loading="lazy">
+          <img src="/assets/img/placeholder-slip.svg" alt="Причал и слип" loading="lazy">
+        </div>
+        <div class="razmeshhenie-extra__body">
+          <h3>Причал и слип</h3>
+          <p>Оборудованный спуск для катеров и удобный подъезд к воде помогают планировать выход на Ладогу и прогулки по шхерам на собственной лодке.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="razmeshhenie-price" id="prices-razmeshhenie">
+  <div class="razmeshhenie-price__inner">
+    <h2 class="razmeshhenie-price__title">Прейскурант кемпинга и автокемпинга «Хийденвуори»</h2>
+    <p class="razmeshhenie-price__date">Действует с 01.07.2025 г.</p>
+    <div class="razmeshhenie-price__grid">
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">🚐</span>
+        <h3>Стоянка для автодома<br>с электричеством</h3>
+        <p>Электричество, вода, слив воды. Максимально: 6 человек.</p>
+        <strong>2500,00 руб./сутки</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">🚐</span>
+        <h3>Стоянка для автодома<br>без электричества</h3>
+        <p>Вода, слив воды. Максимально: 6 человек.</p>
+        <strong>2000,00 руб./сутки</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">🅿️</span>
+        <h3>Парковка<br>с посуточной оплатой</h3>
+        <p>Без проживания на территории кемпинга.</p>
+        <strong>350,00 руб./сутки</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">🅿️</span>
+        <h3>Парковка<br>с почасовой оплатой</h3>
+        <p>Без проживания на территории кемпинга.</p>
+        <strong>Первый час бесплатно,<br>далее 100 руб./час</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">⛺</span>
+        <h3>Место<br>для палатки</h3>
+        <p>Место для палатки на деревянном настиле 3x3 м.</p>
+        <strong>1500,00 руб./сутки</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">⛺</span>
+        <h3>Место для палатки<br>под навесом</h3>
+        <p>Место для палатки на деревянном настиле 3x3 м под навесом.</p>
+        <strong>2000,00 руб./сутки</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">⛺</span>
+        <h3>Место для палатки<br>на естественном грунте</h3>
+        <p>Палатка устанавливается прямо на почву.</p>
+        <strong>700,00 руб./сутки за 1 чел.</strong>
+      </article>
+      <article class="razmeshhenie-price-card">
+        <span class="razmeshhenie-price-card__icon" aria-hidden="true">🚿</span>
+        <h3>Душ</h3>
+        <p>На территории оборудованы чистые душевые кабины с горячей водой.</p>
+        <strong>Первые 15 мин. — 350 руб.<br>Следующие 10 мин. — по 50 руб.</strong>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="razmeshhenie-included" id="included-razmeshhenie">
+  <div class="razmeshhenie-included__inner">
+    <h2 class="razmeshhenie-included__title">Бесплатно для проживающих в кемпинге</h2>
+    <div class="razmeshhenie-included__grid">
+      <article class="razmeshhenie-included-card">
+        <span class="razmeshhenie-included-card__icon" aria-hidden="true">🍽️</span>
+        <h3>Кухня</h3>
+        <p>Крытая кухня с посудой, холодильником и морозильной камерой.</p>
+      </article>
+      <article class="razmeshhenie-included-card">
+        <span class="razmeshhenie-included-card__icon" aria-hidden="true">🚻</span>
+        <h3>Туалет</h3>
+        <p>Современные туалеты на территории. Уборка проводится регулярно.</p>
+      </article>
+      <article class="razmeshhenie-included-card">
+        <span class="razmeshhenie-included-card__icon" aria-hidden="true">🪵</span>
+        <h3>Мангал и дрова</h3>
+        <p>На каждом участке есть мангал. Дрова предоставляются бесплатно.</p>
+      </article>
+      <article class="razmeshhenie-included-card">
+        <span class="razmeshhenie-included-card__icon" aria-hidden="true">🅿️</span>
+        <h3>Парковочное место</h3>
+        <p>Место для автомобиля рядом с участком включено в стоимость.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="razmeshhenie-rules" id="rules-razmeshhenie">
+  <div class="razmeshhenie-rules__inner">
+    <div class="razmeshhenie-rules__section">
+      <h2 class="razmeshhenie-rules__title">Правила пребывания</h2>
+      <p class="razmeshhenie-rules__intro">Дорогие гости! Для комфортного пребывания всех проживающих надо соблюдать ряд правил. Это не сложно, ведь их не так много.</p>
+      <div class="razmeshhenie-rules__grid">
+        <article class="razmeshhenie-rule-card">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">⏰</span>
+          <h3>Время заезда и выезда</h3>
+          <p>Заезд возможен после 15:00, выезд — до 12:00. Если нужен другой график — просто согласуйте с нами заранее.</p>
+        </article>
+        <article class="razmeshhenie-rule-card">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🌿</span>
+          <h3>Чистота и порядок</h3>
+          <p>Поддерживайте чистоту на территории и в зонах общего пользования. Нам важно, чтобы здесь было приятно каждому.</p>
+        </article>
+        <article class="razmeshhenie-rule-card">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🐶</span>
+          <h3>Домашние животные</h3>
+          <p>Мы не против питомцев, если они ласковые, не мешают другим и хозяин убирает за ними.</p>
+        </article>
+        <article class="razmeshhenie-rule-card">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🤫</span>
+          <h3>Спокойствие и тишина</h3>
+          <p>В период с 22:00 до 07:00 запрещается включать аудио и видеотехнику на полную громкость, громко разговаривать и мешать отдыху других гостей.</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="razmeshhenie-rules__section">
+      <h2 class="razmeshhenie-rules__title">У нас запрещено</h2>
+      <div class="razmeshhenie-rules__grid razmeshhenie-rules__grid--forbidden">
+        <article class="razmeshhenie-rule-card razmeshhenie-rule-card--compact">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🔥</span>
+          <h3>Разводить огонь<br>вне кострового места</h3>
+        </article>
+        <article class="razmeshhenie-rule-card razmeshhenie-rule-card--compact">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🚭</span>
+          <h3>Курить на настилах запрещено.<br>Для этого есть отведенные места</h3>
+        </article>
+        <article class="razmeshhenie-rule-card razmeshhenie-rule-card--compact">
+          <span class="razmeshhenie-rule-card__icon" aria-hidden="true">🥩</span>
+          <h3>Использовать мангал<br>вне мангальной зоны</h3>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set title = 'Нужна помощь с выбором места?' %}
+{% set text = 'Напишите нам, если хотите уточнить свободные даты, формат размещения или условия для автодома, палатки и береговой инфраструктуры.' %}
+{% set buttons = [
+  { href: 'tel:+79210141190', label: '+7 (921) 014-11-90' }
+] %}
+{% include "components/cta.njk" %}
