@@ -15,6 +15,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addGlobalData("site", {
     title: "Хийденвуори.рф",
+    url: "https://xn--b1addkdc4ajs2ap.xn--p1ai",
     subtitle: "Туристическое пространство на Ладожском озере!",
     phone1: "+7 (921) 014-11-90",
     phone2: "+7 (921) 014-64-47",

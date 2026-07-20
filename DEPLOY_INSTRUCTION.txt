@@ -1,20 +1,10 @@
-ИНСТРУКЦИЯ ПО ДЕПЛОЮ (Satellite Mode)
+ПУБЛИКАЦИЯ ЧЕРЕЗ GITHUB PAGES
 
-1. Распакуйте архив на сервере:
-   (Предполагается, что вы уже загрузили файл, например, через scp)
-   unzip hiidenvuori_deploy_pack.zip -d hiidenvuori
+1. npm ci
+2. npm run build
+3. npm run verify
+4. После проверки отправьте коммит в master или main.
 
-2. Переместите конфиг Caddy в папку FitnessApp:
-   (Путь может отличаться, проверьте где лежит FitnessApp)
-   mv hiidenvuori/hiidenvuori.caddy ~/fitnessapp/docker/conf.d/
-
-3. Запустите сайт:
-   cd hiidenvuori
-   docker compose up -d --build
-
-4. Перезагрузите основной Caddy (чтобы он увидел новый конфиг):
-   cd ~/fitnessapp/docker
-   docker compose exec caddy caddy reload
-
-5. Проверьте:
-   Откройте https://хийденвуори.рф (или xn--b1aigpbrd8abgk.xn--p1ai)
+GitHub Actions публикует только каталог _site.
+CNAME и .nojekyll включаются в сборку автоматически.
+Не меняйте DNS и не запускайте публикацию без согласования с владельцем сайта.

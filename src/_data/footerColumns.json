@@ -3,24 +3,24 @@
     "title": "Меню сайта",
     "links": [
       { "label": "Главная страница", "url": "/" },
-      { "label": "Размещение и удобства", "url": "/razmeshhenie/" },
-      { "label": "Развлечения и услуги", "url": "/uslugi/" },
-      { "label": "Отзывы", "url": "/comment/" },
-      { "label": "Контакты", "url": "/contacts/" }
+      { "label": "Размещение и удобства", "url": "/razmeshhenie.html" },
+      { "label": "Развлечения и услуги", "url": "/uslugi.html" },
+      { "label": "Отзывы", "url": "/comment.html" },
+      { "label": "Контакты", "url": "/contacts.html" }
     ]
   },
   "services": {
     "title": "Размещение и услуги",
     "links": [
-      { "label": "Кемпинг и автокемпинг", "url": "/razmeshhenie/" },
-      { "label": "Песчаный пляж", "url": "/razmeshhenie/#plyazh" },
-      { "label": "Причал и слип", "url": "/razmeshhenie/#prichal-slip" },
-      { "label": "Баня на дровах", "url": "/uslugi/#banya" },
-      { "label": "ХийденАрт", "url": "/uslugi/#hiidenart" },
-      { "label": "Активный отдых", "url": "/uslugi/#aktivnyj-otdykh" },
-      { "label": "Магазин-кафе «Saha»", "url": "/uslugi/#saha" },
-      { "label": "Трансфер в Рускеалу", "url": "/uslugi/#transfer" },
-      { "label": "Концертные программы", "url": "/uslugi/#koncerty" }
+      { "label": "Кемпинг и автокемпинг", "url": "/razmeshhenie.html" },
+      { "label": "Песчаный пляж", "url": "/razmeshhenie.html#plyazh" },
+      { "label": "Причал и слип", "url": "/razmeshhenie.html#prichal-slip" },
+      { "label": "Баня на дровах", "url": "/uslugi.html#banya" },
+      { "label": "ХийденАрт", "url": "/uslugi.html#hiidenart" },
+      { "label": "Активный отдых", "url": "/uslugi.html#aktivnyj-otdykh" },
+      { "label": "Магазин-кафе «Saha»", "url": "/uslugi.html#saha" },
+      { "label": "Трансфер в Рускеалу", "url": "/uslugi.html#transfer" },
+      { "label": "Концертные программы", "url": "/uslugi.html#koncerty" }
     ]
   }
 }

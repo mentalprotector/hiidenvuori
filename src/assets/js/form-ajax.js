@@ -1,106 +1,81 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Настройки
-    const TARGET_EMAIL = "mail@hiidenvuori.ru"; 
-    const ENDPOINT = "https://formsubmit.co/ajax/" + TARGET_EMAIL;
+document.addEventListener("DOMContentLoaded", function () {
+    var endpoint = "https://formsubmit.co/ajax/mail@hiidenvuori.ru";
 
-    // Находим все формы, кроме поиска (если есть)
-    const forms = document.querySelectorAll("form");
+    document.querySelectorAll("form.js-conversion-form").forEach(function (form) {
+        var submitButton = form.querySelector("button[type='submit'], input[type='submit']");
+        var originalText = submitButton ? submitButton.textContent || submitButton.value : "";
+        var status = document.createElement("div");
 
-    forms.forEach(form => {
-        // Пропускаем формы, которые не похожи на заявки (например, поиск)
-        if (!form.querySelector("input")) return;
+        status.className = "form-submit-status";
+        status.setAttribute("role", "status");
+        status.setAttribute("aria-live", "polite");
+        status.hidden = true;
+        form.insertAdjacentElement("afterend", status);
 
-        const currentUrl = window.location.origin + window.location.pathname;
-        if (!form.querySelector("input[name='_next']")) {
-            const nextField = document.createElement("input");
-            nextField.type = "hidden";
-            nextField.name = "_next";
-            nextField.value = currentUrl + "?form=success";
-            form.appendChild(nextField);
+        function setButtonPending(isPending) {
+            if (!submitButton) return;
+            submitButton.disabled = isPending;
+            submitButton.style.opacity = isPending ? "0.7" : "1";
+            if (submitButton.tagName === "INPUT") {
+                submitButton.value = isPending ? "Отправка..." : originalText;
+            } else {
+                submitButton.textContent = isPending ? "Отправка..." : originalText;
+            }
         }
 
-        form.addEventListener("submit", function(e) {
-            e.preventDefault();
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
 
-            const submitBtn = form.querySelector("button[type='submit']") || form.querySelector("input[type='submit']");
-            let originalBtnText = "";
-            
-            if (submitBtn) {
-                originalBtnText = submitBtn.innerText || submitBtn.value;
-                submitBtn.innerText = "Отправка...";
-                submitBtn.value = "Отправка...";
-                submitBtn.disabled = true;
-                submitBtn.style.opacity = "0.7";
+            if (form.dataset.submitting === "true") return;
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
             }
 
-            const formData = new FormData(form);
-            
-            // Добавляем настройки для FormSubmit (JSON ответ)
-            // _captcha=false (отключаем капчу для скорости)
-            formData.append("_captcha", "false");
-            formData.append("_subject", "Новая заявка с сайта Хийденвуори");
+            form.dataset.submitting = "true";
+            status.hidden = true;
+            status.textContent = "";
+            setButtonPending(true);
 
-            fetch(ENDPOINT, {
+            var formData = new FormData(form);
+            formData.set("_captcha", "false");
+            formData.set("_subject", "Новая заявка с сайта Хийденвуори");
+
+            fetch(endpoint, {
                 method: "POST",
-                body: formData
+                body: formData,
+                headers: { Accept: "application/json" }
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success === "true" || data.success === true) {
+                .then(function (response) {
+                    if (!response.ok) throw new Error("FormSubmit returned " + response.status);
+                    return response.json();
+                })
+                .then(function (data) {
+                    if (data.success !== true && data.success !== "true") {
+                        throw new Error("FormSubmit rejected the request");
+                    }
+
                     document.dispatchEvent(new CustomEvent("hiidenvuori:form-success", {
                         detail: { formId: form.id || form.dataset.target || "" }
                     }));
-
-                    // Успех! Заменяем содержимое формы на красивое сообщение
-                    const successMessage = document.createElement("div");
-                    successMessage.style.textAlign = "center";
-                    successMessage.style.padding = "20px";
-                    successMessage.style.color = "#27ae60";
-                    successMessage.style.animation = "fadeIn 0.5s";
-                    successMessage.innerHTML = `
-                        <div style="font-size: 40px; margin-bottom: 10px;">✅</div>
-                        <h3 style="margin: 0; color: inherit;">Заявка отправлена!</h3>
-                        <p style="color: #555; margin-top: 10px;">Администратор свяжется с вами в ближайшее время.</p>
-                    `;
-                    
-                    // Плавно скрываем форму и показываем сообщение
-                    form.style.display = "none";
-                    form.parentNode.insertBefore(successMessage, form);
-                } else {
+                    form.hidden = true;
+                    status.className = "form-submit-status form-submit-status--success";
+                    status.innerHTML = "<h3>Заявка отправлена!</h3><p>Администратор свяжется с вами в ближайшее время.</p>";
+                    status.hidden = false;
+                })
+                .catch(function (error) {
+                    console.error("Form submission failed:", error);
                     document.dispatchEvent(new CustomEvent("hiidenvuori:form-error", {
                         detail: { formId: form.id || form.dataset.target || "" }
                     }));
-                    alert("Ошибка отправки. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
-                    resetBtn();
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                document.dispatchEvent(new CustomEvent("hiidenvuori:form-error", {
-                    detail: { formId: form.id || form.dataset.target || "" }
-                }));
-                alert("Ошибка соединения. Пожалуйста, позвоните нам: +7 (921) 014-11-90");
-                resetBtn();
-            });
-
-            function resetBtn() {
-                if (submitBtn) {
-                    submitBtn.innerText = originalBtnText;
-                    submitBtn.value = originalBtnText;
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = "1";
-                }
-            }
+                    status.className = "form-submit-status form-submit-status--error";
+                    status.innerHTML = "<p>Не удалось отправить заявку. Позвоните <a href='tel:+79210141190'>+7 (921) 014-11-90</a> или напишите в <a href='https://wa.me/79210141190'>WhatsApp</a> / <a href='https://t.me/+79210141190'>Telegram</a>.</p>";
+                    status.hidden = false;
+                })
+                .finally(function () {
+                    form.dataset.submitting = "false";
+                    if (!form.hidden) setButtonPending(false);
+                });
         });
     });
-
-    // Добавим стиль для анимации
-    const style = document.createElement('style');
-    style.innerHTML = `
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    `;
-    document.head.appendChild(style);
 });

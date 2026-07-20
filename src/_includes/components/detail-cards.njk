@@ -4,7 +4,7 @@
 {% set colClass = "nh-cards__items--two-columns" if cols == 2 else "nh-cards__items--adaptive" %}
 {% set headingColor = "#ffffff" if theme == "dark" else "#243B5C" %}
 {% set textColor = "#ffffff" if theme == "dark" else "#102748" %}
-<section class="nh-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id or ('cards-' ~ range(1000,9999) | random) }}">
+<section class="nh-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id or 'detail-cards' }}">
 <link href="/assets/css/cards.ce46b1.min.css" rel="stylesheet" type="text/css"/>
 <div class="lazyload nh-cards--indent-top-m nh-cards--indent-bottom-m" data-ng-non-bindable="" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: {{ background }};">
 <div class="js-indent-add"></div>

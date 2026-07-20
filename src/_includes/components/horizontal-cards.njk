@@ -1,8 +1,8 @@
-{% macro horizontalCards(items, columns=none) %}
+{% macro horizontalCards(items, columns=none, id='horizontal-cards') %}
 {% set cols = columns if columns else items.length %}
 {% set tabletCols = 2 if cols > 2 else cols %}
 {% set figureWidth = '3' if cols <= 3 else '4' %}
-<section class="nh-horizontal-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="horizontal-cards-{{ range(1000,9999) | random }}">
+<section class="nh-horizontal-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id }}">
 <link href="/assets/css/horizontal-cards.374645.min.css" rel="stylesheet" type="text/css"/>
 <div data-ng-non-bindable="" style="--hc-bg-before-color: rgba(245,247,251, 1);">
 <div class="lazyload nh-horizontal-cards--indent-top-s nh-horizontal-cards--indent-bottom-l" style="background-position: center; background-repeat: no-repeat; background-size: cover; background-color: rgba(245,247,251, 1);">

@@ -37,6 +37,9 @@ jobs:
       - name: Build with Eleventy
         run: npm run build
 
+      - name: Verify generated site
+        run: npm run verify
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

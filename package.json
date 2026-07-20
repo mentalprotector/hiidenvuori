@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Хийденвуори.рф — Туристическое пространство на Ладожском озере",
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "serve": "npx @11ty/eleventy --serve"
+    "build": "node scripts/clean-output.mjs && eleventy",
+    "serve": "eleventy --serve",
+    "verify": "node scripts/verify-build.mjs"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0"
