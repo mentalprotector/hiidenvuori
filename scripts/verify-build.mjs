@@ -12,8 +12,8 @@ const legacyPages = [
 const cleanRedirects = [...legacyPages.map((name) => name.replace(/\.html$/, "")), "palatki-na-nastilah"];
 const publicPaths = [
   "/", "/agreement.html", "/comment.html", "/contacts.html",
-  "/palatki-na-nastilah.html", "/privacy.html", "/razmeshhenie.html",
-  "/rules.html", "/spusk-dlya-katerov.html", "/stoyanka-dlya-avtodomov.html",
+  "/privacy.html", "/razmeshhenie.html",
+  "/rules.html", "/spusk-dlya-katerov.html",
   "/uslugi.html"
 ];
 const errors = [];

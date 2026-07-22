@@ -7,12 +7,177 @@ ogDescription: "Кемпинг, автокемпинг, песчаный пля�
 activePage: "/razmeshhenie.html"
 pageType: "text"
 ---
-{% from "components/features.njk" import features %}
-{% from "components/detail-cards.njk" import detailCards %}
-
 <style>
   .razmeshhenie-top-spacer {
-    height: 86px;
+    height: 120px;
+  }
+
+  .stay-options {
+    padding: 0 0 86px;
+    background: #ffffff;
+  }
+
+  .stay-options__inner {
+    display: grid;
+    gap: 34px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .stay-option {
+    display: grid;
+    grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr);
+    overflow: hidden;
+    border-radius: 16px;
+    background: #f4f6fc;
+    box-shadow: 0 18px 50px rgba(36, 59, 92, .08);
+  }
+
+  .stay-option__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 330px auto;
+    gap: 8px;
+    padding: 8px;
+    background: #ffffff;
+  }
+
+  .stay-option__gallery img {
+    display: block;
+    width: 100%;
+    height: 150px !important;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .stay-option__gallery img:first-child {
+    grid-column: 1 / -1;
+    height: 330px !important;
+  }
+
+  .stay-option__gallery--two img:last-child {
+    grid-column: 1 / -1;
+    height: auto !important;
+    object-fit: contain;
+  }
+
+  .stay-option__content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 38px 38px;
+    color: #102748;
+  }
+
+  .stay-option__eyebrow {
+    margin-bottom: 9px;
+    color: #52708f;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+
+  .stay-option h2 {
+    margin: 0 0 14px;
+    color: #243b5c;
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .stay-option__lead {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .stay-option__facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 0 0 24px;
+  }
+
+  .stay-option__fact {
+    padding: 14px 15px;
+    border: 1px solid rgba(36, 59, 92, .12);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .72);
+  }
+
+  .stay-option__fact span {
+    display: block;
+    margin-bottom: 4px;
+    color: #52708f;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .stay-option__fact strong {
+    display: block;
+    color: #102748;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .stay-option__included {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .stay-option__included li {
+    position: relative;
+    padding-left: 24px;
+  }
+
+  .stay-option__included li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #2585b8;
+    content: "✓";
+    font-weight: 900;
+  }
+
+  .stay-option__action {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 48px;
+    margin-top: auto;
+    padding: 0 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    background: #3384bf;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .stay-option__action:visited,
+  .stay-option__action:hover,
+  .stay-option__action:focus,
+  .stay-option__action:active {
+    color: #ffffff !important;
+    text-decoration: none;
+  }
+
+  .stay-option__action:hover,
+  .stay-option__action:focus-visible {
+    background: #276f9f;
+  }
+
+  .stay-option__note {
+    margin: 18px 0 22px;
+    color: #52708f;
+    font-size: 13px;
+    line-height: 1.45;
   }
 
   .razmeshhenie-extra {
@@ -63,23 +228,28 @@ pageType: "text"
   }
 
   .razmeshhenie-extra__gallery {
+    --gallery-main-height: 220px;
+    --gallery-thumb-height: 108px;
     display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    grid-template-rows: 118px 118px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: var(--gallery-main-height) var(--gallery-thumb-height);
     gap: 8px;
     padding: 8px;
   }
 
   .razmeshhenie-extra__gallery img {
     width: 100%;
-    height: 100%;
+    height: var(--gallery-thumb-height) !important;
+    min-width: 0;
+    min-height: 0;
     object-fit: cover;
     border-radius: 6px;
     display: block;
   }
 
   .razmeshhenie-extra__gallery img:first-child {
-    grid-row: 1 / span 2;
+    grid-column: 1 / -1;
+    height: var(--gallery-main-height) !important;
   }
 
   .razmeshhenie-extra__body {
@@ -268,12 +438,25 @@ pageType: "text"
   }
 
   @media (max-width: 960px) {
+    .stay-option {
+      grid-template-columns: 1fr;
+    }
+
+    .stay-option__gallery {
+      grid-template-rows: clamp(280px, 52vw, 420px) auto;
+    }
+
+    .stay-option__gallery img:first-child {
+      height: clamp(280px, 52vw, 420px) !important;
+    }
+
     .razmeshhenie-extra__grid {
       grid-template-columns: 1fr;
     }
 
     .razmeshhenie-extra__gallery {
-      grid-template-rows: 170px 170px;
+      --gallery-main-height: clamp(260px, 42vw, 380px);
+      --gallery-thumb-height: clamp(130px, 20vw, 180px);
     }
 
     .razmeshhenie-rules__grid,
@@ -286,7 +469,55 @@ pageType: "text"
 
   @media (max-width: 640px) {
     .razmeshhenie-top-spacer {
-      height: 56px;
+      height: 96px;
+    }
+
+    .stay-options {
+      padding-bottom: 56px;
+    }
+
+    .stay-options__inner {
+      gap: 24px;
+      padding: 0 14px;
+    }
+
+    .stay-option {
+      border-radius: 12px;
+    }
+
+    .stay-option__gallery {
+      grid-template-rows: 230px auto;
+      gap: 6px;
+      padding: 6px;
+    }
+
+    .stay-option__gallery img,
+    .stay-option__gallery img:first-child {
+      height: 106px !important;
+    }
+
+    .stay-option__gallery img:first-child {
+      height: 230px !important;
+    }
+
+    .stay-option__gallery--two img:last-child {
+      height: auto !important;
+    }
+
+    .stay-option__content {
+      padding: 28px 22px 26px;
+    }
+
+    .stay-option h2 {
+      font-size: 27px;
+    }
+
+    .stay-option__facts {
+      grid-template-columns: 1fr;
+    }
+
+    .stay-option__action {
+      width: 100%;
     }
 
     .razmeshhenie-extra {
@@ -298,7 +529,8 @@ pageType: "text"
     }
 
     .razmeshhenie-extra__gallery {
-      grid-template-rows: 126px 126px;
+      --gallery-main-height: 220px;
+      --gallery-thumb-height: 108px;
     }
 
     .razmeshhenie-rules {
@@ -340,22 +572,59 @@ pageType: "text"
 
 <div class="razmeshhenie-top-spacer" aria-hidden="true"></div>
 
-{{ features([
-  {
-    anchor: "camping",
-    url: "/palatki-na-nastilah.html",
-    image: { src: "/assets/img/palatka_large.webp", alt: "Палатки на деревянных настилах в Хийденвуори" },
-    title: "Кемпинг: палатки на настилах",
-    text: '<p class="nh-text-editor__fontsize-16"><strong>Приглашаем вас отдохнуть в нашем кемпинге на берегу Ладожского озера.</strong> Мы подготовили удобные деревянные настилы для установки палаток.</p><p class="nh-text-editor__fontsize-16">Настилы дают ровную поверхность для сна и защищают от холода и влаги, идущих от земли. Это помогает сохранить тепло и сухость внутри палатки в любую погоду.</p><p class="nh-text-editor__fontsize-16">На территории есть мангальные зоны, костровища и доступ к инфраструктуре туристического пространства.</p>'
-  },
-  {
-    anchor: "avtocamping",
-    url: "/stoyanka-dlya-avtodomov.html",
-    image: { src: "/assets/img/9hbg2e0s524gws880og4g0oo4400w0.webp", alt: "Стоянка для автодомов в Хийденвуори" },
-    title: "Автокемпинг",
-    text: '<p class="nh-text-editor__fontsize-16"><strong>Стоянка для автодомов создана для гостей, которые путешествуют на собственном доме на колесах</strong> и хотят сохранить комфорт рядом с природой.</p><p class="nh-text-editor__fontsize-16">Наш кемпинг находится в живописном месте: рядом Ладога, свежий воздух и вся базовая инфраструктура. Для автодомов предусмотрены электричество, вода, доступ к сливу и зона для утилизации мусора.</p><p class="nh-text-editor__fontsize-16">Вы сохраняете мобильность и свободу маршрута, но отдыхаете в организованном и понятном месте.</p>'
-  }
-], "features-razmeshhenie") }}
+<section class="stay-options" aria-label="Варианты размещения">
+  <div class="stay-options__inner">
+    <article class="stay-option" id="camping">
+      <div class="stay-option__gallery stay-option__gallery--two">
+        <img src="/assets/img/selected-2026/camping-main-tent-platform.webp" alt="Палатка на деревянном настиле у Ладоги">
+        <img src="/assets/img/selected-2026/camping-reserve-tents-wide.webp" alt="Палаточные места кемпинга Хийденвуори" loading="lazy">
+      </div>
+      <div class="stay-option__content">
+        <span class="stay-option__eyebrow">Для путешествий с палаткой</span>
+        <h2>Кемпинг у Ладоги</h2>
+        <p class="stay-option__lead">Ровные деревянные настилы защищают палатку от холодной и влажной земли. Можно выбрать открытое место, настил под навесом или расположиться на естественном грунте.</p>
+        <div class="stay-option__facts">
+          <div class="stay-option__fact"><span>Настил 3×3 м</span><strong>1500 ₽ / сутки</strong></div>
+          <div class="stay-option__fact"><span>Настил под навесом</span><strong>2000 ₽ / сутки</strong></div>
+          <div class="stay-option__fact"><span>Естественный грунт</span><strong>700 ₽ / сутки за гостя</strong></div>
+          <div class="stay-option__fact"><span>Заезд / выезд</span><strong>после 15:00 / до 12:00</strong></div>
+        </div>
+        <ul class="stay-option__included">
+          <li>Мангал и дрова на каждом участке</li>
+          <li>Парковочное место рядом с участком</li>
+          <li>Общая кухня, туалеты и береговая инфраструктура</li>
+        </ul>
+        <p class="stay-option__note">Палатку гости привозят с собой. Свободное место лучше уточнить заранее.</p>
+        <a class="stay-option__action" href="tel:+79210141190">Уточнить свободные места</a>
+      </div>
+    </article>
+
+    <article class="stay-option" id="avtocamping">
+      <div class="stay-option__gallery stay-option__gallery--two">
+        <img src="/assets/img/selected-2026/autocamping-reserve-existing-pitch.webp" alt="Оборудованные площадки автокемпинга Хийденвуори" loading="lazy">
+        <img src="/assets/img/selected-2026/beach-reserve-open-water.webp" alt="Берег Ладоги рядом с автокемпингом" loading="lazy">
+      </div>
+      <div class="stay-option__content">
+        <span class="stay-option__eyebrow">Для автодомов и кемперов</span>
+        <h2>Автокемпинг</h2>
+        <p class="stay-option__lead">Организованная стоянка на берегу Ладоги для тех, кто путешествует в собственном доме на колёсах. Выберите место с подключением к электричеству или без него.</p>
+        <div class="stay-option__facts">
+          <div class="stay-option__fact"><span>С электричеством</span><strong>2500 ₽ / сутки</strong></div>
+          <div class="stay-option__fact"><span>Без электричества</span><strong>2000 ₽ / сутки</strong></div>
+          <div class="stay-option__fact"><span>Вместимость места</span><strong>до 6 гостей</strong></div>
+          <div class="stay-option__fact"><span>Заезд / выезд</span><strong>после 15:00 / до 12:00</strong></div>
+        </div>
+        <ul class="stay-option__included">
+          <li>Вода и место для слива</li>
+          <li>Зона для утилизации мусора</li>
+          <li>Кухня, туалеты, пляж и общие зоны территории</li>
+        </ul>
+        <p class="stay-option__note">Подключение к электричеству зависит от выбранного тарифа и доступности места.</p>
+        <a class="stay-option__action" href="tel:+79210141190">Забронировать место</a>
+      </div>
+    </article>
+  </div>
+</section>
 
 <section class="razmeshhenie-extra" id="amenities-gallery">
   <div class="razmeshhenie-extra__inner">
@@ -366,9 +635,9 @@ pageType: "text"
     <div class="razmeshhenie-extra__grid">
       <article class="razmeshhenie-extra__card" id="plyazh">
         <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/os310n7rzv4c0goswc4wsw48440c4c.webp" alt="Песчаный пляж на берегу Ладоги" loading="lazy">
-          <img src="/assets/img/p05yaisd0y88o8s4cgg084wko0c8gs.webp" alt="Береговая зона Хийденвуори" loading="lazy">
-          <img src="/assets/img/mbppi31cxbkogc000o4cwocs44kk00.webp" alt="Вид на Ладожское озеро" loading="lazy">
+          <img src="/assets/img/selected-2026/beach-main-sandy-shore.webp" alt="Песчаный пляж на берегу Ладоги" loading="lazy" style="object-position: center center;">
+          <img src="/assets/img/selected-2026/beach-reserve-wide.webp" alt="Широкий вид на пляж Хийденвуори" loading="lazy" style="object-position: center center;">
+          <img src="/assets/img/selected-2026/beach-reserve-open-water.webp" alt="Пляж и открытая вода Ладоги" loading="lazy" style="object-position: center center;">
         </div>
         <div class="razmeshhenie-extra__body">
           <h3>Песчаный пляж</h3>
@@ -377,9 +646,9 @@ pageType: "text"
       </article>
       <article class="razmeshhenie-extra__card" id="kitchen">
         <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/naves.webp" alt="Крытая общая зона на берегу Ладоги" loading="lazy">
-          <img src="/assets/img/mziqpz0enhwc8kkg0s8c088wkoswg0.webp" alt="Навес и общая зона" loading="lazy">
-          <img src="/assets/img/np3wb8n21r4kwg4kc4kkoso4ggg880.webp" alt="Инфраструктура кемпинга" loading="lazy">
+          <img src="/assets/img/selected-2026/kitchen-reserve-cookware.webp" alt="Посуда на общей кухне" loading="lazy" style="object-position: center center;">
+          <img src="/assets/img/selected-2026/kitchen-main-overview.webp" alt="Общий вид кухни Хийденвуори" loading="lazy" style="object-position: center 52%;">
+          <img src="/assets/img/selected-2026/kitchen-reserve-dish-rack.webp" alt="Сушилка с посудой на общей кухне" loading="lazy" style="object-position: center center;">
         </div>
         <div class="razmeshhenie-extra__body">
           <h3>Общая кухня входит в стоимость</h3>
@@ -388,9 +657,9 @@ pageType: "text"
       </article>
       <article class="razmeshhenie-extra__card" id="prichal-slip">
         <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/boat_launch.webp" alt="Спуск для катеров на Ладоге" loading="lazy">
-          <img src="/assets/img/ship_test.webp" alt="Катер у берега" loading="lazy">
-          <img src="/assets/img/placeholder-slip.svg" alt="Причал и слип" loading="lazy">
+          <img src="/assets/img/selected-2026/pier-reserve-slip.webp" alt="Оборудованный слип у Ладоги" loading="lazy" style="object-position: center center;">
+          <img src="/assets/img/selected-2026/pier-reserve-dock-front.webp" alt="Причал Хийденвуори со стороны берега" loading="lazy" style="object-position: center center;">
+          <img src="/assets/img/selected-2026/pier-reserve-boat-at-dock.webp" alt="Катера у причала Хийденвуори" loading="lazy" style="object-position: center center;">
         </div>
         <div class="razmeshhenie-extra__body">
           <h3>Причал и слип</h3>

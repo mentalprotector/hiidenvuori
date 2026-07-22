@@ -43,6 +43,10 @@ body.site_main-page #content-anchor {
     width: 100vw !important;
   }
 
+  #carousel-fullscreen-16 .nh-carousel-fullscreen__relative {
+    background-position: 30% center !important;
+  }
+
   #carousel-fullscreen-16 .nh-carousel-fullscreen__relative,
   #carousel-fullscreen-16 .nh-carousel-fullscreen__items,
   #carousel-fullscreen-16 .nh-carousel-fullscreen__item {
@@ -73,7 +77,7 @@ body.site_main-page #content-anchor {
   justify-content: center;
 }
 </style>
-<div class="nh-carousel-fullscreen__relative nh-carousel-fullscreen--fixed-position" data-widget-replaceable-content="16" style="background: url('/assets/img/k8apcr5oe0gsc4c0408wo08g04s8k8.webp') center / cover no-repeat; background-color: rgba(0,0,0, 0);">
+<div class="nh-carousel-fullscreen__relative nh-carousel-fullscreen--fixed-position" data-widget-replaceable-content="16" style="background: url('/assets/img/selected-2026/hero-main-aerial-ladoga.webp') center center / cover no-repeat; background-color: rgba(0,0,0, 0);">
 <div class="content-block nh-carousel-fullscreen__content" data-desktop-control="0" data-mobile-control="0" data-ng-non-bindable="" id="carousel-fullscreen-show">
 <div class="small-12 column splide__track">
 <ul class="splide__list nh-carousel-fullscreen__items" style="--carousel-fullscreen-height: 700px">
@@ -245,51 +249,281 @@ body.site_main-page #content-anchor {
 </div>
 </section>
 
-{% set title = 'К услугам гостей' %}
-{% set text = 'Мы собрали сайт вокруг двух понятных разделов: где остановиться и что делать на территории. Так проще быстро найти нужный формат отдыха и не разбираться в отдельных старых страницах.' %}
-{% set buttons = [] %}
-{% include "components/cta.njk" %}
+<section class="home-services-heading widget-sort onmain on-view widget-block js-indent">
+  <div class="home-services-heading__inner">
+    <h2>К услугам гостей</h2>
+  </div>
+</section>
 
 {{ horizontalCards([
   {
     link: "/razmeshhenie.html",
-    image: { src: "/assets/img/Palatka1.webp", alt: "Размещение и удобства" },
+    image: { src: "/assets/img/selected-2026/camping-main-tent-platform.webp", alt: "Палатка на деревянном настиле у Ладоги" },
+    eyebrow: "Ночлег и инфраструктура",
     title: "Размещение и удобства",
-    text: "Кемпинг на деревянных настилах, автокемпинг, песчаный пляж, общая кухня, причал и слип."
+    text: "Выберите удобный формат отдыха у Ладоги — с палаткой или в автодоме.",
+    features: ["Палатки на деревянных настилах", "Стоянка для автодомов", "Кухня, пляж, причал и слип"],
+    actionLabel: "Выбрать размещение"
   },
   {
     link: "/uslugi.html",
-    image: { src: "/assets/img/88qxikv5jpssoww0ss88ww8c8k4koc.webp", alt: "Развлечения и услуги" },
+    image: { src: "/assets/img/selected-2026/activity-reserve-sup-stack.webp", alt: "SUP-доски для активного отдыха на Ладоге" },
+    eyebrow: "Отдых на территории",
     title: "Развлечения и услуги",
-    text: "Баня на дровах, ХийденАрт, прокат сапов, велосипедов и вейкбордов, магазин-кафе Saha, душ и сезонные услуги."
+    text: "Добавьте к поездке впечатления, активный отдых и всё необходимое на месте.",
+    features: ["Баня на дровах и ХийденАрт", "SUP, велосипеды и вейкборды", "Магазин-кафе Saha и сезонные услуги"],
+    actionLabel: "Смотреть все услуги"
   }
 ], 2, "horizontal-cards-home") }}
 
-{{ features([
-  {
-    image: { src: "/assets/img/aw5ad4c3ecws8o0gs4k4kk4kg4sww8.webp", alt: "Причал и Ладога в Хийденвуори" },
-    title: "Незабываемый отдых в долине Хийденвуори",
-    text: '<p class="nh-text-editor__fontsize-16"><strong>Хийденвуори — это туристическое пространство в одном из живописных уголков Карелии</strong>, на берегу Ладожского озера. Здесь природа встречается с историей, а отдых становится погружением в атмосферу северной тишины и уюта.</p><p class="nh-text-editor__fontsize-16"><strong>Пространство находится на территории бывшего Ладожского лесопильного завода</strong>, которому сегодня возвращена жизнь в новом качестве. Теперь это место встречает путешественников: здесь есть причал, кемпинг, автокемпинг, кафе, прокат снаряжения, магазин и сезонные услуги.</p><p class="nh-text-editor__fontsize-16"><strong>Неподалеку возвышается гора Хийденвуори.</strong> С вершины открывается вид на национальный парк «Ладожские шхеры» — с озерами, сосновыми лесами и тихими реками.</p><p class="nh-text-editor__fontsize-16"><strong>Приезжайте в Хийденвуори, чтобы отдохнуть на природе, почувствовать связь с историей края и просто выдохнуть — без суеты, но с комфортом.</strong></p>',
-    buttons: [
-      { url: "tel:+79210141190", label: "+7 (921) 014-11-90", type: "secondary" }
-    ]
-  }
-], "history-index") }}
+<section class="home-history widget-sort onmain on-view widget-block js-indent" id="history-index">
+  <div class="home-history__wrap">
+    <div class="home-history__card">
+      <h2 class="home-history__title">Незабываемый отдых<br><span>в долине Хийденвуори</span></h2>
+      <div class="home-history__text">
+        <p><strong>Хийденвуори — это туристическое пространство в одном из живописных уголков Карелии</strong>, на берегу Ладожского озера. Здесь природа встречается с историей, а отдых становится погружением в атмосферу северной тишины и уюта.</p>
+        <p><strong>Пространство находится на территории бывшего Ладожского лесопильного завода</strong>, которому сегодня возвращена жизнь в новом качестве. Теперь это место встречает путешественников: здесь есть причал, кемпинг, автокемпинг, кафе, прокат снаряжения, магазин и сезонные услуги.</p>
+        <p><strong>Неподалеку возвышается гора Хийденвуори.</strong> С вершины открывается вид на национальный парк «Ладожские шхеры» — с озерами, сосновыми лесами и тихими реками.</p>
+        <p><strong>Приезжайте в Хийденвуори, чтобы отдохнуть на природе, почувствовать связь с историей края и просто выдохнуть — без суеты, но с комфортом.</strong></p>
+      </div>
+      <div class="home-history__actions">
+        <a class="home-history__button" href="https://t.me/+79210141190" target="_blank" rel="noopener">Консультация в TG</a>
+        <a class="home-history__button home-history__button--secondary" href="tel:+79210141190">+7 (921) 014-11-90</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="home-consultation widget-sort onmain on-view widget-block js-indent" id="home-consultation">
 <link href="/assets/css/application-form.338de2.min.css" rel="stylesheet" type="text/css"/>
 <style>
+.home-services-heading {
+  background: #f5f7fb;
+}
+
+.home-services-heading__inner {
+  max-width: 84.5rem;
+  margin: 0 auto;
+  padding: 68px 1rem 28px;
+}
+
+.home-services-heading h2 {
+  margin: 0;
+  color: #243b5c;
+  font-family: FontHeader, Arial, sans-serif;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+#horizontal-cards-home .nh-horizontal-cards--indent-top-s {
+  padding-top: 30px !important;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__item {
+  min-height: 270px;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__item figure {
+  min-height: 270px;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__picture-container {
+  flex: 0 0 56%;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__picture-container,
+#horizontal-cards-home .nh-horizontal-cards__picture-container picture,
+#horizontal-cards-home .nh-horizontal-cards__picture-container img {
+  height: 270px;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__picture-container img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__info {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 28px;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__title h6 {
+  margin: 6px 0 12px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__text p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__eyebrow {
+  color: #52708f;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__features {
+  display: grid;
+  gap: 7px;
+  margin: 18px 0 0;
+  padding: 0;
+  color: #102748;
+  font-size: 14px;
+  line-height: 1.35;
+  list-style: none;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__features li {
+  position: relative;
+  padding-left: 18px;
+}
+
+#horizontal-cards-home .nh-horizontal-cards__features li::before {
+  position: absolute;
+  top: .48em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1a759f;
+  content: "";
+}
+
+#horizontal-cards-home .nh-horizontal-cards__action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  color: #155f85;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 47.9375rem) {
+  .home-services-heading__inner {
+    padding: 48px 1.25rem 22px;
+  }
+
+  .home-services-heading h2 {
+    font-size: 1.75rem;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards--indent-top-s {
+    padding-top: 20px !important;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards__item,
+  #horizontal-cards-home .nh-horizontal-cards__item figure {
+    min-height: 0;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards__item figure {
+    display: block;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards__picture-container,
+  #horizontal-cards-home .nh-horizontal-cards__picture-container picture,
+  #horizontal-cards-home .nh-horizontal-cards__picture-container img {
+    height: 220px;
+    width: 100%;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards__info {
+    padding: 24px 22px 26px;
+  }
+
+  #horizontal-cards-home .nh-horizontal-cards__title h6 {
+    font-size: 21px;
+  }
+}
+
+.home-history {
+  min-height: 760px;
+  background: #1a5378 url('/assets/img/features_bg.webp') center center / cover no-repeat;
+}
+
+.home-history__wrap {
+  max-width: 84.5rem;
+  min-height: 760px;
+  margin: 0 auto;
+  padding: 64px 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.home-history__card {
+  width: min(760px, 100%);
+  padding: 38px 32px 34px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .93);
+  box-shadow: 0 18px 42px rgba(5, 29, 49, .12);
+  color: #102748;
+}
+
+.home-history__title {
+  margin: 0 0 1.6rem;
+  color: #243b5c;
+  font-family: FontHeader, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.16;
+}
+
+.home-history__title span {
+  color: #3384bf;
+}
+
+.home-history__text {
+  font: 500 1rem/1.48 FontParagraph, Arial, sans-serif;
+}
+
+.home-history__text p {
+  margin: 0 0 1rem;
+}
+
+.home-history__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin-top: 2rem;
+}
+
+.home-history__button {
+  display: inline-flex;
+  min-height: 48px;
+  padding: 0 1.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background: #3384bf;
+  color: #fff;
+  font: 800 1rem FontParagraph, Arial, sans-serif;
+  text-decoration: none;
+}
+
+.home-history__button--secondary {
+  background: #243b5c;
+}
+
 .home-consultation {
   position: relative;
   overflow: hidden;
-  background: #071723 url('/assets/img/consultation_bg.webp') center / cover no-repeat;
+  background: #071723 url('/assets/img/consultation_bg.webp') center center / cover no-repeat;
 }
 
 .home-consultation::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 14, 24, .62);
+  background: rgba(0, 0, 0, .7);
 }
 
 .home-consultation__wrap {
@@ -522,6 +756,15 @@ body.site_main-page #content-anchor {
 }
 
 @media (max-width: 900px) {
+  .home-history,
+  .home-history__wrap {
+    min-height: 0;
+  }
+
+  .home-history__wrap {
+    padding: 56px 1rem;
+  }
+
   .home-consultation__wrap,
   .home-location__wrap {
     grid-template-columns: 1fr;
@@ -534,6 +777,37 @@ body.site_main-page #content-anchor {
 }
 
 @media (max-width: 560px) {
+  .home-history {
+    background-position: 62% center;
+  }
+
+  .home-history__wrap {
+    padding: 32px .75rem;
+  }
+
+  .home-history__card {
+    padding: 26px 20px 24px;
+    border-radius: 10px;
+  }
+
+  .home-history__title {
+    margin-bottom: 1.25rem;
+    font-size: 1.65rem;
+  }
+
+  .home-history__text {
+    font-size: .94rem;
+    line-height: 1.45;
+  }
+
+  .home-history__actions {
+    margin-top: 1.5rem;
+  }
+
+  .home-history__button {
+    width: 100%;
+  }
+
   .home-consultation__wrap,
   .home-location__wrap {
     padding-left: 1rem;

@@ -21,6 +21,7 @@
 </picture>
 </div>
 <div class="nh-horizontal-cards__info nh-horizontal-cards__info--alignment-1" style="">
+{% if item.eyebrow %}<div class="nh-horizontal-cards__eyebrow">{{ item.eyebrow }}</div>{% endif %}
 {% if item.title %}
 <div class="nh-horizontal-cards__title nh-horizontal-cards-item-title--user-inner" style="color: #102748; text-align: left;">
 <h6 class="nh-text-editor__fontsize-20">{{ item.title }}</h6>
@@ -29,6 +30,12 @@
 <div class="nh-horizontal-cards__text nh-horizontal-cards-item-desc--user-inner" style="color: #102748;">
 <p class="nh-text-editor__fontsize-14">{{ item.text }}</p>
 </div>
+{% if item.features and item.features.length %}
+<ul class="nh-horizontal-cards__features">
+{% for feature in item.features %}<li>{{ feature }}</li>{% endfor %}
+</ul>
+{% endif %}
+{% if item.actionLabel %}<span class="nh-horizontal-cards__action">{{ item.actionLabel }} <span aria-hidden="true">→</span></span>{% endif %}
 </div>
 </figure>
 {% if item.link %}</a>{% endif %}

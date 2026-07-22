@@ -10,11 +10,38 @@ pageType: "text"
 {% from "components/features.njk" import features %}
 {% from "components/detail-cards.njk" import detailCards %}
 
+<style>
+  .uslugi-top-spacer {
+    height: 120px;
+  }
+
+  #features-uslugi .nh-features__title a {
+    color: inherit;
+    text-decoration: none;
+    pointer-events: none;
+  }
+
+  #features-uslugi .nh-features__btn,
+  #features-uslugi .nh-features__btn:visited,
+  #features-uslugi .nh-features__btn:hover,
+  #features-uslugi .nh-features__btn:focus,
+  #features-uslugi .nh-features__btn:active {
+    color: #ffffff !important;
+  }
+
+  @media (max-width: 640px) {
+    .uslugi-top-spacer {
+      height: 96px;
+    }
+  }
+</style>
+
+<div class="uslugi-top-spacer" aria-hidden="true"></div>
+
 {{ features([
   {
     anchor: "banya",
-    url: "/uslugi.html#banya",
-    image: { src: "/assets/img/placeholder-sauna.svg", alt: "Плейсхолдер фото бани на дровах" },
+    image: { src: "/assets/img/selected-2026/sauna-main-steam-room.webp", alt: "Парная бани на дровах в Хийденвуори" },
     title: "Баня на дровах",
     text: '<p class="nh-text-editor__fontsize-16"><strong>Баня на дровах — спокойный способ завершить день после дороги, прогулки или активностей на Ладоге.</strong></p><p class="nh-text-editor__fontsize-16">Формат рассчитан на бронирование по времени. Стоимость и доступные слоты появятся позже, а сейчас их можно уточнить у администратора.</p>',
     buttons: [
@@ -23,22 +50,22 @@ pageType: "text"
   },
   {
     anchor: "hiidenart",
-    url: "/uslugi.html#hiidenart",
     image: { src: "/assets/img/placeholder-hiidenart.svg", alt: "Плейсхолдер фото ХийденАрт" },
     title: "ХийденАрт",
-    text: '<p class="nh-text-editor__fontsize-16"><strong>ХийденАрт — бесплатное творческое направление для гостей Хийденвуори.</strong></p><p class="nh-text-editor__fontsize-16">Это камерный арт-маршрут и площадка для небольших выставок, встреч и визуальных историй о Ладоге, северной природе и месте, где бывшая промышленная территория стала туристическим пространством.</p><p class="nh-text-editor__fontsize-16">Программа будет обновляться по сезону.</p>'
+    text: '<p class="nh-text-editor__fontsize-16"><strong>ХийденАрт — пространство современного и традиционного искусства в Хийденсельге, на территории бывшего лесопильного завода у Ладожского озера.</strong></p><p class="nh-text-editor__fontsize-16">Здесь современное искусство встречается с историей Карелии: выставки, объекты художников и артефакты, связанные с этим местом и краем. Это повод задержаться после прогулки, посмотреть на знакомый северный ландшафт с другой стороны и открыть для себя ещё один маршрут на территории Хийденвуори.</p><p class="nh-text-editor__fontsize-16">Посещение выставочного пространства — свободное для гостей кемпинга.</p>'
   },
   {
     anchor: "aktivnyj-otdykh",
-    url: "/aktivnyj-otdykh.html",
-    image: { src: "/assets/img/eo851ccast4csw8ksgggkco8wo8osw.webp", alt: "Активный отдых в Хийденвуори" },
+    image: { src: "/assets/img/selected-2026/activity-main-bicycles.webp", alt: "Велосипеды для активного отдыха в Хийденвуори" },
     title: "Активный отдых",
-    text: '<p class="nh-text-editor__fontsize-16"><strong>Для знакомства с Карелией и Ладожскими шхерами мы предлагаем прокат снаряжения и разные форматы активного отдыха.</strong></p><ul><li class="nh-text-editor__fontsize-16"><strong>Велосипеды:</strong> для прогулок по живописным дорогам и лесным маршрутам.</li><li class="nh-text-editor__fontsize-16"><strong>Сапборды:</strong> для спокойных прогулок по воде и знакомства с береговыми пейзажами.</li><li class="nh-text-editor__fontsize-16"><strong>Вейкборды:</strong> для тех, кто хочет добавить к отдыху больше движения и адреналина.</li><li class="nh-text-editor__fontsize-16"><strong>Катер и рыболовное снаряжение:</strong> для прогулок по шхерам и тихого отдыха на Ладоге.</li></ul><p class="nh-text-editor__fontsize-16">О наличии снаряжения лучше уточнить заранее: набор проката зависит от сезона и погоды.</p>'
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Для знакомства с Карелией и Ладожскими шхерами мы предлагаем прокат снаряжения и разные форматы активного отдыха.</strong></p><ul><li class="nh-text-editor__fontsize-16"><strong>Велосипеды:</strong> для прогулок по живописным дорогам и лесным маршрутам.</li><li class="nh-text-editor__fontsize-16"><strong>Сапборды:</strong> для спокойных прогулок по воде и знакомства с береговыми пейзажами.</li><li class="nh-text-editor__fontsize-16"><strong>Вейкборды:</strong> для тех, кто хочет добавить к отдыху больше движения и адреналина.</li><li class="nh-text-editor__fontsize-16"><strong>Катер и рыболовное снаряжение:</strong> для прогулок по шхерам и тихого отдыха на Ладоге.</li></ul><p class="nh-text-editor__fontsize-16">О наличии снаряжения лучше уточнить заранее: набор проката зависит от сезона и погоды.</p>',
+    buttons: [
+      { url: "https://t.me/+79210141190", label: "Уточнить наличие", type: "basic" }
+    ]
   },
   {
     anchor: "saha",
-    url: "/magazin-kafe-saha.html",
-    image: { src: "/assets/img/55bycsmyzvwow84kc848g80kws4o8o.webp", alt: "Магазин-кафе Saha" },
+    image: { src: "/assets/img/selected-2026/cafe-main-local-products.webp", alt: "Товары местных производителей в магазине-кафе Saha" },
     title: "Магазин-кафе «Saha»",
     text: '<p class="nh-text-editor__fontsize-16"><strong>Kauppa «Saha» — магазин сувенирной продукции.</strong> В ассортименте изделия ручной работы из кожи и дерева, украшения, одежда и аксессуары, сувениры, карельская косметика, продукты местных производителей, рыба, консервы, сладости, мороженое, напитки и другие товары.</p><p class="nh-text-editor__fontsize-16"><strong>Kahvila «Saha» — небольшое уютное кафе при магазине.</strong> Здесь можно выпить кофе или чай, попробовать карельские калитки и другую выпечку.</p><p class="nh-text-editor__fontsize-16"><strong>Работаем ежедневно с 8:00 до 22:00.</strong></p>',
     buttons: [
@@ -78,16 +105,16 @@ pageType: "text"
 
 {{ detailCards("Фото магазина-кафе «Saha»", "Несколько кадров из старой галереи Saha сохранены в объединенном разделе.", [
   {
-    image: { src: "/assets/img/tgzyrorryv4wk40w4cwwwos448w8cg.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+    image: { src: "/assets/img/selected-2026/cafe-main-local-products.webp", alt: "Товары местных производителей в Saha", ratio: "4 / 3" }
   },
   {
-    image: { src: "/assets/img/s84papiap340wocosggsc8gog8gg8k.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+    image: { src: "/assets/img/selected-2026/cafe-reserve-shop-wide.webp", alt: "Интерьер магазина Saha", ratio: "4 / 3" }
   },
   {
-    image: { src: "/assets/img/rlq580p5juo4sogc8wgk0wgcg8c8sk.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+    image: { src: "/assets/img/selected-2026/cafe-reserve-saha-exterior.webp", alt: "Вход в магазин-кафе Saha", ratio: "4 / 3" }
   },
   {
-    image: { src: "/assets/img/fywhs487j1cg8gsgwkgkgwskc0wsw4.webp", alt: "Магазин-кафе Saha", ratio: "4 / 3" }
+    image: { src: "/assets/img/selected-2026/cafe-reserve-counter.webp", alt: "Стойка кафе Saha", ratio: "4 / 3" }
   }
 ], 4, "saha-gallery-uslugi", "rgba(244,246,252,1)") }}
 

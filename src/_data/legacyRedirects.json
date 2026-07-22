@@ -1,16 +1,16 @@
 [
   { "slug": "agreement", "target": "/agreement.html" },
-  { "slug": "aktivnyj-otdykh", "target": "/aktivnyj-otdykh.html" },
+  { "slug": "aktivnyj-otdykh", "target": "/uslugi.html#aktivnyj-otdykh" },
   { "slug": "comment", "target": "/comment.html" },
   { "slug": "contacts", "target": "/contacts.html" },
-  { "slug": "konczertnye-programmy", "target": "/konczertnye-programmy.html" },
-  { "slug": "magazin-kafe-saha", "target": "/magazin-kafe-saha.html" },
-  { "slug": "palatki-na-nastilah", "target": "/palatki-na-nastilah.html" },
+  { "slug": "konczertnye-programmy", "target": "/uslugi.html#koncerty" },
+  { "slug": "magazin-kafe-saha", "target": "/uslugi.html#saha" },
+  { "slug": "palatki-na-nastilah", "target": "/razmeshhenie.html#camping" },
   { "slug": "privacy", "target": "/privacy.html" },
   { "slug": "razmeshhenie", "target": "/razmeshhenie.html" },
   { "slug": "rules", "target": "/rules.html" },
   { "slug": "spusk-dlya-katerov", "target": "/spusk-dlya-katerov.html" },
-  { "slug": "stoyanka-dlya-avtodomov", "target": "/stoyanka-dlya-avtodomov.html" },
-  { "slug": "transfer-v-ruskealu", "target": "/transfer-v-ruskealu.html" },
+  { "slug": "stoyanka-dlya-avtodomov", "target": "/razmeshhenie.html#avtocamping" },
+  { "slug": "transfer-v-ruskealu", "target": "/uslugi.html#transfer" },
   { "slug": "uslugi", "target": "/uslugi.html" }
 ]
