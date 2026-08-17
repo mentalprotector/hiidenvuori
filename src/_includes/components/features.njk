@@ -1,0 +1,54 @@
+{% macro features(items, id=none) %}
+<section class="nh-features widget-block nh-editor-panel js-indent" data-widget-store-item="" id="{{ id or 'features' }}">
+<link href="/assets/css/features.4c0a14.min.css" rel="stylesheet" type="text/css"/>
+<div class="lazyload nh-features--indent-top-l nh-features--indent-bottom-l" data-ng-non-bindable="" style="background-position: top center; background-repeat: repeat-y; background-size: 1420px; background-color: rgba(255,255,255, 1);">
+<div class="js-indent-add"></div>
+<div class="nh-features__container">
+<ul class="nh-features__items">
+{% for item in items %}
+<li{% if item.anchor %} id="{{ item.anchor }}"{% endif %} class="lazyload nh-features__item" style="background-position: top center; background-repeat: repeat-y; background-size: auto; background-color: rgba(255,255,255, 1);">
+<div class="nh-features__inner">
+<div class="nh-features__item-wrapper nh-features--indent-top-s nh-features--indent-bottom-s">
+<figure class="nh-features__figure" data-desktop-position="4" data-mobile-position="0">
+<div class="nh-features__image-block">
+<picture class="nh-features__picture-container nh-features_round-2" style="--picture-shadow-color: rgba(0,0,0, 0); --picture-shadow-offset-x: 0px; --picture-shadow-offset-y: 8px; --picture-shadow-blur: 25px; --picture-border-color: rgba(0,0,0, 0); --picture-border-width: 0px;">
+<img alt="{{ item.image.alt or item.title or '' }}" class="nh-features_round-2" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 374px, (min-width: 768px) 528px" src="{{ item.image.src }}"/>
+</picture>
+</div>
+<div class="lazyload nh-features__info nh-features__info--indent nh-features_round-2" style="--content-border-color: rgba(0,0,0, 0); --content-border-width: 0px; --content-shadow-color: rgba(0,0,0, 0); --content-shadow-offset-x: 0px; --content-shadow-offset-y: 8px; --content-shadow-blur: 25px; background-position: top center; background-repeat: repeat-y; background-size: auto; background-color: rgba(244,246,252, 1);">
+{% if item.title %}
+<div class="nh-features__title nh-features-item-title--user-inner nh-features__title--align-left" style="color: #243B5C;">
+<h3>{% if item.url %}<a class="nh-features__title-link" href="{{ item.url }}" target="_parent">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+</div>
+{% endif %}
+{% if item.text %}
+<div class="nh-features__text nh-features-item-desc--user-inner" style="color: #102748;">
+{{ item.text | safe }}
+</div>
+{% endif %}
+{% if item.buttons and item.buttons.length %}
+<div class="nh-features__btn-container nh-features__btn-container--alignment-0">
+{% for btn in item.buttons %}
+{% if btn.modal %}
+<button class="nh-features__btn nh-features__btn--{{ btn.type or 'basic' }} nh-features__btn--size-xl" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">{{ btn.label }}</button>
+{% else %}
+<a class="nh-features__btn nh-features__btn--{{ btn.type or 'basic' }} nh-features__btn--size-xl" href="{{ btn.url }}" target="_parent">{{ btn.label }}</a>
+{% endif %}
+{% endfor %}
+</div>
+{% elif item.url %}
+<div class="nh-features__btn-container nh-features__btn-container--alignment-0">
+<a class="nh-features__btn nh-features__btn--basic nh-features__btn--size-xl" href="{{ item.url }}" target="_parent">Подробнее</a>
+</div>
+{% endif %}
+</div>
+</figure>
+</div>
+</div>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</section>
+{% endmacro %}

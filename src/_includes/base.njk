@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  {% include "meta.njk" %}
+  {% if hasPhotoGallery %}<link href="/assets/css/photo-gallery.css" rel="stylesheet" type="text/css">{% endif %}
+</head>
+<body class="site site_main-page" data-cart="old" data-enable-compare="false" data-grid="12" data-lang="ru_RU" data-page-type="{{ pageType }}" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
+<div class="site__layout">
+<div class="site-container module main-page-module main-page-module_no-slider" id="container">
+  {% include "header.njk" %}
+  <div class="site-content small-12" id="content-anchor">
+    <div class="site-background" style="background-color: #ffffff; background-image: none; "></div>
+    <section class="js-blocks-list" data-blocks-list="" data-ng-controller="ContentController" id="content">
+      <div class="js-sorted-blocks main-page-module__list module__list main-page-module__list--no-background" data-module="2" data-region="1" data-sorted-blocks="" data-widget-store-list="content">
+        {{ content | safe }}
+      </div>
+    </section>
+  </div>
+  {% include "footer.njk" %}
+</div>
+</div>
+{% include "scripts.njk" %}
+{% if hasPhotoGallery %}<script src="/assets/js/photo-gallery.js" defer></script>{% endif %}
+</body>
+</html>

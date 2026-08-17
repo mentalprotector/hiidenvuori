@@ -1,0 +1,120 @@
+---
+layout: base.njk
+permalink: /uslugi.html
+title: "Развлечения и услуги"
+ogTitle: "Развлечения и услуги"
+ogDescription: "Баня на дровах, ХийденАрт, активный отдых, магазин-кафе Saha, душ и дополнительные услуги Хийденвуори."
+activePage: "/uslugi.html"
+pageType: "text"
+hasPhotoGallery: true
+---
+{% from "components/detail-cards.njk" import detailCards %}
+{% from "components/photo-gallery.njk" import photoGallery %}
+
+<style>
+  .uslugi-top-spacer { height: 120px; }
+  .photo-gallery__body {
+    max-width: 860px;
+    margin-top: 30px;
+    padding: 28px 30px;
+    border-radius: 12px;
+    background: rgba(244, 246, 252, .92);
+    color: #102748;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .photo-gallery__body p { margin: 0 0 16px; }
+  .photo-gallery__body p:last-child { margin-bottom: 0; }
+  .photo-gallery__body ul { margin: 0 0 18px; padding-left: 22px; }
+  .photo-gallery__body li + li { margin-top: 8px; }
+  .photo-gallery__action {
+    display: inline-flex;
+    min-height: 48px;
+    padding: 0 22px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 0;
+    background: #3384bf;
+    color: #ffffff !important;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  @media (max-width: 640px) { .uslugi-top-spacer { height: 96px; } }
+  @media (max-width: 640px) {
+    .photo-gallery__body { margin-top: 20px; padding: 22px 20px; }
+    .photo-gallery__action { width: 100%; }
+  }
+</style>
+
+<div class="uslugi-top-spacer" aria-hidden="true"></div>
+
+{{ photoGallery("banya", "Баня на дровах", "Парная, печь и детали бани, а также внешний вид здания.", [
+  { src: "/assets/img/selected-2026/sauna-reserve-exterior-clean.webp", alt: "Баня на дровах снаружи" },
+  { src: "/assets/img/selected-2026/sauna-new-exterior.webp", alt: "Общий вид бани на дровах и площадки перед входом" },
+  { src: "/assets/img/selected-2026/sauna-reserve-stove.webp", alt: "Дровяная печь в бане Хийденвуори" },
+  { src: "/assets/img/selected-2026/sauna-reserve-wood-detail.webp", alt: "Деревянная отделка парной" },
+  { src: "/assets/img/selected-2026/sauna-main-steam-room.webp", alt: "Парная бани на дровах в Хийденвуори" }
+], '<p><strong>Баня на дровах — 5 000 ₽ на 3 часа для компании до 6 человек.</strong></p><p>В стоимость входят тапочки, банные шапочки, полотенца, простыни и один веник.</p><p><strong>Дополнительные веники — 250 ₽/шт.</strong></p><p><button class="photo-gallery__action" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">Забронировать баню</button></p>') }}
+
+{{ photoGallery("hiidenart", "ХийденАрт", "Выставочное пространство, произведения художников, экскурсии и встречи с авторами.", [
+  { src: "/assets/img/selected-2026/hiidenart-installation.webp", alt: "Световая инсталляция в выставочном пространстве ХийденАрт" },
+  { src: "/assets/img/selected-2026/hiidenart-works-detail.webp", alt: "Графические работы на выставке ХийденАрт" },
+  { src: "/assets/img/selected-2026/hiidenart-artist-talk.webp", alt: "Художница рассказывает о работе посетителям выставки" },
+  { src: "/assets/img/selected-2026/hiidenart-exhibition-guests.webp", alt: "Посетители выставки в пространстве ХийденАрт" },
+  { src: "/assets/img/selected-2026/hiidenart-guided-tour.webp", alt: "Экскурсия по выставке ХийденАрт" },
+  { src: "/assets/img/selected-2026/hiidenart-corgi-guest.webp", alt: "Корги среди гостей выставки ХийденАрт" }
+], '<p><strong>ХийденАрт — пространство современного и традиционного искусства в Хийденсельге, на территории бывшего лесопильного завода у Ладожского озера.</strong></p><p>Здесь современное искусство встречается с историей Карелии: выставки, объекты художников и артефакты, связанные с этим местом и краем. Это ещё один маршрут по территории Хийденвуори и возможность посмотреть на северный ландшафт с другой стороны.</p><p>Посещение выставочного пространства — свободное для гостей кемпинга.</p>') }}
+
+{{ photoGallery("aktivnyj-otdykh", "Активный отдых на территории", "SUP-доски, велосипеды, водные прогулки и сезонные варианты отдыха на Ладоге.", [
+  { src: "/assets/img/selected-2026/activity-main-bicycles.webp", alt: "Велосипеды для активного отдыха в Хийденвуори" },
+  { src: "/assets/img/selected-2026/activity-reserve-sup-stack.webp", alt: "SUP-доски, подготовленные для проката" },
+  { src: "/assets/img/selected-2026/activity-reserve-sup-portrait.webp", alt: "SUP-доска у берега Ладожского озера" },
+  { src: "/assets/img/selected-2026/activity-reserve-boat-ride.webp", alt: "Прогулка на катере по Ладожским шхерам" }
+], '<p><strong>Для знакомства с Карелией и Ладожскими шхерами мы предлагаем прокат снаряжения и разные форматы активного отдыха.</strong></p><ul><li><strong>Велосипеды:</strong> для прогулок по живописным дорогам и лесным маршрутам.</li><li><strong>Сапборды:</strong> для спокойных прогулок по воде.</li><li><strong>Вейкборды:</strong> для тех, кто хочет больше движения.</li><li><strong>Катер и рыболовное снаряжение:</strong> для прогулок по шхерам и отдыха на Ладоге.</li></ul><p>Набор проката зависит от сезона и погоды.</p><p><button class="photo-gallery__action" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">Уточнить наличие</button></p>') }}
+
+{{ photoGallery("saha", "Магазин-кафе «Saha»", "Местные товары, изделия ручной работы, сувениры и небольшое уютное кафе.", [
+  { src: "/assets/img/selected-2026/cafe-main-local-products.webp", alt: "Товары местных производителей в Saha" },
+  { src: "/assets/img/selected-2026/cafe-reserve-shop-wide.webp", alt: "Интерьер магазина Saha" },
+  { src: "/assets/img/selected-2026/cafe-reserve-saha-exterior.webp", alt: "Вход в магазин-кафе Saha" },
+  { src: "/assets/img/selected-2026/cafe-reserve-counter.webp", alt: "Стойка кафе Saha" },
+  { src: "/assets/img/selected-2026/cafe-reserve-craft-detail.webp", alt: "Изделия ручной работы в магазине Saha" }
+], '<p><strong>Kauppa «Saha» — магазин сувенирной продукции.</strong> Здесь представлены изделия ручной работы из кожи и дерева, украшения, одежда и аксессуары, карельская косметика, продукты местных производителей, рыба, консервы, сладости и напитки.</p><p><strong>Kahvila «Saha» — небольшое кафе при магазине.</strong> Здесь можно выпить кофе или чай, попробовать карельские калитки и другую выпечку.</p><p><strong>Работаем ежедневно с 8:00 до 22:00.</strong></p><p><a class="photo-gallery__action" href="tel:+79210141190">+7 (921) 014-11-90</a></p>') }}
+
+{{ detailCards("Платные и дополнительные услуги", "Эти услуги удобно планировать заранее: часть зависит от сезона, графика и загрузки территории.", [
+  {
+    anchor: "dus",
+    title: "Душ с горячей водой",
+    meta: "Первые 15 мин. — 350 руб.; следующие 10 мин. — по 50 руб.",
+    text: "На территории оборудованы чистые душевые кабины с горячей водой."
+  },
+  {
+    anchor: "transfer",
+    image: { src: "/assets/img/c5a6bs66mc0884kg8cwoccs8c88sg0.webp", alt: "Трансфер в горный парк Рускеала", ratio: "4 / 3" },
+    title: "Трансфер в горный парк Рускеала",
+    text: "Горный парк Рускеала — один из самых известных маршрутов Карелии с мраморными каньонами, подземными галереями и прогулочными тропами. Трансфер помогает съездить туда без лишней логистики и вернуться обратно в Хийденвуори."
+  }
+], 2, "paid-services-uslugi", "rgba(244,246,252,1)") }}
+
+{{ detailCards("Концертные программы", "Музыкальные события остаются отдельным направлением внутри раздела развлечений.", [
+  {
+    anchor: "koncerty",
+    image: { src: "/assets/organ-concerts-hiiden/hiidenvuori-screen.png?v=20260329", alt: "Органные концерты в Ангаре Хийденвуори", ratio: "16 / 9" },
+    title: "Органные концерты в Ангаре",
+    html: '<p class="nh-text-editor__fontsize-14"><strong>Такого органа и в таком зале вы точно не слышали.</strong> Органный зал на самом берегу Ладоги открывает свои двери.</p><p class="nh-text-editor__fontsize-14">Классические произведения, музыка кино, рок-баллады и беседы о композиторах проходят в зале при входе в кафе Saha налево.</p><p class="nh-text-editor__fontsize-14">Группа ВК: <a href="https://vk.com/oragnvangare" target="_blank" rel="noopener noreferrer" style="color: rgb(51, 132, 191);">vk.com/oragnvangare</a></p>'
+  },
+  {
+    image: { src: "/assets/organ-concerts/exterior.png", alt: "Органные концерты в Сортавала", ratio: "16 / 9" },
+    title: "Органные концерты в Сортавала",
+    html: '<p class="nh-text-editor__fontsize-14">Органные концерты в Сортавале — необычный музыкальный маршрут среди старинной архитектуры и северной природы.</p><p class="nh-text-editor__fontsize-14">В программе произведения Вивальди, Баха, Генделя, шедевры современных органистов и узнаваемая музыка из кинофильмов.</p><p class="nh-text-editor__fontsize-14">Группа ВК: <a href="https://vk.com/organvsortavale" target="_blank" rel="noopener noreferrer" style="color: rgb(51, 132, 191);">vk.com/organvsortavale</a></p>'
+  }
+], 2, "concerts-uslugi") }}
+
+{% set title = 'Хотите забронировать услугу?' %}
+{% set text = 'Напишите нам: подскажем актуальное расписание, стоимость, свободное время и сезонные ограничения по прокату и дополнительным услугам.' %}
+{% set buttons = [
+  { href: 'tel:+79210141190', label: '+7 (921) 014-11-90' }
+] %}
+{% include "components/cta.njk" %}

@@ -1,0 +1,40 @@
+<div id="for-explain"></div>
+<input class="-currentFont" type="hidden" value="Geologica"/>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var notice = '<div class="client-cookies-notice__design client-cookies-notice__design_light">' +
+        '<div class="client-cookies-notice__description"><p>Для повышения удобства сайта мы используем cookies. Оставаясь на сайте, вы соглашаетесь с <a href="/">политикой их применения</a>.</p></div>' +
+        '<button id="client-cookies-notice-button" class="client-cookies-notice__button">Принять</button>' +
+        '</div>';
+
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+
+    function setCookie(name, value) {
+        var date = new Date(Date.now() + 60*60*24*7*1000);
+        date = date.toUTCString();
+        document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + "; path=/; expires=" + date;
+    }
+
+    if (getCookie("cookie_ok") === undefined) {
+        var element = document.createElement("div");
+        element.id = "client-cookies-notice";
+        element.className = "client-cookies-notice";
+        element.insertAdjacentHTML("beforeEnd", notice);
+        document.body.appendChild(element);
+        element.classList.add("client-cookies-notice_open");
+
+        document.getElementById("client-cookies-notice-button").addEventListener("click", function() {
+            setCookie("cookie_ok", "1");
+            element.classList.remove("client-cookies-notice_open");
+            setTimeout(function() { element.remove(); }, 700);
+        });
+    }
+});
+</script>
+<script src="/assets/js/site-shell.js"></script>
+<script src="/assets/js/site-conversion.js"></script>

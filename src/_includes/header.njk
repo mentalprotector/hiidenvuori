@@ -1,0 +1,272 @@
+<link href="/assets/css/topbar.20562c.min.css" rel="stylesheet" type="text/css"/>
+<style>
+.nh-topbar.site-header {
+  background: transparent !important;
+  left: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  padding-top: 1.25rem !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  z-index: 10000 !important;
+}
+.nh-topbar.site-header .nh-topbar-wrapper {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 82rem !important;
+}
+.nh-topbar.site-header .nh-topbar-link {
+  color: #102748 !important;
+  font-family: FontParagraph, Manrope, Arial, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  padding-left: 0.625rem !important;
+  padding-right: 0.625rem !important;
+  text-decoration: none !important;
+}
+.nh-topbar.site-header .nh-topbar-link:hover,
+.nh-topbar.site-header .nh-topbar-link--active {
+  color: #3384bf !important;
+}
+
+.nh-topbar-overlay {
+  background: rgba(16, 39, 72, 0.96);
+  bottom: 0;
+  display: none;
+  left: 0;
+  overflow-y: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10002 !important;
+}
+
+.nh-topbar-overlay.is-open {
+  display: block;
+}
+
+.nh-topbar-overlay-close {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  display: flex;
+  height: 44px;
+  justify-content: center;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 44px;
+}
+
+.nh-topbar-overlay-close svg,
+.nh-topbar-overlay-close path {
+  fill: #ffffff !important;
+}
+
+.nh-topbar-overlay-content {
+  padding: 5.5rem 1.5rem 2rem;
+}
+
+.nh-topbar-overlay-content a,
+.nh-topbar-overlay-content .nh-topbar-link {
+  color: #ffffff !important;
+  display: block !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  line-height: 1.25 !important;
+  opacity: 1 !important;
+  padding: 0.8rem 0 !important;
+  text-decoration: none !important;
+  visibility: visible !important;
+}
+
+.nh-topbar.site-header .nh-topbar-overlay-content a,
+.nh-topbar.site-header .nh-topbar-overlay-content .nh-topbar-link {
+  color: #ffffff !important;
+}
+
+body.nh-topbar-overlay-open {
+  overflow: hidden !important;
+}
+
+@media screen and (max-width: 47.998rem) {
+  .nh-topbar.site-header .nh-topbar__row-middle {
+    display: flex !important;
+    width: calc(100vw - 32px) !important;
+  }
+
+  .nh-topbar.site-header .nh-topbar__row-middle > .nh-topbar__column:first-child {
+    align-items: center !important;
+    display: flex !important;
+    flex: 1 1 auto !important;
+    gap: 0.75rem !important;
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+
+  .nh-topbar.site-header .nh-topbar-logo-svg {
+    width: 215px !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .nh-topbar-mobile-actions {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    gap: 0;
+    margin-left: auto;
+  }
+
+  .nh-topbar-mobile-action {
+    align-items: center;
+    color: #243b5c;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    width: 28px;
+  }
+
+  .nh-topbar-mobile-menu {
+    cursor: pointer;
+  }
+
+  .nh-topbar-mobile-menu svg {
+    display: block !important;
+    height: 22px !important;
+    width: 22px !important;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  .nh-topbar-mobile-actions {
+    display: none;
+  }
+
+  .nh-topbar.site-header .nh-topbar__row-middle > .nh-topbar__column:nth-child(2) {
+    transform: translateX(clamp(3rem, 7vw, 7rem));
+  }
+}
+</style>
+<header class="nh-topbar site-header nh-editor-panel nh-topbar--sticky nh-topbar--padding-top-2 nh-topbar--padding-bottom-0 nh-topbar--inner" style="max-width:84.5rem;--topbar-border-color: rgba(255,255,255, 0); --topbar-border-width: 0px;--topbar-shadow-rgba-color: rgba(52,62,69, 0);--topbar-shadow-y: 3px;--topbar-shadow-blur: 12px;--topbar-row-top-border-color: rgba(255,255,255, 0); --topbar-row-top-border-width: 0px;--topbar-row-top-shadow-rgba-color: rgba(255,255,255, 0);--topbar-row-middle-border-color: rgba(255,255,255, 1); --topbar-row-middle-border-width: 0px;--topbar-row-middle-shadow-rgba-color: rgba(52,62,69, 0);--topbar-row-bottom-border-color: rgba(255,255,255, 0); --topbar-row-bottom-border-width: 0px;--topbar-row-bottom-shadow-rgba-color: rgba(255,255,255, 0);">
+<section data-ng-controller="TopContactsController"></section>
+<section class="nh-topbar-wrapper nh-topbar--round-2 lazyload" style="background-position: top left;background-repeat: repeat-x;background-size: 0px;background-color: rgba(255,255,255, 0);">
+<div class="nh-topbar__row nh-topbar__row--composition-0 nh-topbar--gap-1 nh-topbar--hide-3 nh-topbar__row--margin-top-0 nh-topbar__row--margin-bottom-1 nh-topbar__row-middle nh-topbar--round-3 lazyload" style="background-position: top center;background-repeat: no-repeat;background-size: 0px;background-color: rgba(244,246,252, 0.95);">
+<div class="nh-topbar__column nh-topbar--gap-2 nh-topbar--hide-2 nh-topbar--round-0 nh-topbar__column--vertical-align-center nh-topbar__column--horizontal-align-left nh-topbar--padding-top-1 nh-topbar--padding-bottom-1 nh-topbar--padding-left-1 nh-topbar--padding-right-0 lazyload" style="border: 0 solid rgba(255,255,255, 0);box-shadow: 0px var(--topbar-shadow-y, 4px) var(--topbar-shadow-blur, 24px) 0px transparent;background-position: top center;background-repeat: no-repeat;background-size: 0px;background-color: rgba(255,255,255, 0);">
+<a class="nh-topbar--hide-2" href="/">
+<img class="nh-topbar-logo-svg" loading="lazy" src="/assets/img/logo.svg" style="width:215px;"/>
+</a>
+<div class="nh-topbar-mobile-actions" aria-label="Быстрые действия">
+<button class="nh-topbar-mobile-action nh-topbar-mobile-menu" type="button" aria-label="Открыть меню" aria-controls="nh-topbar-links-2-2-1">
+<svg fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path d="M5 7h14M5 12h14M5 17h14" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<div class="nh-topbar__column nh-topbar--gap-2 nh-topbar--hide-1 nh-topbar--round-0 nh-topbar__column--vertical-align-center nh-topbar__column--horizontal-align-center nh-topbar--padding-top-0 nh-topbar--padding-bottom-0 nh-topbar--padding-left-0 nh-topbar--padding-right-0 lazyload" style="border: 0 solid rgba(255,255,255, 0);box-shadow: 0px var(--topbar-shadow-y, 4px) var(--topbar-shadow-blur, 24px) 0px transparent;background-position: top center;background-repeat: no-repeat;background-size: 0px;background-color: rgba(255,255,255, 0);">
+<div class="nh-topbar-links nh-topbar--hide-1" id="nh-topbar-links-2-2-1">
+{% for item in navigation %}
+<a class="nh-topbar-link nh-topbar-link__font nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2{% if activePage == item.url %} nh-topbar-link--active{% endif %}" href="{{ item.url }}" style="--nh-topbar-link-color:#102748;--nh-topbar-link-hover:#3384BF;--nh-topbar-link-active:#3384BF;" target="_parent">
+{{ item.label }}
+</a>{% endfor %}
+</div><button class="nh-topbar-links__btn nh-topbar--hide-1 nh-topbar-link__font--14 nh-topbar-link__font--none nh-topbar-link__font--paragraph nh-topbar-link__font--underline-2" id="move-links-btn-2-2-1" style="color:#F5F1FE">
+<svg fill="currentColor" height="6" viewbox="0 0 12 6" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M6 6l5.2-6H.8L6 6z"></path></svg>
+</button>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var source = document.getElementById('nh-topbar-links-2-2-1');
+    var overlay = document.getElementById('nh-topbar-overlay');
+    var content = document.getElementById('nh-topbar-overlay-content');
+    var closeButton = document.getElementById('nh-topbar-overlay-close');
+
+    function openSiteTopbarOverlay() {
+        if (!source || !overlay || !content) {
+            return;
+        }
+
+        content.innerHTML = source.innerHTML;
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('nh-topbar-overlay-open');
+    }
+
+    function closeSiteTopbarOverlay() {
+        if (!overlay) {
+            return;
+        }
+
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('nh-topbar-overlay-open');
+    }
+
+    document.getElementById('move-links-btn-2-2-1').addEventListener('click', openSiteTopbarOverlay);
+    document.querySelectorAll('.nh-topbar-mobile-menu').forEach(function (button) {
+        button.addEventListener('click', openSiteTopbarOverlay);
+    });
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeSiteTopbarOverlay);
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', function (event) {
+            if (event.target === this) {
+                closeSiteTopbarOverlay();
+            }
+        });
+    }
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            closeSiteTopbarOverlay();
+        }
+    });
+});
+</script>
+</div>
+<div class="nh-topbar__column nh-topbar--gap-2 nh-topbar--hide-3 nh-topbar--round-0 nh-topbar__column--vertical-align-center nh-topbar__column--horizontal-align-right nh-topbar--padding-top-1 nh-topbar--padding-bottom-1 nh-topbar--padding-left-0 nh-topbar--padding-right-2 lazyload" style="border: 0 solid rgba(255,255,255, 0);box-shadow: 0px var(--topbar-shadow-y, 4px) var(--topbar-shadow-blur, 24px) 0px transparent;background-position: top center;background-repeat: no-repeat;background-size: 0px;background-color: rgba(255,255,255, 0);">
+<button class="site-contact-cta nh-topbar--hide-1" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">
+<span>Связаться</span>
+</button>
+</div>
+</div>
+</section>
+<div class="nh-topbar-overlay" id="nh-topbar-overlay">
+<button class="nh-topbar-overlay-close" id="nh-topbar-overlay-close">
+<svg fill="none" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="#343E45" fill-rule="evenodd"></path>
+</svg>
+</button>
+<div class="nh-topbar-overlay-content" id="nh-topbar-overlay-content"></div>
+</div>
+<div class="site-contact-modal" id="site-contact-modal" aria-hidden="true">
+<div class="site-contact-modal__backdrop" data-contact-modal-close></div>
+<div class="site-contact-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="site-contact-modal-title">
+<button class="site-contact-modal__close" type="button" data-contact-modal-close aria-label="Закрыть">
+<svg fill="none" height="20" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+<path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+</svg>
+</button>
+<p class="site-contact-modal__eyebrow">Бронь и вопросы</p>
+<h2 class="site-contact-modal__title" id="site-contact-modal-title">Свяжитесь с Хийденвуори</h2>
+<p class="site-contact-modal__text">Позвоните или напишите в удобный чат, чтобы забронировать размещение, уточнить услуги или задать вопрос. Обычно отвечаем в рабочее время в течение дня.</p>
+<div class="site-contact-modal__actions">
+<a class="site-contact-modal__action site-contact-modal__action--phone" href="tel:{{ site.phone1Raw }}">
+<img src="/assets/img/contact-phone.svg" alt="" aria-hidden="true">
+<span>{{ site.phone1 }}</span>
+</a>
+{% for link in socialLinks %}
+<a class="site-contact-modal__action site-contact-modal__action--{{ link.type }}" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+<img src="/assets/img/contact-{{ link.type }}.svg" alt="" aria-hidden="true">
+<span>{{ link.label }}</span>
+</a>
+{% endfor %}
+</div>
+</div>
+</div>
+</header>

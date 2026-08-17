@@ -1,0 +1,6 @@
+_site/
+node_modules/
+/assets/
+.eleventy-serve.*.log
+.mimocode/
+staging-*.png
