@@ -7,9 +7,11 @@ ogDescription: "Отдых в Карелии на берегу Ладоги: р�
 activePage: "/"
 pageType: "index"
 canonicalPath: /
+hasPhotoGallery: true
 ---
 {% from "components/horizontal-cards.njk" import horizontalCards %}
 {% from "components/features.njk" import features %}
+{% from "components/photo-gallery.njk" import photoGallery %}
 
 <section class="nh-carousel-fullscreen widget-sort onmain on-view widget-block js-carousel-fullscreen nh-editor-panel js-indent" id="carousel-fullscreen-16">
 <link href="/assets/css/carousel-fullscreen.fc020d.min.css" rel="stylesheet" type="text/css"/>
@@ -77,7 +79,7 @@ body.site_main-page #content-anchor {
   justify-content: center;
 }
 </style>
-<div class="nh-carousel-fullscreen__relative nh-carousel-fullscreen--fixed-position" data-widget-replaceable-content="16" style="background: url('/assets/img/selected-2026/hero-main-aerial-ladoga.webp') center center / cover no-repeat; background-color: rgba(0,0,0, 0);">
+<div class="nh-carousel-fullscreen__relative nh-carousel-fullscreen--fixed-position" data-widget-replaceable-content="16" style="background: url('/assets/img/selected-2026/hero-main-aerial-ladoga-upscaled.webp') center center / cover no-repeat; background-color: rgba(0,0,0, 0);">
 <div class="content-block nh-carousel-fullscreen__content" data-desktop-control="0" data-mobile-control="0" data-ng-non-bindable="" id="carousel-fullscreen-show">
 <div class="small-12 column splide__track">
 <ul class="splide__list nh-carousel-fullscreen__items" style="--carousel-fullscreen-height: 700px">
@@ -294,8 +296,19 @@ body.site_main-page #content-anchor {
   </div>
 </section>
 
+{{ photoGallery("territory-gallery", "Территория и атмосфера Ладоги", "Общие виды пространства, береговые детали и места, которые гости встречают во время прогулки по Хийденвуори.", [
+  { src: "/assets/img/selected-2026/hero-reserve-islands-aerial-upscaled.webp", alt: "Острова и шхеры Ладоги с высоты" },
+  { src: "/assets/img/selected-2026/camping-fire-pit-waterfront.webp", alt: "Костровая зона кемпинга у берега Ладоги" },
+  { src: "/assets/img/selected-2026/hero-reserve-rocky-shore.webp", alt: "Каменистый берег и острова рядом с Хийденвуори" },
+  { src: "/assets/img/selected-2026/details-reserve-people-water.webp", alt: "Гости отдыхают у воды на Ладоге" },
+  { src: "/assets/img/selected-2026/details-reserve-rocks-flowers.webp", alt: "Северные цветы среди камней на берегу" },
+  { src: "/assets/img/selected-2026/details-reserve-swings-ladoga.webp", alt: "Качели с видом на Ладожское озеро" },
+  { src: "/assets/img/selected-2026/territory-guest-waterfront.webp", alt: "Гостья отдыхает у воды с видом на Ладогу" },
+  { src: "/assets/img/selected-2026/kitchen-pavilion-front.webp", alt: "Крытый павильон на территории Хийденвуори" },
+  { src: "/assets/img/selected-2026/kitchen-pavilion-guests.webp", alt: "Гости за столами в крытом павильоне Хийденвуори" }
+]) }}
+
 <section class="home-consultation widget-sort onmain on-view widget-block js-indent" id="home-consultation">
-<link href="/assets/css/application-form.338de2.min.css" rel="stylesheet" type="text/css"/>
 <style>
 .home-services-heading {
   background: #f5f7fb;
@@ -567,69 +580,48 @@ body.site_main-page #content-anchor {
   height: auto;
 }
 
-.home-consultation__form {
+.home-consultation__contacts {
   padding: 35px 32px 30px;
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 18px 40px rgba(5, 18, 32, .18);
 }
 
-.home-consultation__field {
-  width: 100%;
-  height: 31px;
-  margin: 0 0 24px;
-  padding: 0 10px;
-  border: 1px solid #b2bcc3;
-  border-radius: 4px;
+.home-consultation__contacts-title {
+  margin: 0 0 1.25rem;
   color: #102748;
-  font: 500 .875rem FontParagraph, Arial, sans-serif;
+  font: 800 1.15rem/1.3 FontHeader, Arial, sans-serif;
 }
 
-.home-consultation__field::placeholder {
-  color: #9aa8b7;
+.home-consultation__contact-list {
+  display: grid;
+  gap: .75rem;
 }
 
-.home-consultation__links {
-  margin: -2px 0 10px;
-  font-size: .67rem;
-  line-height: 1.4;
-}
-
-.home-consultation__links a {
-  color: #0067fa;
-  text-decoration: underline;
-}
-
-.home-consultation__consent {
+.home-consultation__contact {
   display: flex;
-  gap: .5rem;
-  align-items: flex-start;
-  margin: 0 0 28px;
-  color: #647886;
-  font: 500 .75rem/1.35 FontParagraph, Arial, sans-serif;
-}
-
-.home-consultation__consent input {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  flex: 0 0 auto;
-}
-
-.home-consultation__button {
-  width: 240px;
-  max-width: 100%;
-  min-height: 40px;
-  border: 0;
-  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: .7rem 1rem;
+  border-radius: 23px;
   background: #3384bf;
   color: #fff;
-  cursor: pointer;
-  font: 800 .875rem FontParagraph, Arial, sans-serif;
+  font: 800 1rem/1.2 FontParagraph, Arial, sans-serif;
+  text-align: center;
+  text-decoration: none;
 }
 
-.home-consultation__button:hover {
+.home-consultation__contact:hover {
   background: #2b75ab;
+}
+
+.home-consultation__contact--email {
+  background: #243b5c;
+}
+
+.home-consultation__contact--email:hover {
+  background: #192d49;
 }
 
 .home-location {
@@ -819,7 +811,7 @@ body.site_main-page #content-anchor {
     font-size: 1.65rem;
   }
 
-  .home-consultation__form {
+  .home-consultation__contacts {
     padding: 26px 20px;
   }
 
@@ -831,22 +823,17 @@ body.site_main-page #content-anchor {
 <div class="home-consultation__wrap">
   <div class="home-consultation__content">
     <h2 class="home-consultation__title">Получите консультацию<br><span>нашего менеджера</span></h2>
-    <p class="home-consultation__text">Если у вас есть вопросы по размещению, ценам, бронированию, трансферам или отдыху в «Хийденвуори» — оставьте заявку. Наш менеджер свяжется с вами, всё подробно расскажет и поможет выбрать оптимальный вариант для вашей поездки.</p>
+    <p class="home-consultation__text">Если у вас есть вопросы по размещению, ценам, бронированию, трансферам или отдыху в «Хийденвуори» — позвоните или напишите нам. Всё подробно расскажем и поможем выбрать оптимальный вариант для вашей поездки.</p>
     <img class="home-consultation__logo" src="/assets/img/logo.svg" alt="Хийденвуори.рф" loading="lazy">
   </div>
-  <form class="home-consultation__form js-conversion-form" action="https://formsubmit.co/mail@hiidenvuori.ru" method="POST">
-    <input class="home-consultation__field" type="text" name="name" placeholder="Ваше имя" autocomplete="name">
-    <input class="home-consultation__field" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
-    <p class="home-consultation__links"><a href="/agreement.html">Пользовательское соглашение</a> · <a href="/privacy.html">Политика конфиденциальности</a></p>
-    <label class="home-consultation__consent">
-      <input type="checkbox" name="agreement" required>
-      <span>Соглашаюсь на обработку персональных данных</span>
-    </label>
-    <button class="home-consultation__button" type="submit">Заказать консультацию</button>
-    <input name="_subject" type="hidden" value="Новая заявка (Хийденвуори)">
-    <input name="_captcha" type="hidden" value="false">
-    <input name="_template" type="hidden" value="table">
-  </form>
+  <div class="home-consultation__contacts">
+    <h3 class="home-consultation__contacts-title">Свяжитесь с нами удобным способом</h3>
+    <div class="home-consultation__contact-list">
+      <a class="home-consultation__contact" href="tel:{{ site.phone1Raw }}">{{ site.phone1 }}</a>
+      <a class="home-consultation__contact" href="tel:{{ site.phone2Raw }}">{{ site.phone2 }}</a>
+      <a class="home-consultation__contact home-consultation__contact--email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+  </div>
 </div>
 </section>
 

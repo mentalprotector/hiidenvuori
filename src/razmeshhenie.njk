@@ -6,7 +6,9 @@ ogTitle: "Размещение и удобства"
 ogDescription: "Кемпинг, автокемпинг, песчаный пляж, общая кухня и береговая инфраструктура Хийденвуори."
 activePage: "/razmeshhenie.html"
 pageType: "text"
+hasPhotoGallery: true
 ---
+{% from "components/photo-gallery.njk" import photoGalleryItems %}
 <style>
   .razmeshhenie-top-spacer {
     height: 120px;
@@ -43,6 +45,11 @@ pageType: "text"
     background: #ffffff;
   }
 
+  .stay-option__gallery .photo-gallery__item {
+    min-width: 0;
+    border-radius: 10px;
+  }
+
   .stay-option__gallery img {
     display: block;
     width: 100%;
@@ -51,8 +58,11 @@ pageType: "text"
     border-radius: 10px;
   }
 
-  .stay-option__gallery img:first-child {
+  .stay-option__gallery .photo-gallery__item:first-child {
     grid-column: 1 / -1;
+  }
+
+  .stay-option__gallery .photo-gallery__item:first-child img {
     height: 330px !important;
   }
 
@@ -152,9 +162,12 @@ pageType: "text"
     padding: 0 22px;
     align-items: center;
     justify-content: center;
+    border: 0;
     border-radius: 24px;
     background: #3384bf;
     color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
     font-size: 15px;
     font-weight: 800;
     text-decoration: none;
@@ -237,6 +250,11 @@ pageType: "text"
     padding: 8px;
   }
 
+  .razmeshhenie-extra__gallery .photo-gallery__item {
+    min-width: 0;
+    border-radius: 6px;
+  }
+
   .razmeshhenie-extra__gallery img {
     width: 100%;
     height: var(--gallery-thumb-height) !important;
@@ -247,8 +265,11 @@ pageType: "text"
     display: block;
   }
 
-  .razmeshhenie-extra__gallery img:first-child {
+  .razmeshhenie-extra__gallery .photo-gallery__item:first-child {
     grid-column: 1 / -1;
+  }
+
+  .razmeshhenie-extra__gallery .photo-gallery__item:first-child img {
     height: var(--gallery-main-height) !important;
   }
 
@@ -446,7 +467,7 @@ pageType: "text"
       grid-template-rows: clamp(280px, 52vw, 420px) auto;
     }
 
-    .stay-option__gallery img:first-child {
+    .stay-option__gallery .photo-gallery__item:first-child img {
       height: clamp(280px, 52vw, 420px) !important;
     }
 
@@ -491,12 +512,11 @@ pageType: "text"
       padding: 6px;
     }
 
-    .stay-option__gallery img,
-    .stay-option__gallery img:first-child {
+    .stay-option__gallery img {
       height: 106px !important;
     }
 
-    .stay-option__gallery img:first-child {
+    .stay-option__gallery .photo-gallery__item:first-child img {
       height: 230px !important;
     }
 
@@ -575,10 +595,11 @@ pageType: "text"
 <section class="stay-options" aria-label="Варианты размещения">
   <div class="stay-options__inner">
     <article class="stay-option" id="camping">
-      <div class="stay-option__gallery stay-option__gallery--two">
-        <img src="/assets/img/selected-2026/camping-main-tent-platform.webp" alt="Палатка на деревянном настиле у Ладоги">
-        <img src="/assets/img/selected-2026/camping-reserve-tents-wide.webp" alt="Палаточные места кемпинга Хийденвуори" loading="lazy">
-      </div>
+      {{ photoGalleryItems([
+        { src: "/assets/img/selected-2026/camping-main-tent-platform.webp", alt: "Палатка на деревянном настиле у Ладоги" },
+        { src: "/assets/img/selected-2026/camping-reserve-tents-wide.webp", alt: "Палаточные места кемпинга Хийденвуори" },
+        { src: "/assets/img/selected-2026/camping-reserve-tent-portrait.webp", alt: "Палатка на настиле, вертикальный ракурс" }
+      ], "Кемпинг у Ладоги", "stay-option__gallery") }}
       <div class="stay-option__content">
         <span class="stay-option__eyebrow">Для путешествий с палаткой</span>
         <h2>Кемпинг у Ладоги</h2>
@@ -595,15 +616,17 @@ pageType: "text"
           <li>Общая кухня, туалеты и береговая инфраструктура</li>
         </ul>
         <p class="stay-option__note">Палатку гости привозят с собой. Свободное место лучше уточнить заранее.</p>
-        <a class="stay-option__action" href="tel:+79210141190">Уточнить свободные места</a>
+        <button class="stay-option__action" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">Уточнить свободные места</button>
       </div>
     </article>
 
     <article class="stay-option" id="avtocamping">
-      <div class="stay-option__gallery stay-option__gallery--two">
-        <img src="/assets/img/selected-2026/autocamping-reserve-existing-pitch.webp" alt="Оборудованные площадки автокемпинга Хийденвуори" loading="lazy">
-        <img src="/assets/img/selected-2026/beach-reserve-open-water.webp" alt="Берег Ладоги рядом с автокемпингом" loading="lazy">
-      </div>
+      {{ photoGalleryItems([
+        { src: "/assets/img/selected-2026/camping-tent-area-new.webp", alt: "Палаточная территория автокемпинга Хийденвуори" },
+        { src: "/assets/img/selected-2026/autocamping-main-pitches-wide.webp", alt: "Общий вид оборудованных мест автокемпинга" },
+        { src: "/assets/img/selected-2026/autocamping-reserve-pitch-waterfront.webp", alt: "Место автокемпинга рядом с берегом" },
+        { src: "/assets/img/selected-2026/autocamping-reserve-pitches-context.webp", alt: "Расположение площадок автокемпинга на территории" }
+      ], "Автокемпинг", "stay-option__gallery") }}
       <div class="stay-option__content">
         <span class="stay-option__eyebrow">Для автодомов и кемперов</span>
         <h2>Автокемпинг</h2>
@@ -620,7 +643,7 @@ pageType: "text"
           <li>Кухня, туалеты, пляж и общие зоны территории</li>
         </ul>
         <p class="stay-option__note">Подключение к электричеству зависит от выбранного тарифа и доступности места.</p>
-        <a class="stay-option__action" href="tel:+79210141190">Забронировать место</a>
+        <button class="stay-option__action" type="button" data-contact-modal-open aria-haspopup="dialog" aria-controls="site-contact-modal">Забронировать место</button>
       </div>
     </article>
   </div>
@@ -634,33 +657,41 @@ pageType: "text"
     </div>
     <div class="razmeshhenie-extra__grid">
       <article class="razmeshhenie-extra__card" id="plyazh">
-        <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/selected-2026/beach-main-sandy-shore.webp" alt="Песчаный пляж на берегу Ладоги" loading="lazy" style="object-position: center center;">
-          <img src="/assets/img/selected-2026/beach-reserve-wide.webp" alt="Широкий вид на пляж Хийденвуори" loading="lazy" style="object-position: center center;">
-          <img src="/assets/img/selected-2026/beach-reserve-open-water.webp" alt="Пляж и открытая вода Ладоги" loading="lazy" style="object-position: center center;">
-        </div>
+        {{ photoGalleryItems([
+          { src: "/assets/img/selected-2026/beach-main-sandy-shore.webp", alt: "Песчаный пляж на берегу Ладоги" },
+          { src: "/assets/img/selected-2026/beach-reserve-wide.webp", alt: "Широкий вид на пляж Хийденвуори" },
+          { src: "/assets/img/selected-2026/beach-reserve-open-water.webp", alt: "Пляж и открытая вода Ладоги" },
+          { src: "/assets/img/selected-2026/beach-sandy-shore-new.webp", alt: "Песчаная полоса пляжа и открытая вода Ладоги" }
+        ], "Песчаный пляж", "razmeshhenie-extra__gallery") }}
         <div class="razmeshhenie-extra__body">
           <h3>Песчаный пляж</h3>
           <p>Береговая зона у Ладоги подходит для спокойного отдыха у воды, прогулок и фотографий. До пляжа удобно дойти из кемпинга и автокемпинга.</p>
         </div>
       </article>
       <article class="razmeshhenie-extra__card" id="kitchen">
-        <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/selected-2026/kitchen-reserve-cookware.webp" alt="Посуда на общей кухне" loading="lazy" style="object-position: center center;">
-          <img src="/assets/img/selected-2026/kitchen-main-overview.webp" alt="Общий вид кухни Хийденвуори" loading="lazy" style="object-position: center 52%;">
-          <img src="/assets/img/selected-2026/kitchen-reserve-dish-rack.webp" alt="Сушилка с посудой на общей кухне" loading="lazy" style="object-position: center center;">
-        </div>
+        {{ photoGalleryItems([
+          { src: "/assets/img/selected-2026/kitchen-reserve-cookware.webp", alt: "Посуда на общей кухне" },
+          { src: "/assets/img/selected-2026/kitchen-main-overview.webp", alt: "Общий вид кухни Хийденвуори", position: "center 52%" },
+          { src: "/assets/img/selected-2026/kitchen-reserve-dish-rack.webp", alt: "Сушилка с посудой на общей кухне" },
+          { src: "/assets/img/selected-2026/kitchen-reserve-tables.webp", alt: "Столы и места для гостей на общей кухне" },
+          { src: "/assets/img/selected-2026/kitchen-cutting-boards.webp", alt: "Разделочные доски на общей кухне", position: "center 46%" },
+          { src: "/assets/img/selected-2026/kitchen-fridge-freezer.webp", alt: "Холодильник и морозильная камера на общей кухне", position: "center 50%" },
+          { src: "/assets/img/selected-2026/kitchen-gas-stove.webp", alt: "Газовая плита и чайники на общей кухне", position: "center 48%" }
+        ], "Общая кухня", "razmeshhenie-extra__gallery") }}
         <div class="razmeshhenie-extra__body">
           <h3>Общая кухня входит в стоимость</h3>
           <p>Для проживающих доступна крытая общая кухня с посудой, холодильником и морозильной камерой. Можно готовить на территории без отдельной доплаты.</p>
         </div>
       </article>
       <article class="razmeshhenie-extra__card" id="prichal-slip">
-        <div class="razmeshhenie-extra__gallery">
-          <img src="/assets/img/selected-2026/pier-reserve-slip.webp" alt="Оборудованный слип у Ладоги" loading="lazy" style="object-position: center center;">
-          <img src="/assets/img/selected-2026/pier-reserve-dock-front.webp" alt="Причал Хийденвуори со стороны берега" loading="lazy" style="object-position: center center;">
-          <img src="/assets/img/selected-2026/pier-reserve-boat-at-dock.webp" alt="Катера у причала Хийденвуори" loading="lazy" style="object-position: center center;">
-        </div>
+        {{ photoGalleryItems([
+          { src: "/assets/img/selected-2026/pier-reserve-slip.webp", alt: "Оборудованный слип у Ладоги" },
+          { src: "/assets/img/selected-2026/pier-reserve-dock-front.webp", alt: "Причал Хийденвуори со стороны берега" },
+          { src: "/assets/img/selected-2026/pier-reserve-boat-at-dock.webp", alt: "Катера у причала Хийденвуори" },
+          { src: "/assets/img/selected-2026/pier-reserve-harbour.webp", alt: "Причал и гавань Хийденвуори" },
+          { src: "/assets/img/selected-2026/pier-catamaran-at-dock.webp", alt: "Парусный катамаран у причала Хийденвуори" },
+          { src: "/assets/img/selected-2026/pier-passenger-ship-dinghy.webp", alt: "Ладожский берег с лодкой и проходящим теплоходом" }
+        ], "Причал и слип", "razmeshhenie-extra__gallery") }}
         <div class="razmeshhenie-extra__body">
           <h3>Причал и слип</h3>
           <p>Оборудованный спуск для катеров и удобный подъезд к воде помогают планировать выход на Ладогу и прогулки по шхерам на собственной лодке.</p>

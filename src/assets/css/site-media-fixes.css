@@ -56,6 +56,10 @@ button,
     padding-top: 0 !important;
 }
 
+.site-content {
+    display: flow-root;
+}
+
 .site-header {
     background: transparent !important;
     left: 0 !important;

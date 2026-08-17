@@ -1,0 +1,22 @@
+{% macro photoGalleryItems(images, title, className="photo-gallery__grid") %}
+<div class="{{ className }}" data-photo-gallery="{{ title }}">
+  {% for image in images %}
+  <button class="photo-gallery__item" type="button" data-photo-src="{{ image.src }}" data-photo-alt="{{ image.alt }}" aria-label="Открыть фото: {{ image.alt }}">
+    <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy" decoding="async"{% if image.position %} style="object-position: {{ image.position }}"{% endif %}>
+  </button>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+{% macro photoGallery(id, title, text, images, body="") %}
+<section class="photo-gallery" id="{{ id }}" aria-labelledby="{{ id }}-title">
+  <div class="photo-gallery__inner">
+    <div class="photo-gallery__head">
+      <h2 id="{{ id }}-title">{{ title }}</h2>
+      {% if text %}<p class="photo-gallery__intro">{{ text }}</p>{% endif %}
+    </div>
+    {{ photoGalleryItems(images, title) }}
+    {% if body %}<div class="photo-gallery__body">{{ body | safe }}</div>{% endif %}
+  </div>
+</section>
+{% endmacro %}

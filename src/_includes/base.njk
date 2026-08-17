@@ -2,6 +2,7 @@
 <html lang="ru-RU">
 <head>
   {% include "meta.njk" %}
+  {% if hasPhotoGallery %}<link href="/assets/css/photo-gallery.css" rel="stylesheet" type="text/css">{% endif %}
 </head>
 <body class="site site_main-page" data-cart="old" data-enable-compare="false" data-grid="12" data-lang="ru_RU" data-page-type="{{ pageType }}" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="site__layout">
@@ -19,5 +20,6 @@
 </div>
 </div>
 {% include "scripts.njk" %}
+{% if hasPhotoGallery %}<script src="/assets/js/photo-gallery.js" defer></script>{% endif %}
 </body>
 </html>
