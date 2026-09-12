@@ -7,6 +7,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/js");
   eleventyConfig.addPassthroughCopy("src/assets/img");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy("src/assets/icons");
   eleventyConfig.addPassthroughCopy("src/assets/splide");
   eleventyConfig.addPassthroughCopy("src/assets/organ-concerts");
   eleventyConfig.addPassthroughCopy("src/assets/organ-concerts-hiiden");

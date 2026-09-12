@@ -1,0 +1,30 @@
+.site-icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.site-icon-visual {
+  display: flex;
+  min-height: 230px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(145deg, #eef5fa, #dcecf7);
+}
+
+.site-icon-visual .site-icon {
+  width: 104px;
+  height: 104px;
+}
+
+.razmeshhenie-price-card__icon .site-icon,
+.razmeshhenie-included-card__icon .site-icon {
+  width: 44px;
+  height: 44px;
+}
+
+@media (max-width: 640px) {
+  .site-icon-visual { min-height: 190px; }
+  .site-icon-visual .site-icon { width: 88px; height: 88px; }
+}

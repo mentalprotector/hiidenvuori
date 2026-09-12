@@ -37,6 +37,10 @@
 <img alt="{{ item.image.alt or item.title or '' }}" class="nh-cards_round-2" loading="lazy" src="{{ item.image.src }}" style="width: 100%; height: auto; object-fit: cover;{% if item.image.ratio %} aspect-ratio: {{ item.image.ratio }};{% endif %}"/>
 </picture>
 </div>
+{% elif item.icon %}
+<div class="site-icon-visual" aria-hidden="true">
+<svg class="site-icon"><use href="/assets/icons/site-icons.svg#icon-{{ item.icon }}"></use></svg>
+</div>
 {% endif %}
 {% if item.title or item.text or item.html or item.meta %}
 <div class="nh-cards__info">
