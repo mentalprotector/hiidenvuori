@@ -1,0 +1,24 @@
+---
+pagination:
+  data: legacyRedirects
+  size: 1
+  alias: legacyRedirect
+permalink: "/{{ legacyRedirect.slug }}/index.html"
+eleventyExcludeFromCollections: true
+layout: false
+---
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Переход на {{ legacyRedirect.target }}</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="{{ site.url }}{{ legacyRedirect.target }}">
+  <meta http-equiv="refresh" content="0; url={{ legacyRedirect.target }}">
+  <script>location.replace({{ legacyRedirect.target | dump | safe }} + location.search + location.hash);</script>
+</head>
+<body>
+  <p>Страница перемещена: <a href="{{ legacyRedirect.target }}">перейти по новому адресу</a>.</p>
+</body>
+</html>

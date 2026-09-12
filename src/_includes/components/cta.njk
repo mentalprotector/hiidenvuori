@@ -1,0 +1,28 @@
+{% set bgStyle = "" %}
+{% if bgImage %}
+{% set bgStyle = "background-image: url('" + bgImage + "'); " %}
+{% endif %}
+<section class="nh-cta widget-sort onmain on-view widget-block nh-editor-panel js-indent">
+<link href="/assets/css/call-to-action.d88795.min.css" rel="stylesheet" type="text/css"/>
+<div class="lazyload nh-cta--indent-top-l nh-cta--indent-bottom-m" style="{{ bgStyle }}background-position: top center;background-repeat: repeat-y;background-size: 1420px;background-color: rgba(245,247,251, 1);">
+<div class="js-indent-add"></div> <div class="nh-cta-inner__edges">
+<div class="nh-cta-inner__width nh-cta__position nh-cta__position--2 nh-cta-inner__width--content">
+<div class="nh-cta-header nh-cta-header--indent-bottom nh-cta-header--left">
+<div class="nh-cta-header__title nh-cta-title--user-inner nh-cta-inner__width--two-thirds nh-cta-header__title--left" style="color: #243B5C;">
+<h2 class="nh-text-editor__fontsize-32">{{ title }}</h2> </div>
+</div>
+<div class="nh-cta__info-wrapper">
+<div class="nh-cta-header__description nh-cta-header__description--indent-bottom nh-cta-desc--user-inner" style="color: #102748;">
+<p class="nh-text-editor__fontsize-16">{{ text }}</p> </div>
+{% if buttons and buttons.length > 0 %}
+<div class="nh-cta__btn-wrapper nh-cta__btn-wrapper--alignment-0">
+{% for btn in buttons %}
+<a class="nh-cta__btn nh-cta__btn--secondary nh-cta__btn--size-xl" href="{{ btn.href }}" target="{{ btn.target | default('_parent') }}">{{ btn.label }}</a>
+{% endfor %}
+</div>
+{% endif %}
+</div>
+</div>
+</div>
+</div>
+</section>

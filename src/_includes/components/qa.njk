@@ -1,0 +1,41 @@
+{% set half = (items.length / 2) | round(0, 'ceil') %}
+<section class="nh-qa widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent">
+<link href="/assets/css/qa.5ea290.min.css" rel="stylesheet" type="text/css"/>
+<div class="lazyload nh-qa--indent-top-l nh-qa--indent-bottom-l" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(244,246,252, 1);">
+<div class="js-indent-add"></div> <div class="nh-qa-inner__edges">
+<div class="nh-qa-inner__width nh-qa-inner__width--content">
+<div class="nh-qa-header nh-qa-header--indent-bottom nh-qa-header--left">
+<div class="nh-h2 nh-qa-header__title nh-qa-title--user-inner nh-qa-header__title--content nh-qa-header__title--left" style="color: #243B5C;">
+<h2 class="nh-text-editor__fontsize-32">{{ title }}</h2> </div>
+</div>
+<div class="nh-qa-columns nh-qa-columns--2">
+<div class="nh-qa-columns__group">
+{% for item in items %}
+{% if loop.index <= half %}
+<details class="nh-qa-item__details">
+<summary class="nh-h6 nh-qa-item__summary nh-qa-item-title--user-inner" style="color: #102748;">
+<h6 class="nh-text-editor__fontsize-16">{{ item.question }}</h6> </summary>
+<div class="nh-qa-item__desc nh-qa-item-desc--user-inner" style="color: #102748;">
+<p class="nh-text-editor__fontsize-14">{{ item.answer }}</p> </div>
+</details>
+{% endif %}
+{% endfor %}
+</div>
+<div class="nh-qa-columns__group">
+{% for item in items %}
+{% if loop.index > half %}
+<details class="nh-qa-item__details">
+<summary class="nh-h6 nh-qa-item__summary nh-qa-item-title--user-inner" style="color: #102748;">
+<h6 class="nh-text-editor__fontsize-16">{{ item.question }}</h6> </summary>
+<div class="nh-qa-item__desc nh-qa-item-desc--user-inner" style="color: #102748;">
+<p class="nh-text-editor__fontsize-14">{{ item.answer }}</p> </div>
+</details>
+{% endif %}
+{% endfor %}
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>

@@ -1,0 +1,38 @@
+---
+layout: base.njk
+permalink: /spusk-dlya-katerov.html
+title: "Спуск для катеров"
+ogTitle: "Причал и слип"
+ogDescription: "Причал, спуск для катеров и береговая инфраструктура Хийденвуори на Ладожском озере."
+activePage: "/razmeshhenie.html"
+pageType: "text"
+---
+{% from "components/features.njk" import features %}
+{% from "components/detail-cards.njk" import detailCards %}
+
+{% set title = "Причал и слип" %}
+{% include "components/text-page-header.njk" %}
+
+{{ features([
+  {
+    image: { src: "/assets/img/selected-2026/pier-reserve-slip.webp", alt: "Оборудованный спуск для катеров на Ладожском озере" },
+    title: "Выход на Ладогу с территории Хийденвуори",
+    text: '<p class="nh-text-editor__fontsize-16"><strong>Береговая инфраструктура помогает планировать отдых у воды и выход на Ладогу.</strong></p><p class="nh-text-editor__fontsize-16">На территории предусмотрен оборудованный спуск для катеров и удобный подъезд к воде. Можно отправиться на прогулку по Ладожским шхерам на собственном катере или лодке.</p><p class="nh-text-editor__fontsize-16">Условия использования причала и слипа лучше уточнить заранее при бронировании.</p>',
+    buttons: [
+      { label: "Связаться", type: "basic", modal: true }
+    ]
+  }
+], "slip-feature") }}
+
+{{ detailCards("Возможности", "Для гостей с лодками и катерами.", [
+  {
+    image: { src: "/assets/img/selected-2026/pier-reserve-boat-at-dock.webp", alt: "Катера у причала Хийденвуори", ratio: "4 / 3" },
+    title: "Спуск на воду",
+    text: "Оборудованный подъезд к воде помогает удобно спустить катер или лодку."
+  },
+  {
+    image: { src: "/assets/img/selected-2026/pier-reserve-dock-front.webp", alt: "Причал Хийденвуори со стороны берега", ratio: "4 / 3" },
+    title: "Береговая инфраструктура",
+    text: "Можно заранее уточнить условия пользования причалом и размещения прицепа."
+  }
+], 2, "slip-details", "rgba(244,246,252,1)") }}

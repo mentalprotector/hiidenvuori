@@ -1,0 +1,26 @@
+{% set colClass = "nh-cards__items--two-columns" if columns == 2 else "nh-cards__items--adaptive" %}
+<section class="nh-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent">
+<div class="lazyload nh-cards--indent-top-m nh-cards--indent-bottom-m" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 0);">
+<div class="js-indent-add"></div> <div class="nh-cards__inner">
+<div class="nh-cards__content">
+<ul class="nh-cards__items nh-cards_m nh-cards__items_0 {{ colClass }}">
+{% for item in items %}
+<li class="lazyload nh-cards__item nh-cards_without-padding nh-cards_round-2 nh-cards__item--two-columns" style="--shadow-rgba-color: rgba(76,91,102, 0);--shadow-offsetX: 0px;--shadow-offsetY: 4px;--shadow-blur: 25px;--border-color: rgba(0,0,0, 0); --border-width: 0px;background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(255,255,255, 0);">
+<div>
+<figure>
+<div class="nh-cards__picture-container">
+<img alt="" class="nh-cards_round-0" loading="lazy" src="{{ item.image }}"/>
+</div>
+<div class="nh-cards__info">
+<div class="nh-cards__title nh-cards-item-title--user-inner nh-cards-item-title-user-inner--size-m" style="color: #243B5C;text-align: left;"><h6 class="nh-text-editor__fontsize-16">{{ item.title }}</h6> </div>
+<div class="nh-cards__text nh-cards-item-desc--user-inner nh-cards-item-desc-user-inner--size-m" style="color: #102748;"><p class="nh-text-editor__fontsize-14">{{ item.text }}</p> </div>
+</div>
+</figure>
+</div>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+</div>
+</section>

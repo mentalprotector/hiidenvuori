@@ -1,0 +1,117 @@
+<link href="/assets/css/footer-columns.b67536.min.css" rel="stylesheet" type="text/css"/>
+<footer class="site-footer site-footer_light" id="footer">
+<div data-module="2" data-region="2" data-widget-store-list="footer">
+<section class="nh-footer-columns widget-block nh-editor-panel lazyload js-indent" data-widget-store-item="" id="footer-columns-47">
+<div class="nh-footer-columns__wrapper lazyload nh-footer-columns--indent-top-l nh-footer-columns--indent-bottom-l" data-ng-non-bindable="" data-widget-replaceable-content="47" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(36,59,92, 1);">
+<div class="js-indent-add"></div>
+<div class="nh-footer-columns__inner nh-footer-columns__container" style="grid-template-columns: repeat( 4, 1fr);">
+<div class="nh-footer-columns__column">
+<div class="nh-footer-columns__section nh-footer-columns__section--align-left" style="--title-color: #FFFFFF;">
+<div class="nh-footer-columns__title-container">
+<div class="nh-footer-columns__section-title" style="--title-color: #FFFFFF;">{{ footerColumns.menu.title }}</div>
+<div class="nh-footer-columns__title-svg" style="--title-color: #FFFFFF;"></div>
+</div>
+<ul class="nh-footer-columns__links-list">
+{% for link in footerColumns.menu.links %}
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="{{ link.url }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ link.label }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+<div class="nh-footer-columns__column">
+<div class="nh-footer-columns__section nh-footer-columns__section--align-left" style="--title-color: #FFFFFF;">
+<div class="nh-footer-columns__title-container">
+<div class="nh-footer-columns__section-title" style="--title-color: #FFFFFF;">{{ footerColumns.services.title }}</div>
+<div class="nh-footer-columns__title-svg" style="--title-color: #FFFFFF;"></div>
+</div>
+<ul class="nh-footer-columns__links-list">
+{% for link in footerColumns.services.links %}
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="{{ link.url }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ link.label }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+<div class="nh-footer-columns__column">
+<div class="nh-footer-columns__section nh-footer-columns__section--align-left" style="--title-color: #FFFFFF;">
+<div class="nh-footer-columns__title-container">
+<div class="nh-footer-columns__section-title" style="--title-color: #FFFFFF;">Контактная информация</div>
+<div class="nh-footer-columns__title-svg" style="--title-color: #FFFFFF;"></div>
+</div>
+<ul class="nh-footer-columns__links-list">
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="/contacts.html" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ site.address }}</a>
+</li>
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="tel:{{ site.phone1Raw }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ site.phone1 }}</a>
+</li>
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="tel:{{ site.phone2Raw }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ site.phone2 }}</a>
+</li>
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="mailto:{{ site.email }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">Эл. почта: {{ site.email }}</a>
+</li>
+{% for social in socialLinks %}
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="{{ social.url }}" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">{{ social.label }}</a>
+</li>
+{% endfor %}
+</ul>
+</div>
+</div>
+<div class="nh-footer-columns__column">
+<div class="nh-footer-columns__section nh-footer-columns__section--align-left" style="--title-color: #FFFFFF;">
+<div class="nh-footer-columns__title-container">
+<div class="nh-footer-columns__section-title" style="--title-color: #FFFFFF;">Правовая информация</div>
+<div class="nh-footer-columns__title-svg" style="--title-color: #FFFFFF;"></div>
+</div>
+<ul class="nh-footer-columns__links-list">
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="/agreement.html" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">Пользовательское соглашение</a>
+</li>
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="/privacy.html" style="--item-color: #B2BCC3; --item-hover: #3384BF;" target="_parent">Политика конфиденциальности</a>
+</li>
+</ul>
+</div>
+<div class="nh-footer-columns__section nh-footer-columns__section--align-left" style="--title-color: #FFFFFF;">
+<div class="nh-footer-columns__title-container">
+<div class="nh-footer-columns__section-title" style="--title-color: #FFFFFF;">Разработка сайта</div>
+<div class="nh-footer-columns__title-svg" style="--title-color: #FFFFFF;"></div>
+</div>
+<ul class="nh-footer-columns__links-list">
+<li class="nh-footer-columns__links-item">
+<a class="nh-footer-columns__link" href="https://integradesign.ru/" style="--item-color: #B2BCC3; --item-hover: #DB073D;" target="_blank">2025 © Интегра | Сайты для бизнеса</a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="site-footer__inner">
+<div class="row">
+<section class="small-12 column">
+<div class="-inline-group"><div class="small-12 large-8 text-center medium-text-left"><div class="footer-text client nh-editor-panel" id="footer-text" style="min-height: 22px;"><div class="footer-text__about" id="footertext1">2025 © {{ site.title }} | {{ site.subtitle }}</div><div class="footer-text__desc" id="footertext2">Материалы, размещенные на сайте, носят информационный характер и не являются публичной офертой.</div></div></div><div class="small-12 medium-12 large-4 site-footer_indent"><div class="text-center large-text-right site-footer__logo"><div class="inline-block"></div></div></div></div>
+<div class="row column site-footer_indent">
+<div class="small-12 large-6 small-centered site-footer__statcounters">
+<section class="block-55 statcounters widget-left widget-block -nt-widget nh-editor-panel" data-block-id="55" id="statcounters-left">
+<link href="/assets/css/statcounters.012cf8.min.css" rel="stylesheet" type="text/css"/>
+<div class="content-block" id="statcounters-left-show">
+<div class="statcounters-list text-center">
+<script type="text/javascript">window.dataLayer = window.dataLayer || [];</script>
+<script>window.addEventListener('load',function(){setTimeout(function(){window.dataLayer=window.dataLayer||[];(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym({{ site.ymId }},"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,ecommerce:"dataLayer"})},2000)});</script>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+</div>
+<script>window.addEventListener('load',function(){setTimeout(function(){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f)})(window,document,'script','dataLayer','GTM-K8C752M7')},3000)});</script>
+</div>
+</footer>

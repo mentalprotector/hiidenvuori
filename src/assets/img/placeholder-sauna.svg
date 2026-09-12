@@ -1,0 +1,11 @@
+<svg width="960" height="640" viewBox="0 0 960 640" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Плейсхолдер фото бани</title>
+  <desc id="desc">Временное изображение для блока Баня на дровах</desc>
+  <rect width="960" height="640" rx="32" fill="#F4F6FC"/>
+  <rect x="80" y="80" width="800" height="480" rx="28" fill="#E2E8F2"/>
+  <path d="M300 430H660V280L480 170L300 280V430Z" fill="#243B5C"/>
+  <path d="M355 430V305H605V430" fill="#F4F6FC"/>
+  <path d="M420 430V345H540V430" fill="#3384BF"/>
+  <path d="M620 180C650 145 645 110 620 80C700 120 710 185 660 235" stroke="#3384BF" stroke-width="24" stroke-linecap="round"/>
+  <text x="480" y="515" text-anchor="middle" fill="#102748" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Фото бани скоро</text>
+</svg>
