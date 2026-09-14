@@ -9,12 +9,15 @@ const legacyPages = [
   "razmeshhenie.html", "rules.html", "spusk-dlya-katerov.html",
   "stoyanka-dlya-avtodomov.html", "transfer-v-ruskealu.html", "uslugi.html"
 ];
-const cleanRedirects = [...legacyPages.map((name) => name.replace(/\.html$/, "")), "palatki-na-nastilah"];
+const cleanRedirects = [
+  "aktivnyj-otdykh", "comment", "konczertnye-programmy", "magazin-kafe-saha",
+  "palatki-na-nastilah", "stoyanka-dlya-avtodomov", "transfer-v-ruskealu"
+];
 const publicPaths = [
-  "/", "/agreement.html", "/contacts.html",
-  "/privacy.html", "/razmeshhenie.html",
-  "/rules.html", "/spusk-dlya-katerov.html",
-  "/uslugi.html"
+  "/", "/agreement/", "/contacts/",
+  "/privacy/", "/razmeshhenie/",
+  "/rules/", "/spusk-dlya-katerov/",
+  "/uslugi/"
 ];
 const errors = [];
 let renderedHtml = "";
@@ -86,6 +89,13 @@ renderedHtml = files
 for (const file of files) {
   if (!/\.(?:html|css)$/i.test(file)) continue;
   const source = fs.readFileSync(file, "utf8");
+  for (const match of source.matchAll(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/gi)) {
+    try {
+      JSON.parse(match[1]);
+    } catch (error) {
+      errors.push(`Invalid JSON-LD in ${path.relative(root, file)}: ${error.message}`);
+    }
+  }
   const references = [
     ...source.matchAll(/(?:href|src|poster|data-src)=["']([^"']+)["']/gi),
     ...source.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)
@@ -126,5 +136,5 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Verified ${legacyPages.length} legacy HTML URLs, ${cleanRedirects.length} clean-URL redirects and ${files.length} build files.`);
+console.log(`Verified ${legacyPages.length} legacy HTML URLs, ${cleanRedirects.length} obsolete clean-URL redirects and ${files.length} build files.`);
 console.log("Canonical URLs, OG URLs, sitemap, robots, CNAME, local links and local resources are present.");

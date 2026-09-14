@@ -1,6 +1,9 @@
 {% set pageTitle = ogTitle | default(title | default(site.title)) %}
 {% set pageDescription = description | default(ogDescription | default(title ~ ' | ' ~ site.title)) %}
 {% set pageUrl = site.url ~ (canonicalPath | default(page.url)) %}
+{% set siteUrl = site.url ~ '/' %}
+{% set businessId = siteUrl ~ '#business' %}
+{% set websiteId = siteUrl ~ '#website' %}
 {% set socialImage = site.url ~ '/assets/img/selected-2026/hero-main-aerial-ladoga-upscaled.webp' %}
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
@@ -129,16 +132,44 @@
         .nh-topbar-link { display: inline-block !important; padding: 10px !important; }
     }
 </style>
+{% if not noindex %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "{{ 'ContactPage' if pageType == 'contacts' else 'WebPage' }}",
+  "@id": {{ (pageUrl ~ '#webpage') | dump | safe }},
+  "name": {{ pageTitle | dump | safe }},
+  "description": {{ pageDescription | dump | safe }},
+  "url": {{ pageUrl | dump | safe }},
+  "inLanguage": "ru-RU",
+  "isPartOf": { "@id": {{ websiteId | dump | safe }} },
+  "about": { "@id": {{ businessId | dump | safe }} }
+}
+</script>
+{% if page.url == '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": {{ websiteId | dump | safe }},
+  "name": "Хийденвуори.рф",
+  "alternateName": "Хийденвуори",
+  "url": {{ siteUrl | dump | safe }},
+  "inLanguage": "ru-RU",
+  "publisher": { "@id": {{ businessId | dump | safe }} }
+}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Campground",
-  "@id": {{ (pageUrl ~ '#campground') | dump | safe }},
+  "@id": {{ businessId | dump | safe }},
   "name": "Хийденвуори",
   "description": {{ pageDescription | dump | safe }},
-  "url": {{ pageUrl | dump | safe }},
+  "url": {{ siteUrl | dump | safe }},
   "telephone": {{ site.phone1Raw | dump | safe }},
-  "image": {{ socialImage | dump | safe }},
+  "email": {{ site.email | dump | safe }},
+  "image": [{{ socialImage | dump | safe }}],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "д. Хийденсельга",
@@ -157,6 +188,30 @@
   ]
 }
 </script>
+{% endif %}
+{% if page.url != '/' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": {{ siteUrl | dump | safe }}
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ title | dump | safe }},
+      "item": {{ pageUrl | dump | safe }}
+    }
+  ]
+}
+</script>
+{% endif %}
+{% endif %}
 <meta content="website" property="og:type"/>
 <meta content="{{ pageTitle }}" property="og:title"/>
 <meta content="{{ pageDescription }}" property="og:description"/>

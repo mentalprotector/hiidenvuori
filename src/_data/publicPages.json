@@ -1,10 +1,10 @@
 [
   "/",
-  "/agreement.html",
-  "/contacts.html",
-  "/privacy.html",
-  "/razmeshhenie.html",
-  "/rules.html",
-  "/spusk-dlya-katerov.html",
-  "/uslugi.html"
+  "/agreement/",
+  "/contacts/",
+  "/privacy/",
+  "/razmeshhenie/",
+  "/rules/",
+  "/spusk-dlya-katerov/",
+  "/uslugi/"
 ]

@@ -1,5 +1,5 @@
 [
-  { "label": "Размещение", "url": "/razmeshhenie.html" },
-  { "label": "Услуги", "url": "/uslugi.html" },
-  { "label": "Контакты", "url": "/contacts.html" }
+  { "label": "Размещение", "url": "/razmeshhenie/" },
+  { "label": "Услуги", "url": "/uslugi/" },
+  { "label": "Контакты", "url": "/contacts/" }
 ]
