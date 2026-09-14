@@ -35,13 +35,30 @@
   var previousButton = modal.querySelector(".photo-lightbox__nav--prev");
   var nextButton = modal.querySelector(".photo-lightbox__nav--next");
 
+  count.setAttribute("aria-live", "polite");
+
+  function preload(index) {
+    if (!activeItems.length) return;
+    var item = activeItems[(index + activeItems.length) % activeItems.length];
+    if (!item || !item.src) return;
+    var nextImage = new Image();
+    nextImage.src = item.src;
+  }
+
   function render() {
     var item = activeItems[activeIndex];
+    image.classList.remove("is-loaded");
     image.src = item.src;
     image.alt = item.alt;
     caption.textContent = item.alt;
     count.textContent = (activeIndex + 1) + " / " + activeItems.length;
+    preload(activeIndex - 1);
+    preload(activeIndex + 1);
   }
+
+  image.addEventListener("load", function () {
+    image.classList.add("is-loaded");
+  });
 
   function open(items, index, trigger) {
     activeItems = items;

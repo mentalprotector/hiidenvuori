@@ -1,0 +1,14 @@
+{% macro innerHero(modifier, label, title, accent, text, href, linkLabel) %}
+<section class="inner-editorial-hero inner-editorial-hero--{{ modifier }}" aria-labelledby="inner-hero-title-{{ modifier }}">
+  <div class="inner-editorial-hero__media" aria-hidden="true"></div>
+  <div class="inner-editorial-hero__wrap">
+    <p class="inner-editorial-hero__eyebrow">{{ label }}</p>
+    <h1 class="inner-editorial-hero__title" id="inner-hero-title-{{ modifier }}">{{ title }}<span>{{ accent }}</span></h1>
+    <p class="inner-editorial-hero__text">{{ text }}</p>
+    <div class="inner-editorial-hero__meta">
+      <span>Хийденвуори · Карелия · Ладога</span>
+      <a href="{{ href }}">{{ linkLabel }} <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+</section>
+{% endmacro %}

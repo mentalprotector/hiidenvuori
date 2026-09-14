@@ -2,6 +2,7 @@
 {% set cols = columns if columns else items.length %}
 {% set tabletCols = 2 if cols > 2 else cols %}
 {% set figureWidth = '3' if cols <= 3 else '4' %}
+{% set imageSizes = '(max-width: 47.9375rem) calc(100vw - 2rem), (max-width: 63.9375rem) calc((100vw - 3rem) / 2), 656px' if figureWidth == '3' else '44px' %}
 <section class="nh-horizontal-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id }}">
 <link href="/assets/css/horizontal-cards.374645.min.css" rel="stylesheet" type="text/css"/>
 <div data-ng-non-bindable="" style="--hc-bg-before-color: rgba(245,247,251, 1);">
@@ -13,12 +14,13 @@
 {% for item in items %}
 <li class="nh-horizontal-cards__item nh-horizontal-cards__item_link-hover nh-horizontal-cards_round-2" style="--border-color: rgba(251,215,149, 0); --border-width: 1px; --shadow-rgba-color: rgba(52,62,69, 0.03); --shadow-offsetX: 0px; --shadow-offsetY: 4px; --shadow-blur: 25px;">
 <div class="lazyload" style="height: 100%; --hc-item-bg-before-color: rgba(255,255,255, 1); background-position: center; background-repeat: no-repeat; background-size: cover; background-color: rgba(255,255,255, 1);">
-{% if item.link %}<a href="{{ item.link }}" target="_parent">{% endif %}
+{% if item.link %}<a class="nh-horizontal-cards__link" href="{{ item.link }}" target="_parent">{% endif %}
 <figure class="nh-horizontal-cards__item--width-{{ figureWidth }}" style="--img-border-color: rgba(0,0,0, 0); --img-border-width: 6px; --image-shadow-rgba-color: rgba(0,0,0, 0); --image-shadow-offsetX: 0px; --image-shadow-offsetY: 4px; --image-shadow-blur: 25px;">
-<div class="nh-horizontal-cards__picture-container">
-<picture class="nh-horizontal-cards__picture-container nh-horizontal-cards_round-2" style="">
-<img alt="{{ item.image.alt or '' }}" class="nh-horizontal-cards_round-2" loading="lazy" sizes="(max-width: 767px) 656px, (min-width: 768px) 656px" src="{{ item.image.src }}"/>
+<div class="nh-horizontal-cards__picture-container"{% if figureWidth == '3' %} style="aspect-ratio: 16 / 9;"{% endif %}>
+<picture class="nh-horizontal-cards__picture-container nh-horizontal-cards_round-2"{% if figureWidth == '3' %} style="aspect-ratio: 16 / 9;"{% endif %}>
+<img alt="{{ item.image.alt or '' }}" class="nh-horizontal-cards_round-2" loading="lazy" decoding="async" sizes="{{ imageSizes }}" src="{{ item.image.src }}"/>
 </picture>
+{% if item.link %}<span class="nh-horizontal-cards__media-hint" aria-hidden="true"><span>↗</span></span>{% endif %}
 </div>
 <div class="nh-horizontal-cards__info nh-horizontal-cards__info--alignment-1" style="">
 {% if item.eyebrow %}<div class="nh-horizontal-cards__eyebrow">{{ item.eyebrow }}</div>{% endif %}

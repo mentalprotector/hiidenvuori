@@ -1,6 +1,13 @@
+{% from "components/editorial-pattern.njk" import editorialPattern %}
 <link href="/assets/css/footer-columns.b67536.min.css" rel="stylesheet" type="text/css"/>
 <footer class="site-footer site-footer_light" id="footer">
 <div data-module="2" data-region="2" data-widget-store-list="footer">
+<div class="editorial-footer-lead">
+{{ editorialPattern("flow", "editorial-pattern--on-dark") }}
+<p class="editorial-footer-lead__eyebrow">До встречи у Ладоги</p>
+<a class="editorial-footer-lead__phone" href="tel:{{ site.phone1Raw }}">{{ site.phone1 }}</a>
+<p class="editorial-footer-lead__note">Бронь, вопросы и планы на северную тишину</p>
+</div>
 <section class="nh-footer-columns widget-block nh-editor-panel lazyload js-indent" data-widget-store-item="" id="footer-columns-47">
 <div class="nh-footer-columns__wrapper lazyload nh-footer-columns--indent-top-l nh-footer-columns--indent-bottom-l" data-ng-non-bindable="" data-widget-replaceable-content="47" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: rgba(36,59,92, 1);">
 <div class="js-indent-add"></div>
@@ -84,7 +91,7 @@
 </div>
 <ul class="nh-footer-columns__links-list">
 <li class="nh-footer-columns__links-item">
-<a class="nh-footer-columns__link" href="https://integradesign.ru/" style="--item-color: #B2BCC3; --item-hover: #DB073D;" target="_blank">2025 © Интегра | Сайты для бизнеса</a>
+<a class="nh-footer-columns__link" href="https://matveycv.ru/" style="--item-color: #B2BCC3; --item-hover: #DB073D;" target="_blank" rel="noopener noreferrer">Борисов Матвей</a>
 </li>
 </ul>
 </div>
@@ -96,7 +103,7 @@
 <div class="site-footer__inner">
 <div class="row">
 <section class="small-12 column">
-<div class="-inline-group"><div class="small-12 large-8 text-center medium-text-left"><div class="footer-text client nh-editor-panel" id="footer-text" style="min-height: 22px;"><div class="footer-text__about" id="footertext1">2025 © {{ site.title }} | {{ site.subtitle }}</div><div class="footer-text__desc" id="footertext2">Материалы, размещенные на сайте, носят информационный характер и не являются публичной офертой.</div></div></div><div class="small-12 medium-12 large-4 site-footer_indent"><div class="text-center large-text-right site-footer__logo"><div class="inline-block"></div></div></div></div>
+<div class="-inline-group"><div class="small-12 large-8 text-center medium-text-left"><div class="footer-text client nh-editor-panel" id="footer-text" style="min-height: 22px;"><div class="footer-text__about" id="footertext1">2026 © {{ site.title }} | {{ site.subtitle }}</div><div class="footer-text__desc" id="footertext2">Материалы, размещенные на сайте, носят информационный характер и не являются публичной офертой.</div></div></div><div class="small-12 medium-12 large-4 site-footer_indent"><div class="text-center large-text-right site-footer__logo"><div class="inline-block"></div></div></div></div>
 <div class="row column site-footer_indent">
 <div class="small-12 large-6 small-centered site-footer__statcounters">
 <section class="block-55 statcounters widget-left widget-block -nt-widget nh-editor-panel" data-block-id="55" id="statcounters-left">

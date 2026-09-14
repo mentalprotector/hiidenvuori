@@ -1,12 +1,16 @@
-<meta content="width=device-width, height=device-height, initial-scale=1.0" name="viewport"/>
+{% set pageTitle = ogTitle | default(title | default(site.title)) %}
+{% set pageDescription = description | default(ogDescription | default(title ~ ' | ' ~ site.title)) %}
+{% set pageUrl = site.url ~ (canonicalPath | default(page.url)) %}
+{% set socialImage = site.url ~ '/assets/img/selected-2026/hero-main-aerial-ladoga-upscaled.webp' %}
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>{% if page.url == '/' %}{{ ogTitle | default(site.title) }}{% else %}{{ title }} | {{ site.title }}{% endif %}</title>
 {% if redirectTo %}
 <meta http-equiv="refresh" content="0; url={{ redirectTo }}"/>
 {% endif %}
-<meta content="{{ description | default(ogDescription | default(title ~ ' | ' ~ site.title)) }}" name="description"/>
+<meta content="{{ pageDescription }}" name="description"/>
 {% if noindex %}<meta content="noindex,follow" name="robots"/>{% endif %}
-<link href="/assets/img/favicon-57x57.webp" rel="apple-touch-icon" sizes="57x57" type="image/png"/><link href="/assets/img/favicon-60x60.webp" rel="apple-touch-icon" sizes="60x60" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="apple-touch-icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-76x76.webp" rel="apple-touch-icon" sizes="76x76" type="image/png"/><link href="/assets/img/favicon-114x114.webp" rel="apple-touch-icon" sizes="114x114" type="image/png"/><link href="/assets/img/favicon-120x120.webp" rel="apple-touch-icon" sizes="120x120" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="apple-touch-icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-152x152.webp" rel="apple-touch-icon" sizes="152x152" type="image/png"/><link href="/assets/img/favicon-180x180.webp" rel="apple-touch-icon" sizes="180x180" type="image/png"/><link href="/assets/img/favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png"/><link href="/assets/img/favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png"/><link href="/assets/img/favicon-36x36.webp" rel="icon" sizes="36x36" type="image/png"/><link href="/assets/img/favicon-48x48.webp" rel="icon" sizes="48x48" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-96x96.webp" rel="icon" sizes="96x96" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-192x192.webp" rel="icon" sizes="192x192" type="image/png"/> <style>svg {display: none;}</style>
+<link href="/assets/img/favicon-57x57.webp" rel="apple-touch-icon" sizes="57x57" type="image/png"/><link href="/assets/img/favicon-60x60.webp" rel="apple-touch-icon" sizes="60x60" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="apple-touch-icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-76x76.webp" rel="apple-touch-icon" sizes="76x76" type="image/png"/><link href="/assets/img/favicon-114x114.webp" rel="apple-touch-icon" sizes="114x114" type="image/png"/><link href="/assets/img/favicon-120x120.webp" rel="apple-touch-icon" sizes="120x120" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="apple-touch-icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-152x152.webp" rel="apple-touch-icon" sizes="152x152" type="image/png"/><link href="/assets/img/favicon-180x180.webp" rel="apple-touch-icon" sizes="180x180" type="image/png"/><link href="/assets/img/favicon-16x16.webp" rel="icon" sizes="16x16" type="image/png"/><link href="/assets/img/favicon-32x32.webp" rel="icon" sizes="32x32" type="image/png"/><link href="/assets/img/favicon-36x36.webp" rel="icon" sizes="36x36" type="image/png"/><link href="/assets/img/favicon-48x48.webp" rel="icon" sizes="48x48" type="image/png"/><link href="/assets/img/favicon-72x72.webp" rel="icon" sizes="72x72" type="image/png"/><link href="/assets/img/favicon-96x96.webp" rel="icon" sizes="96x96" type="image/png"/><link href="/assets/img/favicon-144x144.webp" rel="icon" sizes="144x144" type="image/png"/><link href="/assets/img/favicon-192x192.webp" rel="icon" sizes="192x192" type="image/png"/>
 <link as="font" crossorigin="" href="/assets/fonts/manrope-800-cyrillic.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/manrope-800-latin.woff2" rel="preload" type="font/woff2"/>
 <link as="font" crossorigin="" href="/assets/fonts/manrope-400-cyrillic.woff2" rel="preload" type="font/woff2"/>
@@ -18,7 +22,7 @@
     @font-face {font-family:FontParagraph;font-style:normal;font-weight:400;font-display:block;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 </style>
 <link href="/assets/css/layouts.ce5f3d.min.css" rel="stylesheet" type="text/css"/>
-<link href="{{ site.url }}{{ canonicalPath | default(page.url) }}" rel="canonical"/>
+<link href="{{ pageUrl }}" rel="canonical"/>
 <style type="text/css">
     :root {
         --button-default-font-family : FontParagraph, var(--fallback-font-paragraph), "ProximaNova-Bold", Futura, Avenir, Helvetica, -apple-system, BlinkMacSystemFont, Roboto, Arial, Droid Sans, sans-serif;
@@ -125,26 +129,49 @@
         .nh-topbar-link { display: inline-block !important; padding: 10px !important; }
     }
 </style>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LodgingBusiness",
+  "@type": "Campground",
+  "@id": {{ (pageUrl ~ '#campground') | dump | safe }},
   "name": "Хийденвуори",
-  "url": "https://xn--b1aigpbrd8abgk.xn--p1ai",
-  "telephone": "+79210141190",
+  "description": {{ pageDescription | dump | safe }},
+  "url": {{ pageUrl | dump | safe }},
+  "telephone": {{ site.phone1Raw | dump | safe }},
+  "image": {{ socialImage | dump | safe }},
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "п. Хийденсельга",
+    "streetAddress": "д. Хийденсельга",
+    "addressLocality": "Хийденсельга",
     "addressRegion": "Республика Карелия",
     "addressCountry": "RU"
-  }
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 61.711246,
+    "longitude": 30.978499
+  },
+  "hasMap": "https://yandex.ru/maps/?ll=30.978499%2C61.711246&z=16",
+  "sameAs": [
+    {% for social in socialLinks %}{{ social.url | dump | safe }}{% if not loop.last %},{% endif %}{% endfor %}
+  ]
 }
 </script>
 <meta content="website" property="og:type"/>
-<meta content="{{ ogTitle | default(title ~ ' — Хийденвуори') }}" property="og:title"/>
-<meta content="{{ ogDescription | default('Отдых в Карелии на берегу Ладоги. Кемпинг, прокат, природа.') }}" property="og:description"/>
-<meta content="{{ site.url }}{{ canonicalPath | default(page.url) }}" property="og:url"/>
+<meta content="{{ pageTitle }}" property="og:title"/>
+<meta content="{{ pageDescription }}" property="og:description"/>
+<meta content="{{ pageUrl }}" property="og:url"/>
+<meta content="{{ site.title }}" property="og:site_name"/>
+<meta content="ru_RU" property="og:locale"/>
+<meta content="{{ socialImage }}" property="og:image"/>
+<meta content="{{ socialImage }}" property="og:image:secure_url"/>
+<meta content="image/webp" property="og:image:type"/>
+<meta content="Панорамный вид на Ладогу и территорию кемпинга Хийденвуори" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="{{ pageTitle }}" name="twitter:title"/>
+<meta content="{{ pageDescription }}" name="twitter:description"/>
+<meta content="{{ socialImage }}" name="twitter:image"/>
+<meta content="Панорамный вид на Ладогу и территорию кемпинга Хийденвуори" name="twitter:image:alt"/>
 <link href="/assets/css/burger-fix.css" rel="stylesheet" type="text/css"/>
 <style>
 .nh-topbar { z-index: 10000 !important; }
@@ -161,7 +188,7 @@
         h3 { font-size: 22px !important; }
     }
 </style>
-<style id="faq-comment-mobile-fix">
+<style id="faq-mobile-fix">
     @media (max-width: 768px) {
         #qa-67 .nh-qa-columns__group { gap: 0.875rem; }
         #qa-67 .nh-qa-item__details { background: #ffffff; border-radius: 20px; overflow: hidden; padding: 0.125rem 0; }
@@ -169,7 +196,7 @@
         #qa-67 .nh-qa-item__summary:before, #qa-67 .nh-qa-item__summary:after { left: 1rem; top: 50%; }
         #qa-67 .nh-qa-item__summary h6 { margin: 0; width: 100%; }
         #qa-67 .nh-qa-item__desc { padding-left: 2.75rem; padding-right: 1rem; padding-bottom: 1rem; }
-        #comment, #application-form-31, #maps-39, #horizontal-cards-40 { visibility: visible !important; opacity: 1 !important; animation-name: none !important; }
+        #application-form-31, #maps-39, #horizontal-cards-40 { visibility: visible !important; opacity: 1 !important; animation-name: none !important; }
     }
 </style>
 <style id="aboba-features-image-fix">

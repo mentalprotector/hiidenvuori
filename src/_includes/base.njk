@@ -2,8 +2,9 @@
 <html lang="ru-RU">
 <head>
   {% include "meta.njk" %}
-  {% if hasPhotoGallery %}<link href="/assets/css/photo-gallery.css?v=20260817-gallery-fix" rel="stylesheet" type="text/css">{% endif %}
+  {% if hasPhotoGallery %}<link href="/assets/css/photo-gallery.css?v=20260913-gallery-mobile-height" rel="stylesheet" type="text/css">{% endif %}
   <link href="/assets/css/site-icons.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/hiiden-editorial.css?v=20260913-6-gallery-mobile-mosaic" rel="stylesheet" type="text/css">
 </head>
 <body class="site site_main-page" data-cart="old" data-enable-compare="false" data-grid="12" data-lang="ru_RU" data-page-type="{{ pageType }}" id="top-body" style="--show-header: none;--header-background-color: transparent;background: none;">
 <div class="site__layout">
@@ -22,5 +23,6 @@
 </div>
 {% include "scripts.njk" %}
 {% if hasPhotoGallery %}<script src="/assets/js/photo-gallery.js" defer></script>{% endif %}
+<script src="/assets/js/site-editorial.js" defer></script>
 </body>
 </html>

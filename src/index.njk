@@ -12,6 +12,7 @@ hasPhotoGallery: true
 {% from "components/horizontal-cards.njk" import horizontalCards %}
 {% from "components/features.njk" import features %}
 {% from "components/photo-gallery.njk" import photoGallery %}
+{% from "components/editorial-pattern.njk" import editorialPattern %}
 
 <section class="nh-carousel-fullscreen widget-sort onmain on-view widget-block js-carousel-fullscreen nh-editor-panel js-indent" id="carousel-fullscreen-16">
 <link href="/assets/css/carousel-fullscreen.fc020d.min.css" rel="stylesheet" type="text/css"/>
@@ -279,6 +280,7 @@ body.site_main-page #content-anchor {
 ], 2, "horizontal-cards-home") }}
 
 <section class="home-history widget-sort onmain on-view widget-block js-indent" id="history-index">
+  {{ editorialPattern("ridges", "home-history__ornament editorial-pattern--on-dark") }}
   <div class="home-history__wrap">
     <div class="home-history__card">
       <h2 class="home-history__title">Незабываемый отдых<br><span>в долине Хийденвуори</span></h2>
@@ -297,17 +299,18 @@ body.site_main-page #content-anchor {
 </section>
 
 {{ photoGallery("territory-gallery", "Территория и атмосфера Ладоги", "Общие виды пространства, береговые детали и места, которые гости встречают во время прогулки по Хийденвуори.", [
-  { src: "/assets/img/selected-2026/hero-reserve-islands-aerial-upscaled.webp", alt: "Острова и шхеры Ладоги с высоты" },
-  { src: "/assets/img/selected-2026/hero-reserve-rocky-shore.webp", alt: "Каменистый берег и острова рядом с Хийденвуори" },
-  { src: "/assets/img/selected-2026/details-reserve-people-water.webp", alt: "Гости отдыхают у воды на Ладоге" },
-  { src: "/assets/img/selected-2026/details-reserve-rocks-flowers.webp", alt: "Северные цветы среди камней на берегу" },
-  { src: "/assets/img/selected-2026/details-reserve-swings-ladoga.webp", alt: "Качели с видом на Ладожское озеро" },
-  { src: "/assets/img/selected-2026/territory-guest-waterfront.webp", alt: "Гостья отдыхает у воды с видом на Ладогу" },
-  { src: "/assets/img/selected-2026/kitchen-pavilion-front.webp", alt: "Крытый павильон на территории Хийденвуори" },
-  { src: "/assets/img/selected-2026/kitchen-pavilion-guests.webp", alt: "Гости за столами в крытом павильоне Хийденвуори" }
+  { src: "/assets/img/selected-2026/hero-reserve-rocky-shore.webp", alt: "Каменистый берег и острова рядом с Хийденвуори", slot: 1, position: "center 46%" },
+  { src: "/assets/img/selected-2026/details-reserve-people-water.webp", alt: "Гости отдыхают у воды на Ладоге", slot: 3, position: "center 42%" },
+  { src: "/assets/img/selected-2026/details-reserve-swings-ladoga.webp", alt: "Качели с видом на Ладожское озеро", slot: 2, position: "center 50%" },
+  { src: "/assets/img/selected-2026/details-reserve-rocks-flowers.webp", alt: "Северные цветы среди камней на берегу", slot: 4, position: "center 56%" },
+  { src: "/assets/img/selected-2026/territory-guest-waterfront.webp", alt: "Гостья отдыхает у воды с видом на Ладогу", slot: 5, position: "center 44%" },
+  { src: "/assets/img/selected-2026/kitchen-pavilion-front.webp", alt: "Крытый павильон на территории Хийденвуори", slot: 6, position: "center 50%" },
+  { src: "/assets/img/selected-2026/kitchen-pavilion-guests.webp", alt: "Гости за столами в крытом павильоне Хийденвуори", slot: 1, position: "center 48%" },
+  { src: "/assets/img/selected-2026/hero-reserve-islands-aerial-upscaled.webp", alt: "Острова и шхеры Ладоги с высоты", slot: 2, position: "center 44%" }
 ]) }}
 
 <section class="home-consultation widget-sort onmain on-view widget-block js-indent" id="home-consultation">
+  {{ editorialPattern("skerries", "editorial-pattern--on-dark") }}
 <style>
 .home-services-heading {
   background: #f5f7fb;
@@ -647,6 +650,7 @@ body.site_main-page #content-anchor {
 .home-location__map {
   position: relative;
   background: #dbe7f4;
+  isolation: isolate;
 }
 
 .home-location__map iframe {
@@ -657,16 +661,62 @@ body.site_main-page #content-anchor {
   border: 0;
 }
 
+.home-location__map-frame {
+  opacity: 0;
+  transition: opacity .3s ease;
+  z-index: 2;
+}
+
+.home-location__map:not(.map-embed--loaded) .home-location__map-frame {
+  pointer-events: none;
+}
+
+.home-location__map.map-embed--loaded .home-location__map-frame {
+  opacity: 1;
+}
+
+.home-location__fallback-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  z-index: 0;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
 .home-location__fallback {
   position: absolute;
-  left: 16px;
-  bottom: 16px;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: auto;
+  padding: 16px;
+  border-radius: inherit;
+  background: transparent;
+  color: #102748;
+  font-family: FontParagraph, Arial, sans-serif;
+  z-index: 3;
+  transition: opacity .3s ease, visibility .3s ease;
+}
+
+.home-location__fallback-card {
   width: min(280px, calc(100% - 32px));
   padding: 18px 14px;
   border-radius: 8px;
   background: rgba(255,255,255,.92);
-  color: #102748;
-  font-family: FontParagraph, Arial, sans-serif;
+  box-shadow: 0 12px 28px rgba(16,39,72,.16);
+  position: relative;
+  z-index: 2;
+}
+
+.home-location__map.map-embed--loaded .home-location__fallback,
+.home-location__map.map-embed--loaded .home-location__fallback-image {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .home-location__fallback-title {
@@ -744,6 +794,42 @@ body.site_main-page #content-anchor {
   font-weight: 800;
   line-height: 1.2;
   text-decoration: none;
+}
+
+.home-location__coords {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .65rem .9rem;
+  margin: 1.75rem 0 1.35rem;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(245,240,230,.28);
+}
+
+.home-location__coords-value {
+  color: inherit;
+  font: 700 .95rem/1.35 FontParagraph, Arial, sans-serif;
+  letter-spacing: .03em;
+  white-space: nowrap;
+}
+
+.home-location__coords-copy {
+  appearance: none;
+  min-height: 2rem;
+  padding: .35rem .8rem;
+  border: 1px solid rgba(245,240,230,.5);
+  border-radius: 1.125rem;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: 700 .75rem/1.2 FontParagraph, Arial, sans-serif;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+
+.home-location__coords-copy:hover,
+.home-location__coords-copy:focus-visible {
+  border-color: currentColor;
+  background: rgba(245,240,230,.12);
 }
 
 @media (max-width: 900px) {
@@ -839,12 +925,15 @@ body.site_main-page #content-anchor {
 
 <section class="home-location widget-sort onmain on-view widget-block js-indent" id="home-location">
 <div class="home-location__wrap">
-  <div class="home-location__map">
-    <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afb4ea6617e94ef2721b3155c3f209a841b909da72b6e6c210aab0f50a705d450&amp;source=constructor&amp;scroll=false" title="Карта Хийденвуори" loading="lazy"></iframe>
+  <div class="home-location__map map-embed js-map-embed">
+    <img class="home-location__fallback-image" src="/assets/img/selected-2026/hero-main-aerial-ladoga-upscaled.webp" alt="Вид на Хийденвуори и Ладожское озеро" loading="lazy" decoding="async">
+    <iframe class="home-location__map-frame map-embed__frame js-map-embed-frame" src="https://yandex.ru/map-widget/v1/?um=constructor%3Afb4ea6617e94ef2721b3155c3f209a841b909da72b6e6c210aab0f50a705d450&amp;source=constructor&amp;scroll=false" title="Карта Хийденвуори" loading="lazy"></iframe>
     <div class="home-location__fallback">
-      <p class="home-location__fallback-title">Не удаётся загрузить карту</p>
-      <p class="home-location__fallback-text">Если у вас включён VPN или блокировщик трафика, интерактивная карта может не открыться. Отключите VPN и обновите страницу.</p>
-      <a class="home-location__fallback-link" href="https://yandex.ru/map-widget/v1/?um=constructor%3Afb4ea6617e94ef2721b3155c3f209a841b909da72b6e6c210aab0f50a705d450&amp;source=constructor&amp;scroll=false" target="_blank" rel="noopener noreferrer">Открыть карту отдельно</a>
+      <div class="home-location__fallback-card">
+        <p class="home-location__fallback-title">Интерактивная карта временно недоступна</p>
+        <p class="home-location__fallback-text">Откройте карту отдельно или используйте координаты для навигатора.</p>
+        <a class="home-location__fallback-link" href="https://yandex.ru/map-widget/v1/?um=constructor%3Afb4ea6617e94ef2721b3155c3f209a841b909da72b6e6c210aab0f50a705d450&amp;source=constructor&amp;scroll=false" target="_blank" rel="noopener noreferrer">Открыть карту отдельно</a>
+      </div>
     </div>
   </div>
   <div class="home-location__card">
@@ -854,6 +943,10 @@ body.site_main-page #content-anchor {
       <li>Прием заявок на сайте круглосуточно</li>
       <li>Эл. почта: <a href="mailto:mail@hiidenvuori.ru">mail@hiidenvuori.ru</a></li>
     </ul>
+    <div class="home-location__coords">
+      <span class="home-location__coords-value">61.711246, 30.978499</span>
+      <button class="home-location__coords-copy" type="button" data-copy-text="61.711246, 30.978499" aria-label="Скопировать координаты 61.711246, 30.978499">Копировать</button>
+    </div>
     <div class="home-location__phones">
       <a class="home-location__phone" href="tel:+79210141190">+7 (921) 014-11-90</a>
       <a class="home-location__phone" href="tel:+79210146447">+7 (921) 014-64-47</a>

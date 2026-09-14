@@ -85,23 +85,5 @@ pageType: "contacts"
       <a class="contacts-card__link" href="https://t.me/+79210141190" target="_blank" rel="noopener noreferrer">Telegram</a>
       <a class="contacts-card__link" href="https://vk.com/hiidenv" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
     </article>
-  </section>
+</section>
 </main>
-
-<script>
-  document.querySelectorAll("[data-copy-text]").forEach(function(button) {
-    button.addEventListener("click", function() {
-      var text = button.getAttribute("data-copy-text");
-      if (!navigator.clipboard) {
-        return;
-      }
-      navigator.clipboard.writeText(text).then(function() {
-        var originalText = button.textContent;
-        button.textContent = "Скопировано";
-        window.setTimeout(function() {
-          button.textContent = originalText;
-        }, 1600);
-      });
-    });
-  });
-</script>

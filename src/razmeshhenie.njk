@@ -9,11 +9,9 @@ pageType: "text"
 hasPhotoGallery: true
 ---
 {% from "components/photo-gallery.njk" import photoGalleryItems %}
+{% from "components/inner-page-hero.njk" import innerHero %}
+{{ innerHero("stay", "ночлег и инфраструктура", "Размещение", "у Ладоги", "Палатки, автодома и всё необходимое для спокойной остановки на берегу Ладожского озера.", "#camping", "Смотреть варианты") }}
 <style>
-  .razmeshhenie-top-spacer {
-    height: 120px;
-  }
-
   .stay-options {
     padding: 0 0 86px;
     background: #ffffff;
@@ -489,10 +487,6 @@ hasPhotoGallery: true
   }
 
   @media (max-width: 640px) {
-    .razmeshhenie-top-spacer {
-      height: 96px;
-    }
-
     .stay-options {
       padding-bottom: 56px;
     }
@@ -590,8 +584,6 @@ hasPhotoGallery: true
   }
 </style>
 
-<div class="razmeshhenie-top-spacer" aria-hidden="true"></div>
-
 <section class="stay-options" aria-label="Варианты размещения">
   <div class="stay-options__inner">
     <article class="stay-option" id="camping">
@@ -653,7 +645,6 @@ hasPhotoGallery: true
   <div class="razmeshhenie-extra__inner">
     <div class="razmeshhenie-extra__head">
       <h2>Берег, кухня и выход на воду</h2>
-      <p>Эти зоны живут отдельно от размещения: здесь больше пространства, больше деталей и больше фотографий, чтобы было понятно, как устроен отдых на территории.</p>
     </div>
     <div class="razmeshhenie-extra__grid">
       <article class="razmeshhenie-extra__card" id="plyazh">
@@ -679,7 +670,7 @@ hasPhotoGallery: true
           { src: "/assets/img/selected-2026/kitchen-gas-stove.webp", alt: "Газовая плита и чайники на общей кухне", position: "center 48%" }
         ], "Общая кухня", "razmeshhenie-extra__gallery") }}
         <div class="razmeshhenie-extra__body">
-          <h3>Общая кухня входит в стоимость</h3>
+          <h3>Общая кухня</h3>
           <p>Для проживающих доступна крытая общая кухня с посудой, холодильником и морозильной камерой. Можно готовить на территории без отдельной доплаты.</p>
         </div>
       </article>

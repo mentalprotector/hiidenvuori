@@ -1,10 +1,25 @@
-{% macro photoGalleryItems(images, title, className="photo-gallery__grid") %}
+{% macro photoGalleryItems(images, title, className="photo-gallery__grid", showAll=false) %}
 <div class="{{ className }}" data-photo-gallery="{{ title }}">
+  {% set previewCount = images.length %}
+  {% if not showAll and previewCount > 3 %}{% set previewCount = 3 %}{% endif %}
   {% for image in images %}
-  <button class="photo-gallery__item{% if loop.index > 3 %} photo-gallery__item--hidden{% endif %}{% if loop.index == 3 and images.length > 3 %} photo-gallery__item--more{% endif %}" type="button" data-photo-src="{{ image.src }}" data-photo-alt="{{ image.alt }}"{% if loop.index > 3 %} hidden{% endif %} aria-label="Открыть фото: {{ image.alt }}{% if loop.index == 3 and images.length > 3 %}. Ещё {{ images.length - 3 }} фото{% endif %}">
-    <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy" decoding="async"{% if image.position %} style="object-position: {{ image.position }}"{% endif %}>
-    {% if loop.index == 3 and images.length > 3 %}<span class="photo-gallery__more" aria-hidden="true">+{{ images.length - 3 }} фото</span>{% endif %}
+  {% set deferred = image.preview == false %}
+  {% set hidden = deferred or (not showAll and loop.index > previewCount) %}
+  {% set slot = image.slot or ((loop.index0 % 6) + 1) %}
+  {% set slotPosition = ["center 48%", "center 50%", "center 42%", "center 54%", "center 50%", "center 46%"][slot - 1] %}
+  {% if not hidden and ((not showAll and loop.index0 == 0) or (showAll and loop.index0 % 6 == 0)) %}
+    {% set patternCount = previewCount %}
+    {% if showAll %}
+      {% set patternCount = 6 %}
+      {% if images.length - loop.index0 < 6 %}{% set patternCount = images.length - loop.index0 %}{% endif %}
+    {% endif %}
+    <div class="photo-gallery__pattern photo-gallery__pattern--count-{{ patternCount }}">
+  {% endif %}
+  <button class="photo-gallery__item photo-gallery__item--slot-{{ slot }}{% if hidden %} photo-gallery__item--hidden{% endif %}{% if not showAll and loop.index == 3 and images.length > 3 %} photo-gallery__item--more{% endif %}" type="button" data-photo-src="{{ image.src }}" data-photo-alt="{{ image.alt }}"{% if hidden %} hidden{% endif %} aria-label="Открыть фото: {{ image.alt }}{% if not showAll and loop.index == 3 and images.length > 3 %}. Ещё {{ images.length - 3 }} фото{% endif %}">
+    <img src="{{ image.src }}" alt="{{ image.alt }}" loading="lazy" decoding="async" style="object-position: {{ image.position or slotPosition }}">
+    {% if not showAll and loop.index == 3 and images.length > 3 %}<span class="photo-gallery__more" aria-hidden="true">+{{ images.length - 3 }} фото</span>{% endif %}
   </button>
+  {% if not hidden and ((not showAll and loop.index == previewCount) or (showAll and (loop.index % 6 == 0 or loop.last))) %}</div>{% endif %}
   {% endfor %}
 </div>
 {% endmacro %}
@@ -16,7 +31,7 @@
       <h2 id="{{ id }}-title">{{ title }}</h2>
       {% if text %}<p class="photo-gallery__intro">{{ text }}</p>{% endif %}
     </div>
-    {{ photoGalleryItems(images, title) }}
+    {{ photoGalleryItems(images, title, "photo-gallery__grid", true) }}
     {% if body %}<div class="photo-gallery__body">{{ body | safe }}</div>{% endif %}
   </div>
 </section>

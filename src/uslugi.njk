@@ -10,9 +10,10 @@ hasPhotoGallery: true
 ---
 {% from "components/detail-cards.njk" import detailCards %}
 {% from "components/photo-gallery.njk" import photoGallery %}
+{% from "components/inner-page-hero.njk" import innerHero %}
+{{ innerHero("services", "отдых на территории", "Развлечения", "и услуги", "Баня, искусство, вода, движение и тёплое кафе — собрали всё, что делает поездку в Хийденвуори особенной.", "#banya", "Посмотреть услуги") }}
 
 <style>
-  .uslugi-top-spacer { height: 120px; }
   .photo-gallery__body {
     max-width: 860px;
     margin-top: 30px;
@@ -42,16 +43,13 @@ hasPhotoGallery: true
     font-weight: 800;
     text-decoration: none;
   }
-  @media (max-width: 640px) { .uslugi-top-spacer { height: 96px; } }
   @media (max-width: 640px) {
     .photo-gallery__body { margin-top: 20px; padding: 22px 20px; }
     .photo-gallery__action { width: 100%; }
   }
 </style>
 
-<div class="uslugi-top-spacer" aria-hidden="true"></div>
-
-{{ photoGallery("banya", "Баня на дровах", "Парная, печь и детали бани, а также внешний вид здания.", [
+{{ photoGallery("banya", "Баня на дровах", "", [
   { src: "/assets/img/selected-2026/sauna-reserve-exterior-clean.webp", alt: "Баня на дровах снаружи" },
   { src: "/assets/img/selected-2026/sauna-new-exterior.webp", alt: "Общий вид бани на дровах и площадки перед входом" },
   { src: "/assets/img/selected-2026/sauna-reserve-stove.webp", alt: "Дровяная печь в бане Хийденвуори" },
@@ -65,7 +63,7 @@ hasPhotoGallery: true
   { src: "/assets/img/selected-2026/hiidenart-artist-talk.webp", alt: "Художница рассказывает о работе посетителям выставки" },
   { src: "/assets/img/selected-2026/hiidenart-exhibition-guests.webp", alt: "Посетители выставки в пространстве ХийденАрт" },
   { src: "/assets/img/selected-2026/hiidenart-guided-tour.webp", alt: "Экскурсия по выставке ХийденАрт" },
-  { src: "/assets/img/selected-2026/hiidenart-corgi-guest.webp", alt: "Корги среди гостей выставки ХийденАрт" }
+  { src: "/assets/img/selected-2026/hiidenart-corgi-guest.webp", alt: "Корги среди гостей выставки ХийденАрт", position: "center 100%" }
 ], '<p><strong>ХийденАрт — пространство современного и традиционного искусства в Хийденсельге, на территории бывшего лесопильного завода у Ладожского озера.</strong></p><p>Здесь современное искусство встречается с историей Карелии: выставки, объекты художников и артефакты, связанные с этим местом и краем. Это ещё один маршрут по территории Хийденвуори и возможность посмотреть на северный ландшафт с другой стороны.</p><p>Посещение выставочного пространства — свободное для гостей кемпинга.</p>') }}
 
 {{ photoGallery("aktivnyj-otdykh", "Активный отдых на территории", "SUP-доски, велосипеды, водные прогулки и сезонные варианты отдыха на Ладоге.", [
@@ -97,7 +95,7 @@ hasPhotoGallery: true
     title: "Трансфер в горный парк Рускеала",
     text: "Горный парк Рускеала — один из самых известных маршрутов Карелии с мраморными каньонами, подземными галереями и прогулочными тропами. Трансфер помогает съездить туда без лишней логистики и вернуться обратно в Хийденвуори."
   }
-], 2, "paid-services-uslugi", "rgba(244,246,252,1)") }}
+], 2, "paid-services-uslugi", "rgba(244,246,252,1)", "dark") }}
 
 {{ detailCards("Концертные программы", "Музыкальные события остаются отдельным направлением внутри раздела развлечений.", [
   {

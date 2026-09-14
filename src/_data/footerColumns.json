@@ -5,7 +5,6 @@
       { "label": "Главная страница", "url": "/" },
       { "label": "Размещение и удобства", "url": "/razmeshhenie.html" },
       { "label": "Развлечения и услуги", "url": "/uslugi.html" },
-      { "label": "Отзывы", "url": "/comment.html" },
       { "label": "Контакты", "url": "/contacts.html" }
     ]
   },

@@ -1,3 +1,4 @@
+{% from "components/editorial-pattern.njk" import editorialPattern %}
 {% macro detailCards(title, description, items, columns=2, id=none, background="rgba(255,255,255,1)", theme="light") %}
 {% set cols = columns if columns else 2 %}
 {% set tabletCols = 2 if cols > 2 else cols %}
@@ -7,6 +8,7 @@
 <section class="nh-cards widget-sort onmain on-view widget-block nh-editor-panel lazyload js-indent" id="{{ id or 'detail-cards' }}">
 <link href="/assets/css/cards.ce46b1.min.css" rel="stylesheet" type="text/css"/>
 <div class="lazyload nh-cards--indent-top-m nh-cards--indent-bottom-m" data-ng-non-bindable="" style="background-position: center;background-repeat: no-repeat;background-size: cover;background-color: {{ background }};">
+{{ editorialPattern("facets" if theme == "dark" else "terrain", "editorial-pattern--on-" + ("dark" if theme == "dark" else "light")) }}
 <div class="js-indent-add"></div>
 <div class="nh-cards__inner">
 <div class="nh-cards__content">
@@ -32,9 +34,9 @@
 <div>
 <figure>
 {% if item.image %}
-<div class="nh-cards__picture-container">
-<picture class="nh-cards__picture-container nh-cards_round-2" style="">
-<img alt="{{ item.image.alt or item.title or '' }}" class="nh-cards_round-2" loading="lazy" src="{{ item.image.src }}" style="width: 100%; height: auto; object-fit: cover;{% if item.image.ratio %} aspect-ratio: {{ item.image.ratio }};{% endif %}"/>
+<div class="nh-cards__picture-container"{% if item.image.ratio %} style="aspect-ratio: {{ item.image.ratio }}; overflow: hidden;"{% endif %}>
+<picture class="nh-cards__picture-container nh-cards_round-2"{% if item.image.ratio %} style="display: block; height: 100%;"{% endif %}>
+<img alt="{{ item.image.alt or item.title or '' }}" class="nh-cards_round-2" loading="lazy" decoding="async" sizes="(max-width: 47.9375rem) calc((100vw - 3rem) / 2), 588px" src="{{ item.image.src }}" style="width: 100%; {% if item.image.ratio %}height: 100%;{% else %}height: auto;{% endif %} object-fit: cover;{% if item.image.ratio %} aspect-ratio: {{ item.image.ratio }};{% endif %}"/>
 </picture>
 </div>
 {% elif item.icon %}

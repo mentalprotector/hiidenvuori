@@ -1,0 +1,71 @@
+{% macro editorialPattern(variant="ridges", extraClass="") %}
+<svg class="editorial-pattern editorial-pattern--{{ variant }} {{ extraClass }}" viewBox="0 0 1440 900" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  {% if variant == "skerries" %}
+    <path class="editorial-pattern__fill" d="M0 598 132 468l116 76 126-174 112 126 135-226 126 190 132-102 112 154 132-112 119 103v397H0Z" />
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-42 590 134 438l117 76 124-171 113 123 135-224 128 190 131-100 113 151 133-110 116 98" />
+      <path class="editorial-pattern__line" d="M-34 638 136 492l116 75 123-163 112 120 135-214 128 181 131-96 113 145 134-104 119 93" />
+      <path class="editorial-pattern__line" d="M-26 687 140 543l112 73 123-151 111 116 137-202 126 172 130-91 114 138 134-98 118 87" />
+      <path class="editorial-pattern__line" d="M-18 738 144 598l108 72 122-137 111 112 137-187 126 163 130-86 114 129 134-91 118 81" />
+      <path class="editorial-pattern__line" d="M-10 794 149 659l104 70 122-121 111 106 137-171 126 151 130-80 114 120 134-83 118 73" />
+    </g>
+  {% elif variant == "flow" %}
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-80 176C126 72 294 86 453 185s308 112 463 16 300-106 455-11" />
+      <path class="editorial-pattern__line" d="M-90 230C119 124 292 139 449 238s306 116 465 20 303-107 463-12" />
+      <path class="editorial-pattern__line" d="M-96 286C112 180 290 197 445 296s304 117 466 23 306-108 462-13" />
+      <path class="editorial-pattern__line" d="M-102 344C106 239 286 256 440 355s301 119 468 27 308-109 460-15" />
+      <path class="editorial-pattern__line" d="M-108 706C84 622 257 631 409 735s295 115 445 20 287-105 437-20" />
+      <path class="editorial-pattern__line" d="M-112 758C79 676 254 687 404 789s294 114 450 21 286-104 433-21" />
+    </g>
+  {% elif variant == "shoreline" %}
+    <path class="editorial-pattern__fill" d="M0 718 128 686l94 28 105-78 108 48 128-94 124 62 122-94 130 57 112-71 120 42 169-52v366H0Z" />
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-44 678 127 642l96 29 104-79 110 49 126-94 126 62 121-93 132 57 111-70 121 42 173-51" />
+      <path class="editorial-pattern__line" d="M-42 726 128 692l96 30 104-74 109 47 126-87 126 59 122-87 132 54 112-65 120 39 173-45" />
+      <path class="editorial-pattern__line" d="M-40 774 128 742l96 29 103-69 109 45 127-80 125 56 123-80 131 51 113-59 120 36 173-40" />
+      <path class="editorial-pattern__line" d="M-38 824 129 794l95 28 103-64 109 42 127-73 125 52 123-72 130 47 114-54 119 33 174-34" />
+    </g>
+  {% elif variant == "facets" %}
+    <path class="editorial-pattern__fill" d="M0 0h302l118 112 142-84 160 126 148-92 174 126 130-72 266 126v658H0Z" />
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-36 84h315l119 112 142-84 160 126 148-92 174 126 130-72 266 126" />
+      <path class="editorial-pattern__line" d="M-36 152h315l119 112 142-84 160 126 148-92 174 126 130-72 266 126" />
+      <path class="editorial-pattern__line" d="M-36 222h315l119 112 142-84 160 126 148-92 174 126 130-72 266 126" />
+      <path class="editorial-pattern__line" d="M-36 292h315l119 112 142-84 160 126 148-92 174 126 130-72 266 126" />
+      <path class="editorial-pattern__line" d="M-36 362h315l119 112 142-84 160 126 148-92 174 126 130-72 266 126" />
+    </g>
+  {% elif variant == "terrain" %}
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-60 174 96 104l104 72 121-124 126 104 142-79 132 115 144-92 124 105 164-76 180 89" />
+      <path class="editorial-pattern__line" d="M-60 226 96 156l104 72 121-124 126 104 142-79 132 115 144-92 124 105 164-76 180 89" />
+      <path class="editorial-pattern__line" d="M-60 278 96 208l104 72 121-124 126 104 142-79 132 115 144-92 124 105 164-76 180 89" />
+      <path class="editorial-pattern__line" d="M-60 330 96 260l104 72 121-124 126 104 142-79 132 115 144-92 124 105 164-76 180 89" />
+      <path class="editorial-pattern__line" d="M-60 746 122 674l122 88 146-102 142 91 156-105 151 91 160-112 152 96 178-81" />
+      <path class="editorial-pattern__line" d="M-60 800 122 728l122 88 146-102 142 91 156-105 151 91 160-112 152 96 178-81" />
+    </g>
+  {% elif variant == "contours" %}
+    <path class="editorial-pattern__fill" d="M0 566 172 488l122 38 118-108 120 44 137-92 127 67 146-48 120 81 137-46 141 65v411H0Z" />
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-46 548 172 458l123 39 117-106 121 43 136-91 128 67 145-47 121 80 136-45 141 64" />
+      <path class="editorial-pattern__line" d="M-46 600 172 510l123 39 117-106 121 43 136-91 128 67 145-47 121 80 136-45 141 64" />
+      <path class="editorial-pattern__line" d="M-46 652 172 562l123 39 117-106 121 43 136-91 128 67 145-47 121 80 136-45 141 64" />
+      <path class="editorial-pattern__line" d="M-46 704 172 614l123 39 117-106 121 43 136-91 128 67 145-47 121 80 136-45 141 64" />
+    </g>
+  {% else %}
+    <path class="editorial-pattern__fill" d="M0 190C145 104 266 142 390 224c108 72 190 87 302 18 126-78 222-77 330 14 101 85 235 90 418-7v651H0Z" />
+    <g class="editorial-pattern__lines">
+      <path class="editorial-pattern__line" d="M-30 164C121 73 267 111 393 196c112 76 193 92 307 22 124-76 223-74 328 14 106 89 239 96 442-11" />
+      <path class="editorial-pattern__line" d="M-22 202C124 119 260 150 383 232c115 77 202 101 323 27 116-71 212-68 315 18 112 93 247 99 431 1" />
+      <path class="editorial-pattern__line" d="M-12 246C119 174 258 191 374 268c120 80 214 109 335 35 111-68 204-60 303 24 114 96 253 97 439 21" />
+      <path class="editorial-pattern__line" d="M-20 294C110 236 246 236 363 309c121 75 222 115 343 42 109-65 195-54 294 29 111 92 248 92 453 42" />
+    </g>
+    <g class="editorial-pattern__rings">
+      <path class="editorial-pattern__line" d="M858 608c88-42 191-42 279 0s191 42 279 0" />
+      <path class="editorial-pattern__line" d="M811 654c118-56 257-56 375 0s257 56 375 0" />
+      <path class="editorial-pattern__line" d="M764 704c148-69 322-69 470 0s322 69 470 0" />
+      <path class="editorial-pattern__line" d="M718 760c179-81 389-81 568 0s389 81 568 0" />
+    </g>
+  {% endif %}
+</svg>
+{% endmacro %}

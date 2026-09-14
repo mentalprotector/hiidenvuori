@@ -1,3 +1,4 @@
+{% from "components/editorial-pattern.njk" import editorialPattern %}
 {% set bgStyle = "" %}
 {% if bgImage %}
 {% set bgStyle = "background-image: url('" + bgImage + "'); " %}
@@ -5,6 +6,7 @@
 <section class="nh-cta widget-sort onmain on-view widget-block nh-editor-panel js-indent">
 <link href="/assets/css/call-to-action.d88795.min.css" rel="stylesheet" type="text/css"/>
 <div class="lazyload nh-cta--indent-top-l nh-cta--indent-bottom-m" style="{{ bgStyle }}background-position: top center;background-repeat: repeat-y;background-size: 1420px;background-color: rgba(245,247,251, 1);">
+{{ editorialPattern("shoreline", "editorial-pattern--on-light") }}
 <div class="js-indent-add"></div> <div class="nh-cta-inner__edges">
 <div class="nh-cta-inner__width nh-cta__position nh-cta__position--2 nh-cta-inner__width--content">
 <div class="nh-cta-header nh-cta-header--indent-bottom nh-cta-header--left">

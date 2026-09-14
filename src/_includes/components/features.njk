@@ -1,4 +1,5 @@
 {% macro features(items, id=none) %}
+{% set imageSizes = '(max-width: 47.9375rem) calc(100vw - 2rem), 528px' %}
 <section class="nh-features widget-block nh-editor-panel js-indent" data-widget-store-item="" id="{{ id or 'features' }}">
 <link href="/assets/css/features.4c0a14.min.css" rel="stylesheet" type="text/css"/>
 <div class="lazyload nh-features--indent-top-l nh-features--indent-bottom-l" data-ng-non-bindable="" style="background-position: top center; background-repeat: repeat-y; background-size: 1420px; background-color: rgba(255,255,255, 1);">
@@ -11,8 +12,8 @@
 <div class="nh-features__item-wrapper nh-features--indent-top-s nh-features--indent-bottom-s">
 <figure class="nh-features__figure" data-desktop-position="4" data-mobile-position="0">
 <div class="nh-features__image-block">
-<picture class="nh-features__picture-container nh-features_round-2" style="--picture-shadow-color: rgba(0,0,0, 0); --picture-shadow-offset-x: 0px; --picture-shadow-offset-y: 8px; --picture-shadow-blur: 25px; --picture-border-color: rgba(0,0,0, 0); --picture-border-width: 0px;">
-<img alt="{{ item.image.alt or item.title or '' }}" class="nh-features_round-2" loading="lazy" media="(-webkit-min-device-pixel-ratio: 1.5)" sizes="(max-width: 767px) 374px, (min-width: 768px) 528px" src="{{ item.image.src }}"/>
+<picture class="nh-features__picture-container nh-features_round-2" style="--picture-shadow-color: rgba(0,0,0, 0); --picture-shadow-offset-x: 0px; --picture-shadow-offset-y: 8px; --picture-shadow-blur: 25px; --picture-border-color: rgba(0,0,0, 0); --picture-border-width: 0px; aspect-ratio: 4 / 3;">
+<img alt="{{ item.image.alt or item.title or '' }}" class="nh-features_round-2" loading="lazy" decoding="async" sizes="{{ imageSizes }}" src="{{ item.image.src }}" style="height: 100%; object-fit: cover;"/>
 </picture>
 </div>
 <div class="lazyload nh-features__info nh-features__info--indent nh-features_round-2" style="--content-border-color: rgba(0,0,0, 0); --content-border-width: 0px; --content-shadow-color: rgba(0,0,0, 0); --content-shadow-offset-x: 0px; --content-shadow-offset-y: 8px; --content-shadow-blur: 25px; background-position: top center; background-repeat: repeat-y; background-size: auto; background-color: rgba(244,246,252, 1);">

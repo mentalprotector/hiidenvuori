@@ -1,5 +1,24 @@
 [
-  { "label": "Размещение", "url": "/razmeshhenie.html" },
-  { "label": "Услуги", "url": "/uslugi.html" },
+  {
+    "label": "Размещение",
+    "url": "/razmeshhenie.html",
+    "children": [
+      { "label": "Кемпинг и автокемпинг", "url": "/razmeshhenie.html" },
+      { "label": "Песчаный пляж", "url": "/razmeshhenie.html#plyazh" },
+      { "label": "Причал и слип", "url": "/razmeshhenie.html#prichal-slip" }
+    ]
+  },
+  {
+    "label": "Услуги",
+    "url": "/uslugi.html",
+    "children": [
+      { "label": "Баня на дровах", "url": "/uslugi.html#banya" },
+      { "label": "ХийденАрт", "url": "/uslugi.html#hiidenart" },
+      { "label": "Активный отдых", "url": "/uslugi.html#aktivnyj-otdykh" },
+      { "label": "Магазин-кафе «Saha»", "url": "/uslugi.html#saha" },
+      { "label": "Трансфер в Рускеалу", "url": "/uslugi.html#transfer" },
+      { "label": "Концертные программы", "url": "/uslugi.html#koncerty" }
+    ]
+  },
   { "label": "Контакты", "url": "/contacts.html" }
 ]
